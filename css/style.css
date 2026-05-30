@@ -25,8 +25,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 12% 0%, rgba(36, 87, 197, 0.16), transparent 28%),
-    radial-gradient(circle at 86% 4%, rgba(215, 131, 16, 0.18), transparent 30%),
+    radial-gradient(circle at 10% 0%, rgba(36, 87, 197, 0.22), transparent 30%),
+    radial-gradient(circle at 86% 4%, rgba(215, 131, 16, 0.22), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(15, 140, 140, 0.18), transparent 34%),
     var(--bg);
   color: var(--ink);
   font-family: "Segoe UI", Arial, sans-serif;
@@ -149,14 +150,59 @@ select {
   font-weight: 900;
   text-decoration: none;
   padding: 9px 12px;
+  box-shadow: 0 10px 20px rgba(20, 38, 68, 0.14);
 }
 
-.app-nav a:nth-child(3n + 2) {
+.app-nav a:nth-child(2) {
+  background: linear-gradient(135deg, #104d8d, #28a4d8);
+}
+
+.app-nav a:nth-child(3) {
   background: linear-gradient(135deg, var(--teal), var(--green));
 }
 
-.app-nav a:nth-child(3n + 3) {
+.app-nav a:nth-child(4) {
   background: linear-gradient(135deg, var(--amber), var(--red));
+}
+
+.app-nav a:nth-child(5) {
+  background: linear-gradient(135deg, #7a3fd1, #db4b82);
+}
+
+.app-nav a:nth-child(6) {
+  background: linear-gradient(135deg, #0f766e, #1aa867);
+}
+
+.app-nav a:nth-child(7) {
+  background: linear-gradient(135deg, #bd6a10, #d14b38);
+}
+
+.app-nav a:nth-child(8) {
+  background: linear-gradient(135deg, #29428f, #2457c5);
+}
+
+.app-nav a:nth-child(9) {
+  background: linear-gradient(135deg, #7b3fb5, #ba3e9b);
+}
+
+.app-nav a:nth-child(10) {
+  background: linear-gradient(135deg, #236e3f, #159c7d);
+}
+
+.app-nav a:nth-child(11) {
+  background: linear-gradient(135deg, #d78310, #a95015);
+}
+
+.app-nav a:nth-child(12) {
+  background: linear-gradient(135deg, #145fb8, #1daaa0);
+}
+
+.app-nav a:nth-child(13) {
+  background: linear-gradient(135deg, #172036, #627084);
+}
+
+.app-nav a:nth-child(14) {
+  background: linear-gradient(135deg, #c9433d, #7949c9);
 }
 
 main {
@@ -171,6 +217,43 @@ main {
   background: var(--surface);
   box-shadow: var(--shadow);
   padding: clamp(16px, 3vw, 26px);
+  border-top: 6px solid var(--blue);
+}
+
+.module:nth-of-type(2n) {
+  background: linear-gradient(180deg, #ffffff, #f6fbff);
+}
+
+.module:nth-of-type(3n) {
+  background: linear-gradient(180deg, #ffffff, #fff8ea);
+}
+
+.module:nth-of-type(4n) {
+  background: linear-gradient(180deg, #ffffff, #f2fff8);
+}
+
+#society,
+#utilities,
+#notices {
+  border-top-color: var(--teal);
+}
+
+#residents,
+#maintenance,
+#reports {
+  border-top-color: var(--amber);
+}
+
+#rwa,
+#security,
+#help {
+  border-top-color: var(--purple);
+}
+
+#complaints,
+#workers,
+#documents {
+  border-top-color: var(--red);
 }
 
 .module-heading,
@@ -405,7 +488,8 @@ main {
 }
 
 .privacy-note,
-.load-error {
+.load-error,
+.empty-state {
   margin-bottom: 12px;
   border: 1px solid #ffe0a3;
   border-radius: 8px;
@@ -413,6 +497,13 @@ main {
   color: #75520f;
   font-weight: 800;
   padding: 12px;
+}
+
+.empty-state {
+  margin: 0;
+  border-color: #d6e5ff;
+  background: #f4f8ff;
+  color: #24406f;
 }
 
 .table-shell {

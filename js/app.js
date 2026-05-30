@@ -43,6 +43,8 @@ const money = (value) => `INR ${Number(value).toLocaleString("en-IN")}`;
 const byId = (id) => document.getElementById(id);
 const badge = (value) => `<span class="badge ${statusClass[value] || "neutral"}">${value}</span>`;
 const yesNo = (value) => badge(value ? "Yes" : "No");
+const filterSearch = (items) => items.filter(matchesSearch);
+const empty = (label) => `<div class="empty-state">No ${label} match the current search/filter.</div>`;
 
 function matchesSearch(item) {
   if (!state.search) return true;
@@ -159,15 +161,17 @@ function renderResidents() {
 
 function renderRwa() {
   const data = state.data;
+  const office = filterSearch(data.rwa.officeBearers);
+  const executives = data.rwa.executiveMembers.filter((name) => !state.search || name.toLowerCase().includes(state.search));
   byId("rwaCards").innerHTML = [
-    ...data.rwa.officeBearers.map((member) => ({ title: member.name, subtitle: member.post, status: "Active" })),
-    ...data.rwa.executiveMembers.map((name) => ({ title: name, subtitle: "Executive Member", status: "Active" }))
-  ].map(simpleCard).join("");
+    ...office.map((member) => ({ title: member.name, subtitle: member.post, status: "Active" })),
+    ...executives.map((name) => ({ title: name, subtitle: "Executive Member", status: "Active" }))
+  ].map(simpleCard).join("") || empty("RWA records");
 
   const members = data.properties.filter((property) => property.rwaMember).length;
   const nonMembers = data.properties.filter((property) => !property.rwaMember).length;
   byId("coordinatorList").innerHTML = [
-    ...data.rwa.blockCoordinators.map((item) => `<div><strong>Block ${item.block}</strong><span>${item.name}</span></div>`),
+    ...filterSearch(data.rwa.blockCoordinators).map((item) => `<div><strong>Block ${item.block}</strong><span>${item.name}</span></div>`),
     `<div><strong>RWA members</strong><span>${members}</span></div>`,
     `<div><strong>Non-RWA members</strong><span>${nonMembers}</span></div>`,
     `<div><strong>Pending membership</strong><span>${nonMembers}</span></div>`
@@ -175,8 +179,8 @@ function renderRwa() {
 
   byId("meetingList").innerHTML = [
     { title: data.rwa.agm.agenda, meta: `AGM: ${data.rwa.agm.date}`, status: "Planned" },
-    ...data.rwa.meetingSchedule.map((meeting) => ({ title: meeting.title, meta: meeting.date, status: meeting.status }))
-  ].map(feedItem).join("");
+    ...filterSearch(data.rwa.meetingSchedule).map((meeting) => ({ title: meeting.title, meta: meeting.date, status: meeting.status }))
+  ].map(feedItem).join("") || empty("meeting records");
 }
 
 function simpleCard(item) {
@@ -198,21 +202,21 @@ function renderMaintenance() {
     ["Expenses", money(expenses), "Recorded expenses"]
   ].map(([label, value, note]) => metricCard(label, value, note)).join("");
 
-  byId("collectionRows").innerHTML = data.monthlyCollections.map((item) => `<tr><td>${item.house}</td><td>${item.resident}</td><td>${item.month}</td><td>${money(item.amount)}</td><td>${badge(item.status)}</td></tr>`).join("");
-  byId("expenseRows").innerHTML = data.expenses.map((item) => `<tr><td>${item.date}</td><td>${item.category}</td><td>${money(item.amount)}</td><td>${item.paidTo}</td><td>${badge(item.status)}</td></tr>`).join("");
-  byId("workHistory").innerHTML = [...data.workHistory, ...data.vendorBills].map((item) => simpleCard({
+  byId("collectionRows").innerHTML = filterSearch(data.monthlyCollections).map((item) => `<tr><td>${item.house}</td><td>${item.resident}</td><td>${item.month}</td><td>${money(item.amount)}</td><td>${badge(item.status)}</td></tr>`).join("");
+  byId("expenseRows").innerHTML = filterSearch(data.expenses).map((item) => `<tr><td>${item.date}</td><td>${item.category}</td><td>${money(item.amount)}</td><td>${item.paidTo}</td><td>${badge(item.status)}</td></tr>`).join("");
+  byId("workHistory").innerHTML = filterSearch([...data.workHistory, ...data.vendorBills]).map((item) => simpleCard({
     title: item.task || item.vendor,
     subtitle: item.category || item.bill,
     status: item.status
-  })).join("");
+  })).join("") || empty("maintenance records");
 }
 
 function renderUtilities() {
-  byId("utilityCards").innerHTML = state.data.utilities.map((item) => simpleCard({
+  byId("utilityCards").innerHTML = filterSearch(state.data.utilities).map((item) => simpleCard({
     title: item.name,
     subtitle: `${item.owner}: ${item.note}`,
     status: item.status
-  })).join("");
+  })).join("") || empty("utility records");
 }
 
 function renderComplaints() {
@@ -231,12 +235,12 @@ function renderComplaints() {
 
 function renderSecurity() {
   const security = state.data.security;
-  byId("securityRows").innerHTML = security.entries.map((entry) => `<tr><td>${entry.type}</td><td>${entry.name}</td><td>${entry.house}</td><td>${entry.entry}</td><td>${entry.exit}</td><td>${entry.purpose}</td><td>${entry.guard}</td><td>${entry.vehicle}</td></tr>`).join("");
-  byId("gatePassCards").innerHTML = security.gatePassRecords.map((pass) => simpleCard({
+  byId("securityRows").innerHTML = filterSearch(security.entries).map((entry) => `<tr><td>${entry.type}</td><td>${entry.name}</td><td>${entry.house}</td><td>${entry.entry}</td><td>${entry.exit}</td><td>${entry.purpose}</td><td>${entry.guard}</td><td>${entry.vehicle}</td></tr>`).join("");
+  byId("gatePassCards").innerHTML = filterSearch(security.gatePassRecords).map((pass) => simpleCard({
     title: `${pass.pass} - ${pass.house}`,
     subtitle: `${pass.purpose}; valid till ${pass.validTill}`,
     status: pass.status
-  })).join("");
+  })).join("") || empty("gate pass records");
 }
 
 function renderWorkers() {
@@ -253,39 +257,39 @@ function renderWorkers() {
 }
 
 function renderDocuments() {
-  byId("documentCards").innerHTML = state.data.documents.map((doc) => simpleCard({
+  byId("documentCards").innerHTML = filterSearch(state.data.documents).map((doc) => simpleCard({
     title: doc.title,
     subtitle: `${doc.type} / ${doc.access}`,
     status: doc.status,
     link: doc.link
-  })).join("");
+  })).join("") || empty("document records");
 }
 
 function renderNotices() {
-  byId("noticeCards").innerHTML = state.data.notices.map((notice) => simpleCard({
+  byId("noticeCards").innerHTML = filterSearch(state.data.notices).map((notice) => simpleCard({
     title: notice.title,
     subtitle: `${notice.date} / ${notice.type}`,
     status: notice.priority
-  })).join("");
-  byId("whatsappLinks").innerHTML = state.data.whatsapp.map((item) => `<a class="action-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>`).join("");
+  })).join("") || empty("notice records");
+  byId("whatsappLinks").innerHTML = filterSearch(state.data.whatsapp).map((item) => `<a class="action-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>`).join("");
 }
 
 function renderReports() {
-  byId("reportCards").innerHTML = state.data.reports.map((report) => simpleCard({
+  byId("reportCards").innerHTML = filterSearch(state.data.reports).map((report) => simpleCard({
     title: report.title,
     subtitle: report.summary,
     status: "Available"
-  })).join("");
+  })).join("") || empty("report records");
 }
 
 function renderHelp() {
-  byId("helpCards").innerHTML = state.data.help.map((item) => `
+  byId("helpCards").innerHTML = filterSearch(state.data.help).map((item) => `
     <article class="help-card">
       <h3>${item.name}</h3>
       <strong>${item.contact}</strong>
       <p>${item.instruction}</p>
     </article>
-  `).join("");
+  `).join("") || empty("help records");
 }
 
 function renderAll() {

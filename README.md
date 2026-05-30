@@ -19,7 +19,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 
 ## Navigation
 
-Dashboard, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Reports, Help.
+Home, Dashboard, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Reports, Help.
 
 ## Privacy Rules
 
