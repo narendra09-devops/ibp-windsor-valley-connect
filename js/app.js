@@ -353,17 +353,22 @@ function renderAll() {
 function setActiveNav(hash) {
   const targetHash = hash || "#dashboard";
   document.querySelectorAll(".app-nav a").forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === targetHash);
+    const href = link.getAttribute("href");
+    link.classList.toggle("active", href && href.startsWith("#") && href === targetHash);
   });
 }
 
 function setupNavigation() {
   const links = [...document.querySelectorAll(".app-nav a")];
-  const sections = links
+  const sectionLinks = links.filter((link) => {
+    const href = link.getAttribute("href") || "";
+    return href.startsWith("#");
+  });
+  const sections = sectionLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
 
-  links.forEach((link) => {
+  sectionLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       const hash = link.getAttribute("href");

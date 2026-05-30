@@ -15,12 +15,13 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 - Worker attendance, duty shift, assigned area and payment status with contacts hidden.
 - Documents, notices, WhatsApp links, reports and emergency help placeholders.
 - Events & Programs module with upcoming/past events, festival programs, meetings, drives, cultural programs, sports activities, RSVP and gallery placeholders.
+- Emergency & Services help center with colorful service cards, search, category filters, details modal, quick actions, sticky emergency contacts and dark mode.
 - PWA-ready manifest and service worker.
 - Dockerfile using nginx.
 
 ## Navigation
 
-Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Events, Reports, Help.
+Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Events, Reports, Help, Emergency & Services.
 
 ## Privacy Rules
 
@@ -40,6 +41,7 @@ Private sample structures are kept separately in `data/private-sample.json` for 
 
 - `data/public-data.json` contains dummy public JSON for the portal.
 - `data/events.json` contains dummy event/program data.
+- `emergency-services.json` contains public emergency and service directory data.
 - `data/private-sample.json` contains private-data placeholders only.
 - Existing public assets are under `assets/`.
 
@@ -77,6 +79,10 @@ The app is root-ready for GitHub Pages. Publish from the repository root on the 
 - `index.html` - static app shell and module containers.
 - `css/style.css` - responsive visual design.
 - `js/app.js` - JSON loading, filters and rendering.
+- `emergency-services.html` - standalone emergency and services help center.
+- `emergency-services.css` - responsive help center design.
+- `emergency-services.js` - help center search, filters, modal details and quick actions.
+- `emergency-services.json` - dummy emergency and services data.
 - `data/public-data.json` - public dummy data.
 - `data/private-sample.json` - private placeholder structure.
 - `manifest.json` - PWA manifest.

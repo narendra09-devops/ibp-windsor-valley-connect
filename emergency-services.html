@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emergency and services help center for IBP Windsor Valley Welfare Society.">
+  <meta name="theme-color" content="#132b46">
+  <title>Emergency & Services | IBP Windsor Valley</title>
+  <link rel="icon" href="assets/images/rwa-logo.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="emergency-services.css">
+</head>
+<body>
+  <header id="top" class="es-hero">
+    <nav class="es-nav" aria-label="Emergency page navigation">
+      <a href="index.html#dashboard">Home</a>
+      <a href="index.html#society">Society</a>
+      <a href="index.html#residents">Residents</a>
+      <a href="index.html#rwa">RWA</a>
+      <a href="index.html#maintenance">Maintenance</a>
+      <a href="index.html#utilities">Utilities</a>
+      <a href="index.html#complaints">Complaints</a>
+      <a href="index.html#security">Security</a>
+      <a href="index.html#workers">Workers</a>
+      <a href="index.html#documents">Documents</a>
+      <a href="index.html#notices">Notices</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#reports">Reports</a>
+      <a href="index.html#help">Help</a>
+      <a class="active" href="emergency-services.html">Emergency & Services</a>
+    </nav>
+    <div class="hero-grid">
+      <img src="assets/images/rwa-logo.png" alt="IBP Windsor Valley Welfare Society logo">
+      <div>
+        <p class="eyebrow">Professional resident help center</p>
+        <h1>Emergency & Services</h1>
+        <p>Fast access to emergency numbers, nearby hospitals, society utilities, security, parking, builder support and maintenance service desks.</p>
+      </div>
+    </div>
+  </header>
+
+  <aside class="sticky-bar" aria-label="Sticky emergency contact bar">
+    <strong>Emergency:</strong>
+    <a href="tel:112">112</a>
+    <span>Police / Fire / Ambulance</span>
+    <a href="tel:108">Ambulance 108</a>
+    <a href="tel:101">Fire 101</a>
+  </aside>
+
+  <main>
+    <section class="emergency-banner">
+      <div>
+        <p class="eyebrow">Use in urgent situations</p>
+        <h2>For immediate danger, call 112 first.</h2>
+        <p>Then inform the society gate/security desk so emergency vehicles can enter quickly.</p>
+      </div>
+      <div class="banner-actions">
+        <a href="tel:112">Call 112</a>
+        <button type="button" data-quick="Emergency Alert">Emergency Alert</button>
+      </div>
+    </section>
+
+    <section class="quick-actions" aria-label="Quick actions">
+      <button type="button" data-quick="Raise Complaint">Raise Complaint</button>
+      <button type="button" data-quick="Water Issue">Water Issue</button>
+      <button type="button" data-quick="Electricity Issue">Electricity Issue</button>
+      <button type="button" data-quick="Parking Issue">Parking Issue</button>
+      <button type="button" data-quick="Security Issue">Security Issue</button>
+      <button type="button" data-quick="Builder Issue">Builder Issue</button>
+      <button type="button" data-quick="Emergency Alert">Emergency Alert</button>
+      <button type="button" data-quick="Contact RWA">Contact RWA</button>
+      <button type="button" data-quick="WhatsApp Support">WhatsApp Support</button>
+      <button id="themeToggle" type="button">Dark Mode</button>
+    </section>
+
+    <section class="filters" aria-label="Service filters">
+      <label>
+        <span>Search services</span>
+        <input id="serviceSearch" type="search" placeholder="Search police, hospital, water, NPCL...">
+      </label>
+      <label>
+        <span>Filter category</span>
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+        </select>
+      </label>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Service directory</p>
+          <h2>Help Center Cards</h2>
+        </div>
+        <span id="resultCount" class="result-count"></span>
+      </div>
+      <div id="serviceGrid" class="service-grid"></div>
+    </section>
+  </main>
+
+  <button id="floatingHelp" class="floating-help" type="button" aria-label="Open emergency help">Help</button>
+
+  <dialog id="serviceModal" class="service-modal" aria-labelledby="modalTitle">
+    <form method="dialog">
+      <button class="modal-close" value="close" aria-label="Close details">Close</button>
+    </form>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="emergency-services.js"></script>
+</body>
+</html>
