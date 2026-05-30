@@ -119,12 +119,24 @@ const publicData = {
   ],
   bankAccount: {
     accountName: "IBP Windsor Valley RWA",
-    bankName: "Resident Welfare Bank",
-    accountNumber: "XXXX XXXX 2486",
-    ifsc: "IBPW0002486",
-    upi: "ibp-rwa@bank",
-    note: "Masked public details. Confirm final account details with the RWA treasurer before payment."
+    bankName: "Canara Bank",
+    accountNumber: "Masked for public website",
+    ifsc: "Available with RWA Treasurer",
+    upi: "ppr.18882.20072024.00714042@cnrb",
+    note: "Use the QR/UPI for society maintenance payments. Mention house number and month in payment remarks."
   },
+  layoutBlocks: [
+    { block: "A", title: "Block-A", plots: ["Commercial", "A-01", "A-02", "A-03", "A-04", "A-05", "A-06", "A-07", "A-08", "Other Plots"], className: "layout-a" },
+    { block: "B", title: "Block-B", plots: ["B-01", "B-02", "B-03", "B-04", "B-05", "B-06", "B-07", "B-08", "B-09", "B-10", "B-11", "B-12"], className: "layout-b" },
+    { block: "C", title: "Block-C", plots: ["C-01", "C-02", "C-03", "C-04", "C-05", "C-06", "C-07", "C-08", "C-09", "C-10", "C-11", "C-12"], className: "layout-c" },
+    { block: "D", title: "Block-D", plots: ["D-01", "D-02", "D-03", "D-04", "D-05", "D-06", "Other Size"], className: "layout-d" }
+  ],
+  locationNotes: [
+    "Connected from Gaur Chowk and the service road corridor.",
+    "Nearby references include school, hospital, proposed metro route, and main commercial access.",
+    "Main entrance shown from the 40 ft wide road in the layout diagram.",
+    "Diagram is a simplified web version for resident orientation, not a legal site plan."
+  ],
   monthlyFinance: [
     { month: "May 2026", expected: 70000, received: 52000, pending: 18000, expenses: 18350, closingBalance: 33650 },
     { month: "April 2026", expected: 68000, received: 61000, pending: 7000, expenses: 26750, closingBalance: 34250 },
@@ -139,11 +151,17 @@ const publicData = {
     { house: "E-05", resident: "Resident details pending", month: "May 2026", amount: 1000, mode: "Pending", status: "Pending" }
   ],
   documents: [
-    { title: "Society Licence", type: "Compliance", status: "Draft", summary: "Licence and registration details placeholder for future verified document upload." },
+    { title: "RWA Certificate", type: "Compliance", status: "Active", summary: "Official RWA Windsor Valley certificate PDF for public reference.", link: "assets/documents/RWA_Windsor_Valley_Certificate.pdf" },
     { title: "Maintenance Policy", type: "Policy", status: "Active", summary: "Monthly maintenance billing, due date, late fee, and expense approval rules." },
     { title: "Visitor Gate Pass Policy", type: "Security", status: "Active", summary: "Entry, exit, vehicle, delivery, and worker verification rules for the gate register." },
     { title: "Payment Collection Policy", type: "Accounts", status: "Active", summary: "Accepted payment modes, receipt tracking, bank reconciliation, and treasurer review." },
     { title: "Common Area Usage Policy", type: "Community", status: "Draft", summary: "Guidelines for cleaning, parking, noise, construction material, and shared electricity usage." }
+  ],
+  events: [
+    { title: "Holi Milan", date: "March 2026", type: "Festival", media: "Photos + Video", summary: "Resident colors, group photos, music, refreshments, and children activities.", theme: "holi" },
+    { title: "Diwali Celebration", date: "November 2026", type: "Festival", media: "Photos", summary: "Lighting, rangoli, diya decoration, sweets, and family group photos.", theme: "diwali" },
+    { title: "Jagran Program", date: "October 2026", type: "Cultural", media: "Video", summary: "Evening devotional program, stage setup, prasad distribution, and community gathering.", theme: "jagran" },
+    { title: "RWA Monthly Meeting", date: "Monthly", type: "Meeting", media: "Minutes + Photos", summary: "Maintenance review, payment collection update, open issues, and next action list.", theme: "meeting" }
   ],
   gateRules: [
     "Every visitor must share name, visiting house, purpose, entry time, and exit time at the gate.",
@@ -207,6 +225,10 @@ const elements = {
   paymentRows: document.querySelector("#paymentRows"),
   documentCards: document.querySelector("#documentCards"),
   gateRuleList: document.querySelector("#gateRuleList"),
+  upiDetails: document.querySelector("#upiDetails"),
+  layoutBlocks: document.querySelector("#layoutBlocks"),
+  locationNotes: document.querySelector("#locationNotes"),
+  eventCards: document.querySelector("#eventCards"),
   lastUpdated: document.querySelector("#lastUpdated"),
   propertyTotalLabel: document.querySelector("#propertyTotalLabel"),
   openIssueLabel: document.querySelector("#openIssueLabel")
@@ -401,6 +423,12 @@ function renderFinance() {
     </div>
   `).join("");
 
+  elements.upiDetails.innerHTML = `
+    <strong>UPI ID</strong>
+    <button class="copy-chip" type="button" data-copy="${publicData.bankAccount.upi}">${publicData.bankAccount.upi}</button>
+    <span>${publicData.bankAccount.note}</span>
+  `;
+
   const chartRows = [
     ["Received", current.received, current.expected],
     ["Pending", current.pending, current.expected],
@@ -447,12 +475,47 @@ function renderDocuments() {
         <div class="issue-meta">
           <span class="soft-pill">${documentItem.type}</span>
           ${badge(documentItem.status)}
+          ${documentItem.link ? `<a class="doc-link" href="${documentItem.link}" target="_blank" rel="noreferrer">Open PDF</a>` : ""}
         </div>
       </div>
     </article>
   `).join("");
 
   elements.gateRuleList.innerHTML = publicData.gateRules.map((rule) => `<li>${rule}</li>`).join("");
+}
+
+function renderLayout() {
+  elements.layoutBlocks.innerHTML = publicData.layoutBlocks.map((block) => `
+    <section class="plot-zone ${block.className}">
+      <h3>${block.title}</h3>
+      <div class="plot-list">
+        ${block.plots.map((plot) => `<span>${plot}</span>`).join("")}
+      </div>
+    </section>
+  `).join("");
+
+  elements.locationNotes.innerHTML = publicData.locationNotes.map((note) => `
+    <div class="location-note">${note}</div>
+  `).join("");
+}
+
+function renderEvents() {
+  elements.eventCards.innerHTML = publicData.events.map((eventItem) => `
+    <article class="event-card ${eventItem.theme}">
+      <div class="event-media">
+        <span>${eventItem.media}</span>
+      </div>
+      <div>
+        <div class="event-meta">
+          <span class="soft-pill">${eventItem.type}</span>
+          <span class="soft-pill">${eventItem.date}</span>
+        </div>
+        <h3>${eventItem.title}</h3>
+        <p>${eventItem.summary}</p>
+        <button class="media-button" type="button">Add photos/video</button>
+      </div>
+    </article>
+  `).join("");
 }
 
 function renderWorkers() {
@@ -488,6 +551,8 @@ function render() {
   renderMaintenance();
   renderFinance();
   renderDocuments();
+  renderLayout();
+  renderEvents();
   renderWorkers();
   renderVisitors();
 }
@@ -505,6 +570,18 @@ elements.statusFilter.addEventListener("change", (event) => {
 elements.globalSearch.addEventListener("input", (event) => {
   state.query = event.target.value;
   render();
+});
+
+document.addEventListener("click", async (event) => {
+  const copyButton = event.target.closest("[data-copy]");
+  if (!copyButton || !navigator.clipboard) {
+    return;
+  }
+  await navigator.clipboard.writeText(copyButton.dataset.copy);
+  copyButton.textContent = "UPI copied";
+  window.setTimeout(() => {
+    copyButton.textContent = copyButton.dataset.copy;
+  }, 1400);
 });
 
 renderFilters();

@@ -9,8 +9,10 @@ A static, mobile-responsive society dashboard for an under-development residenti
 - Maintenance tracker for water motor repair, street lights, sewage, cleaning, security, common electricity, and expense history.
 - Monthly maintenance records with expected collection, received money, pending amount, expenses, and closing balance.
 - Payment collection register with house, resident, month, amount, mode, and payment status.
-- Masked IBP RWA bank account details for public payment guidance.
-- Licence, policy documents, and gate pass entry rules.
+- IBP RWA bank account and UPI scan-and-pay card using the published QR asset.
+- RWA certificate PDF, policy documents, and gate pass entry rules.
+- Web layout diagram for Blocks A to D, roads, Phase II, and main entry reference.
+- Events section for Holi, Diwali, Jagran, meetings, photos, and videos.
 - Worker attendance for security guard, sweeper, electrician, plumber, carpenter, labour, and technician roles.
 - Visitor and vehicle attendance with purpose categories for guest, delivery, worker, and vendor.
 - WhatsApp Connect page buttons for society group, security, RWA core team, and maintenance helpdesk.
@@ -31,6 +33,8 @@ Public data is stored in `publicData` inside `js/app.js`. Future login-only fiel
 
 Bank account details in the public site are masked demo details. Replace them only after confirming what should be publicly visible.
 
+The UPI QR image is included because it is intended for public maintenance payment collection. Resident phone numbers, email IDs, full vehicle numbers, and private documents remain excluded.
+
 ## Running Locally
 
 Open `index.html` in a browser. No backend or package installation is required.
@@ -43,3 +47,5 @@ For GitHub Pages, publish the repository root or `/docs` only if these files are
 - `css/style.css` - responsive visual design, cards, tables, charts, and badges.
 - `js/app.js` - resident-derived public data, dummy finance records, filters, search, metrics, and rendering.
 - `manifest.json` - basic PWA metadata.
+- `assets/images/RWA-Society-Account-UPI.jpeg` - UPI scan-and-pay image.
+- `assets/documents/RWA_Windsor_Valley_Certificate.pdf` - RWA certificate PDF.
