@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "title": "Monthly RWA General Meeting",
+      "category": "AGM / General Meetings",
+      "date": "2026-06-08",
+      "time": "10:30 AM",
+      "venue": "Society Gate Office",
+      "organizer": "RWA Core Team",
+      "status": "Upcoming",
+      "rsvp": "RSVP placeholder",
+      "gallery": "Meeting photos placeholder"
+    },
+    {
+      "title": "Monsoon Cleanliness Drive",
+      "category": "Cleanliness Drives",
+      "date": "2026-06-16",
+      "time": "08:00 AM",
+      "venue": "Blocks A to D internal roads",
+      "organizer": "Maintenance Helpdesk",
+      "status": "Upcoming",
+      "rsvp": "Volunteer RSVP placeholder",
+      "gallery": "Before/after photos placeholder"
+    },
+    {
+      "title": "Community Plantation Drive",
+      "category": "Plantation Drives",
+      "date": "2026-07-07",
+      "time": "07:30 AM",
+      "venue": "Main entrance green belt",
+      "organizer": "Block Coordinators",
+      "status": "Upcoming",
+      "rsvp": "Plant contribution placeholder",
+      "gallery": "Plantation gallery placeholder"
+    },
+    {
+      "title": "Diwali Cultural Evening",
+      "category": "Festival Programs",
+      "date": "2026-11-07",
+      "time": "06:30 PM",
+      "venue": "Central open area",
+      "organizer": "Residents Cultural Group",
+      "status": "Upcoming",
+      "rsvp": "Family participation placeholder",
+      "gallery": "Rangoli and lighting photos placeholder"
+    },
+    {
+      "title": "Holi Milan Program",
+      "category": "Festival Programs",
+      "date": "2026-03-14",
+      "time": "10:00 AM",
+      "venue": "Main lawn",
+      "organizer": "RWA Events Team",
+      "status": "Completed",
+      "rsvp": "Closed",
+      "gallery": "Holi group photos placeholder"
+    },
+    {
+      "title": "Kids Sports Morning",
+      "category": "Sports Activities",
+      "date": "2026-02-22",
+      "time": "09:00 AM",
+      "venue": "Internal road near Block B",
+      "organizer": "Resident Volunteers",
+      "status": "Completed",
+      "rsvp": "Closed",
+      "gallery": "Sports activity photos placeholder"
+    },
+    {
+      "title": "Jagran Program Planning",
+      "category": "Cultural Programs",
+      "date": "2026-08-18",
+      "time": "07:00 PM",
+      "venue": "Community meeting point",
+      "organizer": "Cultural Program Team",
+      "status": "Upcoming",
+      "rsvp": "Donation/volunteer placeholder",
+      "gallery": "Stage and program media placeholder"
+    },
+    {
+      "title": "Emergency Preparedness Session",
+      "category": "Community Meetings",
+      "date": "2026-06-30",
+      "time": "05:00 PM",
+      "venue": "Security gate area",
+      "organizer": "Security Desk",
+      "status": "Cancelled",
+      "rsvp": "To be rescheduled",
+      "gallery": "No gallery yet"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-const CACHE_NAME = "ibp-windsor-valley-rwa-v3";
+const CACHE_NAME = "ibp-windsor-valley-rwa-v4";
 const ASSETS = [
   "./",
   "./index.html",
@@ -6,6 +6,7 @@ const ASSETS = [
   "./js/app.js",
   "./manifest.json",
   "./data/public-data.json",
+  "./data/events.json",
   "./assets/images/rwa-logo.png",
   "./assets/images/RWA-Society-Account-UPI.jpeg",
   "./assets/images/Prepaid-meter-Account-details.png",

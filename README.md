@@ -4,7 +4,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 
 ## Features
 
-- Dashboard with plots, occupancy, RWA membership, complaints, dues, workers, visitors, notices, expenses and maintenance task metrics.
+- Dashboard with plots, occupancy, RWA membership, complaints, dues, workers, visitors, notices, events, expenses and maintenance task metrics.
 - Society block layout and property status filters.
 - Public resident directory with privacy-safe fields only.
 - RWA office bearers, executive members, block coordinators, AGM and meeting schedule.
@@ -14,12 +14,13 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 - Security gate entries, visitor/delivery/worker/vehicle records and masked vehicle numbers.
 - Worker attendance, duty shift, assigned area and payment status with contacts hidden.
 - Documents, notices, WhatsApp links, reports and emergency help placeholders.
+- Events & Programs module with upcoming/past events, festival programs, meetings, drives, cultural programs, sports activities, RSVP and gallery placeholders.
 - PWA-ready manifest and service worker.
 - Dockerfile using nginx.
 
 ## Navigation
 
-Home, Dashboard, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Reports, Help.
+Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Events, Reports, Help.
 
 ## Privacy Rules
 
@@ -38,6 +39,7 @@ Private sample structures are kept separately in `data/private-sample.json` for 
 ## Data
 
 - `data/public-data.json` contains dummy public JSON for the portal.
+- `data/events.json` contains dummy event/program data.
 - `data/private-sample.json` contains private-data placeholders only.
 - Existing public assets are under `assets/`.
 

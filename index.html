@@ -36,7 +36,6 @@
 
   <nav class="app-nav" aria-label="Society portal navigation">
     <a href="#dashboard">Home</a>
-    <a href="#dashboard">Dashboard</a>
     <a href="#society">Society</a>
     <a href="#residents">Residents</a>
     <a href="#rwa">RWA</a>
@@ -47,6 +46,7 @@
     <a href="#workers">Workers</a>
     <a href="#documents">Documents</a>
     <a href="#notices">Notices</a>
+    <a href="#events">Events</a>
     <a href="#reports">Reports</a>
     <a href="#help">Help</a>
   </nav>
@@ -258,6 +258,23 @@
       </div>
       <div id="noticeCards" class="notice-grid"></div>
       <div id="whatsappLinks" class="quick-links"></div>
+    </section>
+
+    <section id="events" class="module" aria-labelledby="eventsTitle">
+      <div class="module-heading">
+        <div>
+          <p class="eyebrow">Events and programs</p>
+          <h2 id="eventsTitle">Events & Programs</h2>
+        </div>
+        <select id="eventFilter">
+          <option value="all">All Event Status</option>
+          <option>Upcoming</option>
+          <option>Completed</option>
+          <option>Cancelled</option>
+        </select>
+      </div>
+      <div id="eventSummary" class="event-summary"></div>
+      <div id="eventCards" class="event-grid"></div>
     </section>
 
     <section id="reports" class="module" aria-labelledby="reportsTitle">

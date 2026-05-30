@@ -152,6 +152,15 @@ select {
   text-decoration: none;
   padding: 9px 12px;
   box-shadow: 0 10px 20px rgba(20, 38, 68, 0.14);
+  border: 2px solid transparent;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.app-nav a:hover,
+.app-nav a.active {
+  border-color: #ffffff;
+  box-shadow: 0 14px 24px rgba(20, 38, 68, 0.22);
+  transform: translateY(-1px);
 }
 
 .app-nav a:nth-child(2) {
@@ -567,6 +576,94 @@ tbody tr:hover {
   gap: 12px;
 }
 
+.event-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.event-summary div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff, #eef8ff);
+  padding: 14px;
+  border-top: 4px solid var(--teal);
+}
+
+.event-summary strong {
+  display: block;
+  font-size: 1.7rem;
+  color: var(--blue);
+}
+
+.event-summary span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.event-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fff, #fff8ec);
+  border-top: 5px solid var(--amber);
+  padding: 15px;
+  box-shadow: 0 12px 26px rgba(30, 45, 70, 0.08);
+}
+
+.event-card:nth-child(3n + 2) {
+  border-top-color: var(--teal);
+  background: linear-gradient(180deg, #fff, #eefcff);
+}
+
+.event-card:nth-child(3n + 3) {
+  border-top-color: var(--purple);
+  background: linear-gradient(180deg, #fff, #f8f0ff);
+}
+
+.event-top,
+.event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.event-top > span:first-child,
+.event-actions span {
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #24406f;
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 5px 9px;
+}
+
+.event-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.event-card dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.event-card dd {
+  margin: 0;
+  font-weight: 800;
+}
+
 .complaint-card ol {
   margin: 8px 0 0;
   padding-left: 20px;
@@ -628,6 +725,8 @@ footer strong {
   .work-grid,
   .layout-grid,
   .complaint-grid,
+  .event-summary,
+  .event-grid,
   .mini-grid {
     grid-template-columns: 1fr;
   }
