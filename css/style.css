@@ -46,18 +46,19 @@ body {
 
 .brand-lockup {
   display: grid;
-  grid-template-columns: 128px minmax(0, 1fr);
+  grid-template-columns: 132px minmax(0, 1fr);
   gap: 18px;
   align-items: center;
 }
 
 .brand-lockup img {
-  width: 128px;
-  height: 84px;
+  width: 132px;
+  height: 132px;
   border: 2px solid rgba(255, 255, 255, 0.72);
-  border-radius: 16px;
-  object-fit: cover;
-  background: #172036;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 6px;
 }
 
 .eyebrow {
@@ -632,8 +633,8 @@ footer strong {
   }
 
   .brand-lockup img {
-    width: 116px;
-    height: 76px;
+    width: 112px;
+    height: 112px;
   }
 
   .module-heading,

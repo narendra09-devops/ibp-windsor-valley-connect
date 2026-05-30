@@ -10,9 +10,9 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "assets/images/ibp-windsor-valley-logo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/images/rwa-logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
