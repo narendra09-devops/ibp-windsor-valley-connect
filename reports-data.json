@@ -1,0 +1,170 @@
+{
+  "lastUpdated": "30 May 2026",
+  "admin": {
+    "mode": "placeholder",
+    "publicAccess": "Published reports are visible to public users.",
+    "adminAccess": "Upload, edit, delete, publish and archive actions require future admin login.",
+    "authPlaceholders": [
+      "Firebase Authentication placeholder",
+      "Firebase Storage placeholder",
+      "Supabase Authentication placeholder",
+      "Supabase Storage placeholder"
+    ]
+  },
+  "autoReports": [
+    {
+      "id": "finance",
+      "name": "Finance Reports",
+      "category": "Finance",
+      "theme": "finance",
+      "icon": "$",
+      "status": "Auto Generated",
+      "summary": "Monthly collection, pending dues, house-wise dues, expenses, vendor payments and annual summary.",
+      "reports": ["Monthly Collection", "Pending Dues", "House-wise Dues", "Expense Summary", "Vendor Payments", "Annual Summary"],
+      "trend": [42, 48, 52, 57, 61, 67]
+    },
+    {
+      "id": "residents",
+      "name": "Residents Reports",
+      "category": "Residents",
+      "theme": "residents",
+      "icon": "R",
+      "status": "Auto Generated",
+      "summary": "Resident counts, owners vs tenants, RWA membership and block-wise occupancy analytics.",
+      "reports": ["Total Residents", "Owners vs Tenants", "RWA Members", "Non-RWA Members", "Block-wise Occupancy", "Vacant Plots", "Under Construction Properties"],
+      "trend": [30, 34, 38, 41, 43, 45]
+    },
+    {
+      "id": "maintenance",
+      "name": "Maintenance Reports",
+      "category": "Maintenance",
+      "theme": "maintenance",
+      "icon": "M",
+      "status": "Auto Generated",
+      "summary": "Open work, completed work, pending maintenance, cost summary and vendor history.",
+      "reports": ["Open Tasks", "Completed Tasks", "Pending Tasks", "Cost Summary", "Vendor Summary"],
+      "trend": [8, 10, 7, 9, 6, 5]
+    },
+    {
+      "id": "complaints",
+      "name": "Complaints Reports",
+      "category": "Complaints",
+      "theme": "complaints",
+      "icon": "C",
+      "status": "Auto Generated",
+      "summary": "Open, in-progress and resolved complaints with category-wise and resolution-time analysis.",
+      "reports": ["Open Complaints", "In Progress Complaints", "Resolved Complaints", "Category-wise Analysis", "Resolution Time Report"],
+      "trend": [5, 7, 6, 4, 5, 3]
+    },
+    {
+      "id": "security",
+      "name": "Security & Visitors",
+      "category": "Security",
+      "theme": "security",
+      "icon": "S",
+      "status": "Auto Generated",
+      "summary": "Visitor, vehicle, delivery, daily entry and monthly visitor trend reports.",
+      "reports": ["Visitor Report", "Vehicle Report", "Delivery Report", "Daily Entry Summary", "Monthly Visitor Trends"],
+      "trend": [12, 15, 19, 18, 21, 24]
+    },
+    {
+      "id": "workers",
+      "name": "Workers Reports",
+      "category": "Workers",
+      "theme": "workers",
+      "icon": "W",
+      "status": "Auto Generated",
+      "summary": "Attendance, role-wise activity, shift coverage and salary/payment status reports.",
+      "reports": ["Attendance Summary", "Security Attendance", "Sweeper Attendance", "Electrician Activity", "Plumber Activity", "Salary Status"],
+      "trend": [5, 6, 5, 7, 6, 5]
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities Reports",
+      "category": "Utilities",
+      "theme": "utilities",
+      "icon": "U",
+      "status": "Auto Generated",
+      "summary": "Water, borewell, submersible, electricity, street light and sewage status reports.",
+      "reports": ["Water Supply Report", "Borewell Status", "Submersible Status", "Electricity Report", "Street Light Report", "Sewage Report"],
+      "trend": [9, 8, 8, 7, 8, 7]
+    },
+    {
+      "id": "rwa",
+      "name": "RWA Reports",
+      "category": "RWA",
+      "theme": "rwa",
+      "icon": "RWA",
+      "status": "Auto Generated",
+      "summary": "Membership, AGM participation, meeting attendance and committee reporting.",
+      "reports": ["Membership Report", "AGM Participation", "Meeting Attendance", "Committee Reports"],
+      "trend": [4, 4, 5, 6, 7, 8]
+    },
+    {
+      "id": "uploads",
+      "name": "Uploaded Documents",
+      "category": "Uploaded Documents",
+      "theme": "uploads",
+      "icon": "DOC",
+      "status": "Repository",
+      "summary": "Published uploaded PDFs, Excel sheets, CSV files, Word documents, images and JSON records.",
+      "reports": ["PDF", "XLSX", "CSV", "DOCX", "PNG", "JPG", "JSON"],
+      "trend": [1, 2, 2, 3, 4, 5]
+    }
+  ],
+  "uploadedReports": [
+    {
+      "title": "May 2026 Maintenance Collection Sheet",
+      "category": "Finance",
+      "uploadDate": "2026-05-30",
+      "uploadedBy": "Admin Placeholder",
+      "fileType": "XLSX",
+      "description": "House-wise payment and pending dues sample workbook.",
+      "status": "Published",
+      "path": "reports/finance/may-2026-maintenance-collection.xlsx"
+    },
+    {
+      "title": "Water Motor Repair Bill",
+      "category": "Maintenance",
+      "uploadDate": "2026-05-28",
+      "uploadedBy": "Treasurer Placeholder",
+      "fileType": "PDF",
+      "description": "Vendor bill placeholder for motor inspection and repair.",
+      "status": "Published",
+      "path": "reports/maintenance/water-motor-repair-bill.pdf"
+    },
+    {
+      "title": "Complaint Closure Register",
+      "category": "Complaints",
+      "uploadDate": "2026-05-27",
+      "uploadedBy": "Secretary Placeholder",
+      "fileType": "CSV",
+      "description": "Sample register for complaint tracking and closure notes.",
+      "status": "Draft",
+      "path": "reports/complaints/complaint-closure-register.csv"
+    },
+    {
+      "title": "AGM Agenda Draft",
+      "category": "RWA",
+      "uploadDate": "2026-05-25",
+      "uploadedBy": "RWA Core Placeholder",
+      "fileType": "DOCX",
+      "description": "Draft agenda for upcoming Annual General Meeting.",
+      "status": "Published",
+      "path": "reports/rwa/agm-agenda-draft.docx"
+    },
+    {
+      "title": "Gate Visitor Summary",
+      "category": "Security",
+      "uploadDate": "2026-05-24",
+      "uploadedBy": "Security Desk Placeholder",
+      "fileType": "JSON",
+      "description": "Daily visitor and vehicle entry sample export with masked values.",
+      "status": "Published",
+      "path": "reports/visitors/gate-visitor-summary.json"
+    }
+  ],
+  "reportStatuses": ["Auto Generated", "Repository", "Published", "Draft", "Archived"],
+  "dateRanges": ["Today", "This Week", "This Month", "This Quarter", "This Year"],
+  "downloadOptions": ["Download PDF", "Download Excel", "Download CSV", "Print Report"]
+}

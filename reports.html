@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reports and analytics center for IBP Windsor Valley Welfare Society.">
+  <meta name="theme-color" content="#132b46">
+  <title>Reports & Analytics | IBP Windsor Valley</title>
+  <link rel="icon" href="assets/images/rwa-logo.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+  <header class="reports-hero">
+    <nav class="reports-nav" aria-label="Reports page navigation">
+      <a href="index.html#dashboard">Home</a>
+      <a href="index.html#society">Society</a>
+      <a href="index.html#residents">Residents</a>
+      <a href="index.html#rwa">RWA</a>
+      <a href="index.html#maintenance">Maintenance</a>
+      <a href="index.html#utilities">Utilities</a>
+      <a href="index.html#complaints">Complaints</a>
+      <a href="index.html#security">Security</a>
+      <a href="index.html#workers">Workers</a>
+      <a href="index.html#documents">Documents</a>
+      <a href="index.html#notices">Notices</a>
+      <a href="index.html#events">Events</a>
+      <a class="active" href="reports.html">Reports & Analytics</a>
+      <a href="emergency-services.html">Emergency & Services</a>
+    </nav>
+    <div class="hero-content">
+      <img src="assets/images/rwa-logo.png" alt="IBP Windsor Valley Welfare Society logo">
+      <div>
+        <p class="eyebrow">Professional reporting dashboard</p>
+        <h1>Reports & Analytics Center</h1>
+        <p>Auto-generated society reports, uploaded document repository, KPI analytics, trends, filters, download placeholders and admin upload controls.</p>
+      </div>
+      <button id="themeToggle" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="admin-panel" aria-label="Admin upload placeholders">
+      <div>
+        <p class="eyebrow">Admin role</p>
+        <h2>Upload & Manage Reports</h2>
+        <p>Upload, edit, delete, publish and archive actions are prepared for future Firebase or Supabase login-based access.</p>
+      </div>
+      <div class="admin-actions">
+        <button type="button" data-action="Upload Report">Upload Report</button>
+        <button type="button" data-action="Publish Report">Publish Report</button>
+        <button type="button" data-action="Archive Report">Archive Report</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="kpiTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Live analytics</p>
+          <h2 id="kpiTitle">Top KPI Dashboard</h2>
+        </div>
+        <span id="lastUpdated" class="last-updated"></span>
+      </div>
+      <div id="kpiGrid" class="kpi-grid"></div>
+    </section>
+
+    <section class="filters" aria-label="Report filters">
+      <label>
+        <span>Global Search</span>
+        <input id="searchInput" type="search" placeholder="Search finance, residents, uploads, visitor...">
+      </label>
+      <label>
+        <span>Date Filter</span>
+        <select id="dateFilter"></select>
+      </label>
+      <label>
+        <span>Category Filter</span>
+        <select id="categoryFilter"></select>
+      </label>
+      <label>
+        <span>Block Filter</span>
+        <select id="blockFilter"></select>
+      </label>
+      <label>
+        <span>Status Filter</span>
+        <select id="statusFilter"></select>
+      </label>
+      <label>
+        <span>Uploaded Report Filter</span>
+        <select id="uploadFilter">
+          <option value="all">All Uploads</option>
+          <option value="Published">Published</option>
+          <option value="Draft">Draft</option>
+          <option value="Archived">Archived</option>
+        </select>
+      </label>
+    </section>
+
+    <section aria-labelledby="reportCardsTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Auto generated reports</p>
+          <h2 id="reportCardsTitle">Report Categories</h2>
+        </div>
+        <span id="reportCount" class="last-updated"></span>
+      </div>
+      <div id="reportCards" class="report-grid"></div>
+    </section>
+
+    <section class="analytics-board" aria-labelledby="analyticsTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Charts and trends</p>
+          <h2 id="analyticsTitle">Interactive Analytics Dashboard</h2>
+        </div>
+      </div>
+      <div class="chart-layout">
+        <article class="chart-panel">
+          <h3>Block-wise Occupancy</h3>
+          <div id="blockChart" class="bar-chart"></div>
+        </article>
+        <article class="chart-panel">
+          <h3>Collection vs Expense</h3>
+          <div id="financeChart" class="line-chart"></div>
+        </article>
+        <article class="chart-panel">
+          <h3>Complaint Status</h3>
+          <div id="complaintChart" class="donut-wrap"></div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="uploadsTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Uploaded reports center</p>
+          <h2 id="uploadsTitle">Uploaded Reports Repository</h2>
+        </div>
+        <span class="last-updated">PDF, XLSX, CSV, DOCX, PNG, JPG, JSON</span>
+      </div>
+      <div id="uploadCards" class="upload-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="reportModal" class="report-modal" aria-labelledby="modalTitle">
+    <form method="dialog">
+      <button class="modal-close" value="close" aria-label="Close report details">Close</button>
+    </form>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="reports.js"></script>
+</body>
+</html>

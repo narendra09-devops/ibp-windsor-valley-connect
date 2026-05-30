@@ -13,6 +13,10 @@ if (location.hash === "#help") {
   location.replace("emergency-services.html");
 }
 
+if (location.hash === "#reports") {
+  location.replace("reports.html");
+}
+
 const selectors = {
   search: "#globalSearch",
   block: "#blockFilter",
@@ -350,7 +354,6 @@ function renderAll() {
   renderDocuments();
   renderNotices();
   renderEvents();
-  renderReports();
 }
 
 function setActiveNav(hash) {

@@ -1,7 +1,11 @@
-const CACHE_NAME = "ibp-windsor-valley-rwa-v6";
+const CACHE_NAME = "ibp-windsor-valley-rwa-v7";
 const ASSETS = [
   "./",
   "./index.html",
+  "./reports.html",
+  "./reports.css",
+  "./reports.js",
+  "./reports-data.json",
   "./emergency-services.html",
   "./emergency-services.css",
   "./emergency-services.js",
