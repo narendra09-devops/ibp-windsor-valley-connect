@@ -1,0 +1,19 @@
+{
+  "note": "Admin-only sample structure for future login-based event management. Do not expose this file as public resident data in production.",
+  "roles": ["Super Admin", "RWA Core Admin", "Event Manager", "Committee Member", "Viewer"],
+  "permissions": {
+    "Super Admin": ["create", "edit", "delete", "publish", "unpublish", "upload", "archive", "manage_roles"],
+    "RWA Core Admin": ["create", "edit", "publish", "upload", "archive"],
+    "Event Manager": ["create", "edit", "upload", "update_status"],
+    "Committee Member": ["view_admin", "upload_documents"],
+    "Viewer": ["view_published"]
+  },
+  "hiddenFromPublic": ["internalNotes", "adminRemarks", "draftEvents", "privateAttendance", "unpublishedDocuments"],
+  "samplePrivateEventFields": {
+    "eventId": "evt-monthly-rwa-2026-06",
+    "internalNotes": "Private committee notes placeholder",
+    "adminRemarks": "Admin remarks placeholder",
+    "privateAttendance": "Login-protected attendance file placeholder",
+    "draftBudget": "Draft budget placeholder"
+  }
+}

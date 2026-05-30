@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Form Placeholder | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="events.css">
+</head>
+<body>
+  <main>
+    <section class="admin-strip">
+      <div>
+        <p class="eyebrow">Create or edit event</p>
+        <h1>Event Form Placeholder</h1>
+        <p>This static form prepares fields for future authenticated event management.</p>
+      </div>
+      <div class="admin-links">
+        <a href="admin-events.html">Back to Events</a>
+        <a href="events.html">Public Center</a>
+      </div>
+    </section>
+    <section class="filters">
+      <label><span>Event Title</span><input type="text" placeholder="Monthly RWA Meeting"></label>
+      <label><span>Category</span><input type="text" placeholder="Monthly RWA Meetings"></label>
+      <label><span>Date</span><input type="date"></label>
+      <label><span>Time</span><input type="time"></label>
+      <label><span>Venue</span><input type="text" placeholder="Society Gate Office"></label>
+      <label><span>Status</span><select><option>Draft</option><option>Published</option><option>Postponed</option><option>Cancelled</option></select></label>
+      <button type="button" data-admin-action="Save event">Save Placeholder</button>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-auth.js"></script>
+</body>
+</html>

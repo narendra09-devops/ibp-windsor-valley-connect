@@ -1,0 +1,4 @@
+{
+  "note": "Public users can view published events, MOM, galleries and documents only. Draft events, internal notes and admin remarks are excluded.",
+  "source": "data/events.json"
+}
