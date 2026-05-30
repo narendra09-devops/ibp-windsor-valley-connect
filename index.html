@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IBP Windsor Valley Connect society dashboard for property, maintenance, worker, visitor, and WhatsApp coordination.">
+  <title>IBP Windsor Valley Connect</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Under-development society dashboard</p>
+      <h1>IBP Windsor Valley Connect</h1>
+      <p class="header-copy">Public coordination view for blocks, plots, maintenance, workers, visitors, vehicles, and society help channels.</p>
+    </div>
+    <div class="header-actions" aria-label="Dashboard quick filters">
+      <label class="search-field">
+        <span>Search</span>
+        <input id="globalSearch" type="search" placeholder="House, owner, issue, worker...">
+      </label>
+      <label class="select-field">
+        <span>Block</span>
+        <select id="blockFilter" aria-label="Filter by block">
+          <option value="all">All Blocks</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="summary-band" aria-labelledby="overviewTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Live snapshot</p>
+          <h2 id="overviewTitle">Society Overview</h2>
+        </div>
+        <span id="lastUpdated" class="soft-pill"></span>
+      </div>
+      <div id="overviewCards" class="metric-grid"></div>
+      <div class="visual-grid">
+        <article class="panel">
+          <div class="panel-title">
+            <h3>Property Mix</h3>
+            <span class="soft-pill" id="propertyTotalLabel"></span>
+          </div>
+          <div id="propertyChart" class="bar-chart" aria-label="Property status chart"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-title">
+            <h3>Block Occupancy</h3>
+            <span class="soft-pill">A to H</span>
+          </div>
+          <div id="blockChart" class="block-chart" aria-label="Block-wise occupancy chart"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-band" aria-labelledby="propertyTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Block-wise inventory</p>
+          <h2 id="propertyTitle">Property Status</h2>
+        </div>
+        <select id="statusFilter" aria-label="Filter by property status">
+          <option value="all">All Statuses</option>
+          <option value="Occupied">Occupied</option>
+          <option value="Under Construction">Under Construction</option>
+          <option value="Empty Plot">Empty Plot</option>
+          <option value="Builder Pending">Builder Pending</option>
+          <option value="Rented">Rented</option>
+        </select>
+      </div>
+      <div class="table-shell">
+        <table>
+          <thead>
+            <tr>
+              <th>Block</th>
+              <th>Plot/House</th>
+              <th>Status</th>
+              <th>RWA Member</th>
+              <th>Owner/Tenant</th>
+              <th>Water Source</th>
+            </tr>
+          </thead>
+          <tbody id="propertyRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="content-band" aria-labelledby="maintenanceTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Common-area work</p>
+          <h2 id="maintenanceTitle">Maintenance Tracker</h2>
+        </div>
+        <span id="openIssueLabel" class="soft-pill"></span>
+      </div>
+      <div id="maintenanceCards" class="maintenance-grid"></div>
+      <div class="table-shell compact">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Paid To</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="expenseRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="split-band">
+      <article class="content-band" aria-labelledby="workerTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Attendance</p>
+            <h2 id="workerTitle">Worker Attendance</h2>
+          </div>
+          <span class="soft-pill">Mobile hidden</span>
+        </div>
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Mobile</th>
+                <th>Status</th>
+                <th>Duty Time</th>
+                <th>Area</th>
+              </tr>
+            </thead>
+            <tbody id="workerRows"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="content-band" aria-labelledby="visitorTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Gate register</p>
+            <h2 id="visitorTitle">Visitors & Vehicles</h2>
+          </div>
+          <span class="soft-pill">Vehicle number private</span>
+        </div>
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th>Visitor</th>
+                <th>House</th>
+                <th>Entry</th>
+                <th>Exit</th>
+                <th>Vehicle</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody id="visitorRows"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <section class="whatsapp-band" aria-labelledby="whatsappTitle">
+      <div>
+        <p class="eyebrow">Community channels</p>
+        <h2 id="whatsappTitle">WhatsApp Connect</h2>
+      </div>
+      <div class="wa-actions">
+        <a class="wa-button" href="https://wa.me/" target="_blank" rel="noreferrer">Join Society WhatsApp Group</a>
+        <a class="wa-button" href="https://wa.me/" target="_blank" rel="noreferrer">Message Security</a>
+        <a class="wa-button" href="https://wa.me/" target="_blank" rel="noreferrer">Message RWA Core Team</a>
+        <a class="wa-button" href="https://wa.me/" target="_blank" rel="noreferrer">Maintenance Helpdesk</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Public privacy mode active:</span> mobile numbers, email IDs, full vehicle numbers, documents, and family details are not shown.
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
