@@ -13,7 +13,8 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 - Complaints with category, status, assignee and work-order style history.
 - Security gate entries, visitor/delivery/worker/vehicle records and masked vehicle numbers.
 - Worker attendance, duty shift, assigned area and payment status with contacts hidden.
-- Documents, notices, WhatsApp links, reports and emergency help placeholders.
+- Documents, Notice Board, published WhatsApp links, reports and emergency help placeholders.
+- Notice Board module with public published notices, search/filter, detail modal, attachment placeholders, WhatsApp actions and admin notice management placeholders.
 - Community Activities, Meetings & Events Center with RWA meetings, AGM, builder follow-up, MOM repository, galleries, event documents and admin management placeholders.
 - Reports & Analytics Center with auto-generated reports, uploaded report repository, KPI cards, charts, filters, details modal and admin placeholders.
 - Emergency & Services help center with colorful service cards, search, category filters, details modal, quick actions, sticky emergency contacts and dark mode.
@@ -22,7 +23,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 
 ## Navigation
 
-Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Community Activities, Reports & Analytics, Emergency & Services.
+Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
 
 ## Privacy Rules
 
@@ -41,6 +42,9 @@ Private sample structures are kept separately in `data/private-sample.json` for 
 ## Data
 
 - `data/public-data.json` contains dummy public JSON for the portal.
+- `data/notices.json` contains public notice board data, attachment placeholders and published WhatsApp links.
+- `data/notices-public.json` documents the public notice access model.
+- `data/notices-admin.json` contains admin-only sample notice role and permission structures for future login-based access.
 - `data/events.json` contains public event, MOM, gallery and event document data.
 - `data/events-public.json` documents the public event access model.
 - `data/events-admin.json` contains admin-only sample role and permission structures for future login-based access.
@@ -83,6 +87,13 @@ The app is root-ready for GitHub Pages. Publish from the repository root on the 
 - `index.html` - static app shell and module containers.
 - `css/style.css` - responsive visual design.
 - `js/app.js` - JSON loading, filters and rendering.
+- `notice-board.html` - public Notice Board module.
+- `notice-board.css` - responsive notice board design.
+- `notice-board.js` - notice search, filters, cards, modal and WhatsApp actions.
+- `admin-notices.html` - future notice admin list placeholder.
+- `notice-form.html` - future create/edit notice form placeholder.
+- `js/admin-notices.js` - static admin notice placeholder behavior.
+- `uploads/notices/` - future notice attachment folders for PDF, image and document uploads.
 - `events.html` - Community Activities, Meetings & Events Center.
 - `events.css` - responsive event center design.
 - `events.js` - event filters, cards, MOM repository, gallery and details modal.

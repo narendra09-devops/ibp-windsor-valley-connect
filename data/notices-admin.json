@@ -1,0 +1,13 @@
+{
+  "note": "Admin-only notice management sample structure for future login-based access.",
+  "roles": ["Super Admin", "RWA Core Admin", "Notice Manager", "Committee Member", "Viewer"],
+  "permissions": {
+    "Super Admin": ["create", "edit", "delete", "archive", "publish", "unpublish", "upload", "manage_whatsapp"],
+    "RWA Core Admin": ["create", "edit", "archive", "publish", "upload"],
+    "Notice Manager": ["create", "edit", "upload", "update_status"],
+    "Committee Member": ["view_admin", "comment"],
+    "Viewer": ["view_published"]
+  },
+  "hiddenFromPublic": ["internalRemarks", "draftNotices", "unpublishedNotices", "uploadControls", "editButtons", "deleteButtons"],
+  "backendPlaceholders": ["Firebase Authentication", "Firebase Storage", "Firebase Firestore", "Supabase Authentication", "Supabase Database", "Supabase Storage"]
+}
