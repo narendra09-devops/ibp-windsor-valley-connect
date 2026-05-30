@@ -1,698 +1,350 @@
-const blocks = ["A", "B", "C", "D", "E", "F", "G", "H"];
-
-const residentSourceRows = [
-  ["A", "01", "Sanjeev Pande"],
-  ["A", "02", "Saumuya"],
-  ["A", "03", "Pooja"],
-  ["A", "04", "Biswajeet"],
-  ["A", "05", "Atul"],
-  ["A", "06", "Umesh M"],
-  ["A", "07", "Prabhu Dayal"],
-  ["A", "08", "Harsh Mangal"],
-  ["B", "01", "Rajnish Kumar"],
-  ["B", "02", "Manish"],
-  ["B", "03", "Narendra Pratap Singh"],
-  ["B", "04", "Nitesh Mulgali"],
-  ["B", "05", "Nimesh"],
-  ["B", "06", "Nitesh"],
-  ["B", "07", "Vasanth Gurude"],
-  ["B", "08", "Narendra Vats"],
-  ["B", "09", "Sanjay Rastogi"],
-  ["B", "10", ""],
-  ["B", "11", "Avinash Singh"],
-  ["B", "12", "Hardik Mudgal"],
-  ["C", "01", ""],
-  ["C", "02", ""],
-  ["C", "03", "Roshan Kumar"],
-  ["C", "04", "Ravi Ranjan"],
-  ["C", "05", "Nitin Arora"],
-  ["C", "06", "Dhruv Tripathi"],
-  ["C", "07", ""],
-  ["C", "08", ""],
-  ["C", "09", ""],
-  ["C", "10", ""],
-  ["C", "11", ""],
-  ["C", "12", ""],
-  ["D", "01", "Ashish Rai"],
-  ["D", "02", "Ram Krishna Gautam"],
-  ["D", "03", "Ashok Yadav"],
-  ["D", "04", "Pradeep Kumar"],
-  ["D", "05", "Krishana Mishara"],
-  ["D", "06", "Shiv Ram Tathagat"],
-  ["E", "01", "Gautam Kumar"],
-  ["E", "02", "Rakesh Singh"],
-  ["E", "03", "Anuj"],
-  ["E", "04", "Deepak"],
-  ["E", "05", ""],
-  ["E", "06", ""],
-  ["F", "01", ""],
-  ["F", "02", ""],
-  ["F", "03", ""],
-  ["F", "04", ""],
-  ["F", "05", ""],
-  ["F", "06", ""],
-  ["F", "07", ""],
-  ["F", "08", ""],
-  ["F", "09", ""],
-  ["F", "10", ""],
-  ["G", "01", ""],
-  ["G", "02", ""],
-  ["G", "03", ""],
-  ["G", "04", ""],
-  ["G", "05", ""],
-  ["G", "06", ""],
-  ["G", "07", ""],
-  ["G", "08", ""],
-  ["G", "09", ""],
-  ["G", "10", ""],
-  ["H", "01", ""],
-  ["H", "02", ""],
-  ["H", "03", ""],
-  ["H", "04", ""],
-  ["H", "05", ""],
-  ["H", "06", ""]
-];
-
-const residentProperties = residentSourceRows.map(([block, number, residentName]) => {
-  const hasResident = Boolean(residentName);
-  return {
-    block,
-    number: `${block}-${number}`,
-    status: hasResident ? "Occupied" : "Builder Pending",
-    rwaMember: hasResident,
-    occupant: hasResident ? residentName : "Resident details pending",
-    waterSource: hasResident ? "Common" : "Not Connected"
-  };
-});
-
-const publicData = {
-  lastUpdated: "30 May 2026, 02:30 PM",
-  properties: residentProperties,
-  maintenance: [
-    { title: "Water motor repair", description: "Main borewell motor vibration reported near Block C.", status: "Open", block: "C", priority: "High" },
-    { title: "Street light issue", description: "Three poles inactive between Blocks E and F.", status: "In Progress", block: "E-F", priority: "Medium" },
-    { title: "Sewage issue", description: "Drain overflow check requested behind Block B.", status: "Open", block: "B", priority: "High" },
-    { title: "Cleaning issue", description: "Construction debris needs removal from Block D service lane.", status: "In Progress", block: "D", priority: "Medium" },
-    { title: "Security issue", description: "Night patrolling log audit scheduled.", status: "Open", block: "All", priority: "Medium" },
-    { title: "Common electricity", description: "Meter reading and backup light bill review pending.", status: "In Progress", block: "Gate", priority: "Low" }
-  ],
-  expenses: [
-    { date: "2026-05-28", category: "Water motor repair", amount: 4800, paidTo: "Motor Service Vendor", status: "Pending" },
-    { date: "2026-05-24", category: "Cleaning issue", amount: 2200, paidTo: "Sanitation Team", status: "Paid" },
-    { date: "2026-05-20", category: "Street light issue", amount: 3450, paidTo: "Electrical Store", status: "Paid" },
-    { date: "2026-05-16", category: "Common electricity", amount: 7900, paidTo: "Utility Account", status: "Paid" }
-  ],
-  workers: [
-    { name: "Mahesh", role: "Security Guard", mobile: "Private", attendance: "Present", dutyTime: "08:00 AM - 08:00 PM", area: "Main Gate" },
-    { name: "Pooja", role: "Sweeper", mobile: "Private", attendance: "Present", dutyTime: "07:00 AM - 11:00 AM", area: "Blocks A-C" },
-    { name: "Ramesh", role: "Electrician", mobile: "Private", attendance: "Absent", dutyTime: "On Call", area: "All Blocks" },
-    { name: "Iqbal", role: "Plumber", mobile: "Private", attendance: "Present", dutyTime: "10:00 AM - 04:00 PM", area: "Blocks D-H" },
-    { name: "Sohan", role: "Carpenter", mobile: "Private", attendance: "Absent", dutyTime: "On Call", area: "Club Office" },
-    { name: "Biren", role: "Labour", mobile: "Private", attendance: "Present", dutyTime: "09:00 AM - 05:00 PM", area: "Block D" },
-    { name: "Arun", role: "Technician", mobile: "Private", attendance: "Present", dutyTime: "11:00 AM - 06:00 PM", area: "Water Plant" }
-  ],
-  visitors: [
-    { name: "Amit Courier", house: "A-01", entry: "09:10 AM", exit: "09:22 AM", vehicleType: "Bike", vehicleMasked: "UP16 **** 42", purpose: "Delivery" },
-    { name: "Deepak Vendor", house: "D-01", entry: "10:35 AM", exit: "-", vehicleType: "Mini Truck", vehicleMasked: "HR26 **** 19", purpose: "Vendor" },
-    { name: "Neha Guest", house: "E-02", entry: "11:05 AM", exit: "-", vehicleType: "Car", vehicleMasked: "DL8C **** 87", purpose: "Guest" },
-    { name: "Site Worker", house: "F-04", entry: "08:45 AM", exit: "-", vehicleType: "None", vehicleMasked: "Private", purpose: "Worker" }
-  ],
-  bankAccount: {
-    accountName: "IBP Windsor Valley RWA",
-    bankName: "Canara Bank",
-    accountNumber: "Masked for public website",
-    ifsc: "Available with RWA Treasurer",
-    upi: "ppr.18882.20072024.00714042@cnrb",
-    note: "Use the QR/UPI for society maintenance payments. Mention house number and month in payment remarks."
-  },
-  npclAccount: [
-    ["Consumer No", "2000270949"],
-    ["Name", "IN**A BR***S PR*****T"],
-    ["C/O", "C/O Devendra Patil"],
-    ["Premises Address", "Plot-22 & 25, IBP Windsor Valley, Baidpura"],
-    ["Mobile No", "99*****333"],
-    ["Email ID", "VI**8@GMAIL.COM"],
-    ["Contract No", "1240117"],
-    ["Contract A/C", "315563"],
-    ["Current Status", "LIVE"],
-    ["Contractual Load", "10 KW"],
-    ["Voltage", "440"],
-    ["Tariff", "Q10U"],
-    ["Group", "PP01"],
-    ["Due Date", "N/A"]
-  ],
-  layoutBlocks: [
-    { block: "A", title: "Block-A", plots: ["Commercial", "A-01", "A-02", "A-03", "A-04", "A-05", "A-06", "A-07", "A-08", "Other Plots"], className: "layout-a" },
-    { block: "B", title: "Block-B", plots: ["B-01", "B-02", "B-03", "B-04", "B-05", "B-06", "B-07", "B-08", "B-09", "B-10", "B-11", "B-12"], className: "layout-b" },
-    { block: "C", title: "Block-C", plots: ["C-01", "C-02", "C-03", "C-04", "C-05", "C-06", "C-07", "C-08", "C-09", "C-10", "C-11", "C-12"], className: "layout-c" },
-    { block: "D", title: "Block-D", plots: ["D-01", "D-02", "D-03", "D-04", "D-05", "D-06", "Other Size"], className: "layout-d" },
-    { block: "E", title: "Block-E", plots: ["E-01", "E-02", "E-03", "E-04", "E-05", "E-06"], className: "layout-e" },
-    { block: "F", title: "Block-F", plots: ["F-01", "F-02", "F-03", "F-04", "F-05", "F-06", "F-07", "F-08", "F-09", "F-10"], className: "layout-f" },
-    { block: "G", title: "Block-G", plots: ["G-01", "G-02", "G-03", "G-04", "G-05", "G-06", "G-07", "G-08", "G-09", "G-10"], className: "layout-g" },
-    { block: "H", title: "Block-H", plots: ["H-01", "H-02", "H-03", "H-04", "H-05", "H-06"], className: "layout-h" }
-  ],
-  locationNotes: [
-    "Connected from Gaur Chowk and the service road corridor.",
-    "Nearby references include school, hospital, proposed metro route, and main commercial access.",
-    "Main entrance shown from the 40 ft wide road in the layout diagram.",
-    "Diagram is a simplified web version for resident orientation, not a legal site plan."
-  ],
-  monthlyFinance: [
-    { month: "May 2026", expected: 70000, received: 52000, pending: 18000, expenses: 18350, closingBalance: 33650 },
-    { month: "April 2026", expected: 68000, received: 61000, pending: 7000, expenses: 26750, closingBalance: 34250 },
-    { month: "March 2026", expected: 64000, received: 58500, pending: 5500, expenses: 22100, closingBalance: 36400 }
-  ],
-  payments: [
-    { house: "A-01", resident: "Sanjeev Pande", month: "May 2026", amount: 1000, mode: "UPI", status: "Received" },
-    { house: "A-02", resident: "Saumuya", month: "May 2026", amount: 1000, mode: "Bank Transfer", status: "Received" },
-    { house: "B-03", resident: "Narendra Pratap Singh", month: "May 2026", amount: 1000, mode: "UPI", status: "Received" },
-    { house: "B-10", resident: "Resident details pending", month: "May 2026", amount: 1000, mode: "Pending", status: "Pending" },
-    { house: "C-03", resident: "Roshan Kumar", month: "May 2026", amount: 1000, mode: "Cash", status: "Received" },
-    { house: "E-05", resident: "Resident details pending", month: "May 2026", amount: 1000, mode: "Pending", status: "Pending" }
-  ],
-  documents: [
-    { title: "RWA Certificate", type: "Compliance", status: "Active", summary: "Official RWA Windsor Valley certificate PDF for public reference.", link: "assets/documents/RWA_Windsor_Valley_Certificate.pdf" },
-    { title: "Maintenance Policy", type: "Policy", status: "Active", summary: "Monthly maintenance billing, due date, late fee, and expense approval rules." },
-    { title: "Visitor Gate Pass Policy", type: "Security", status: "Active", summary: "Entry, exit, vehicle, delivery, and worker verification rules for the gate register." },
-    { title: "Payment Collection Policy", type: "Accounts", status: "Active", summary: "Accepted payment modes, receipt tracking, bank reconciliation, and treasurer review." },
-    { title: "Common Area Usage Policy", type: "Community", status: "Draft", summary: "Guidelines for cleaning, parking, noise, construction material, and shared electricity usage." }
-  ],
-  events: [
-    { title: "Holi Milan", date: "March 2026", type: "Festival", media: "Photos + Video", summary: "Resident colors, group photos, music, refreshments, and children activities.", theme: "holi" },
-    { title: "Diwali Celebration", date: "November 2026", type: "Festival", media: "Photos", summary: "Lighting, rangoli, diya decoration, sweets, and family group photos.", theme: "diwali" },
-    { title: "Jagran Program", date: "October 2026", type: "Cultural", media: "Video", summary: "Evening devotional program, stage setup, prasad distribution, and community gathering.", theme: "jagran" },
-    { title: "RWA Monthly Meeting", date: "Monthly", type: "Meeting", media: "Minutes + Photos", summary: "Maintenance review, payment collection update, open issues, and next action list.", theme: "meeting" }
-  ],
-  rwaTeam: [
-    { name: "Rakesh Singh", designation: "President" },
-    { name: "Dhruv Tripathi", designation: "Vice President" },
-    { name: "Narendra Pratap Singh", designation: "Secretary" },
-    { name: "Aasheesh Kumar Rai", designation: "Joint Secretary" },
-    { name: "Avinash Singh", designation: "Treasurer" },
-    { name: "Hardik Mudgal", designation: "Executive Member" },
-    { name: "Vandana Kumari", designation: "Executive Member" },
-    { name: "Shiv Ram Tathagat", designation: "Executive Member" }
-  ],
-  aboutRwa: [
-    { title: "What RWA Does", text: "Coordinates common services, resident requests, maintenance, gate discipline, documents, and society communication." },
-    { title: "Resident Support", text: "Residents can use the helpline portal for common motor, street light, water, cleaning, security, and payment queries." },
-    { title: "Public Privacy", text: "The public website shows only non-sensitive information. Phone numbers, emails, vehicle numbers, and private papers stay hidden." },
-    { title: "Transparent Accounts", text: "Monthly collection, pending maintenance, expenses, and common electricity details are shown for resident awareness." }
-  ],
-  helplines: [
-    { title: "Common Motor Help", owner: "Maintenance Helpdesk", status: "Open", action: "Report water motor, pump, pressure, or tank issue." },
-    { title: "Common Light Help", owner: "Electrical Helpdesk", status: "Open", action: "Report street light, common panel, meter, or wiring issue." },
-    { title: "Security Gate Help", owner: "Gate Desk", status: "Open", action: "Visitor, vendor, worker, delivery, and vehicle entry support." },
-    { title: "RWA Accounts Help", owner: "Treasurer Desk", status: "Open", action: "Maintenance payment, UPI receipt, pending dues, and expense query." }
-  ],
-  commonServices: [
-    { title: "Common Motor", status: "Working", schedule: "Morning and evening tank refill check", note: "Motor repair issue should be logged with block and time." },
-    { title: "Common Street Light", status: "Needs Review", schedule: "Evening inspection", note: "Inactive lights between Blocks E-F are in progress." },
-    { title: "Common Electricity Meter", status: "Live", schedule: "NPCL prepaid recharge", note: "Consumer No 2000270949; recharge manual available above." },
-    { title: "Water Tank Cleaning", status: "Planned", schedule: "Monthly", note: "Cleaning date and vendor receipt to be added in expense history." }
-  ],
-  gateRules: [
-    "Every visitor must share name, visiting house, purpose, entry time, and exit time at the gate.",
-    "Full mobile numbers and full vehicle numbers must stay private and visible only to authorized security/RWA login users.",
-    "Delivery and vendor entries should be marked with expected exit time and assigned house or block.",
-    "Construction workers must carry daily approval from the resident, builder, or site supervisor.",
-    "Night entries after 10:00 PM should be confirmed by the resident or security supervisor.",
-    "Emergency service entries should be allowed immediately and recorded after the situation is stable."
-  ]
-};
-
-const privateData = {
-  residentContacts: "Stored only in the local Excel source. Do not publish phone numbers or email IDs to GitHub Pages.",
-  workerMobiles: "Reserved for future login-based access.",
-  fullVehicleNumbers: "Reserved for future login-based access.",
-  documents: "Reserved for future login-based access."
-};
-
 const state = {
+  data: null,
+  search: "",
   block: "all",
-  status: "all",
-  query: ""
+  propertyStatus: "all",
+  memberStatus: "all",
+  complaintStatus: "all"
+};
+
+const selectors = {
+  search: "#globalSearch",
+  block: "#blockFilter",
+  status: "#statusFilter",
+  member: "#memberFilter",
+  complaint: "#complaintFilter"
 };
 
 const statusClass = {
-  "Occupied": "occupied",
-  "Under Construction": "construction",
-  "Empty Plot": "empty",
-  "Builder Pending": "pending",
-  "Rented": "rented",
-  "Present": "present",
-  "Absent": "absent",
-  "Open": "open",
-  "In Progress": "progress",
-  "Paid": "paid",
-  "Pending": "pending",
-  "Received": "paid",
-  "Draft": "pending",
-  "Active": "paid",
-  "Yes": "paid",
-  "No": "pending",
-  "Working": "paid",
-  "Needs Review": "pending",
-  "Live": "paid",
-  "Planned": "progress"
+  "Occupied": "success",
+  "Paid": "success",
+  "Present": "success",
+  "Resolved": "success",
+  "Closed": "success",
+  "Working": "success",
+  "Live": "success",
+  "Available": "success",
+  "Rented": "info",
+  "Under Construction": "info",
+  "In Progress": "info",
+  "Assigned": "info",
+  "Recorded": "info",
+  "Scheduled": "info",
+  "Open": "warning",
+  "Pending": "warning",
+  "Builder Pending": "warning",
+  "Vacant Plot": "muted",
+  "Absent": "danger",
+  "Dispute/Pending Issue": "danger",
+  "Restricted": "danger"
 };
 
-const elements = {
-  blockFilter: document.querySelector("#blockFilter"),
-  statusFilter: document.querySelector("#statusFilter"),
-  globalSearch: document.querySelector("#globalSearch"),
-  overviewCards: document.querySelector("#overviewCards"),
-  propertyRows: document.querySelector("#propertyRows"),
-  propertyChart: document.querySelector("#propertyChart"),
-  blockChart: document.querySelector("#blockChart"),
-  maintenanceCards: document.querySelector("#maintenanceCards"),
-  expenseRows: document.querySelector("#expenseRows"),
-  workerRows: document.querySelector("#workerRows"),
-  visitorRows: document.querySelector("#visitorRows"),
-  financeCards: document.querySelector("#financeCards"),
-  financeMonthLabel: document.querySelector("#financeMonthLabel"),
-  bankAccountDetails: document.querySelector("#bankAccountDetails"),
-  collectionChart: document.querySelector("#collectionChart"),
-  monthlyFinanceRows: document.querySelector("#monthlyFinanceRows"),
-  paymentRows: document.querySelector("#paymentRows"),
-  documentCards: document.querySelector("#documentCards"),
-  gateRuleList: document.querySelector("#gateRuleList"),
-  upiDetails: document.querySelector("#upiDetails"),
-  npclDetails: document.querySelector("#npclDetails"),
-  layoutBlocks: document.querySelector("#layoutBlocks"),
-  locationNotes: document.querySelector("#locationNotes"),
-  eventCards: document.querySelector("#eventCards"),
-  teamCards: document.querySelector("#teamCards"),
-  aboutCards: document.querySelector("#aboutCards"),
-  helplineCards: document.querySelector("#helplineCards"),
-  commonServiceCards: document.querySelector("#commonServiceCards"),
-  lastUpdated: document.querySelector("#lastUpdated"),
-  propertyTotalLabel: document.querySelector("#propertyTotalLabel"),
-  openIssueLabel: document.querySelector("#openIssueLabel")
-};
+const money = (value) => `INR ${Number(value).toLocaleString("en-IN")}`;
+const byId = (id) => document.getElementById(id);
+const badge = (value) => `<span class="badge ${statusClass[value] || "neutral"}">${value}</span>`;
+const yesNo = (value) => badge(value ? "Yes" : "No");
 
-function money(value) {
-  return `INR ${Number(value).toLocaleString("en-IN")}`;
+function matchesSearch(item) {
+  if (!state.search) return true;
+  return JSON.stringify(item).toLowerCase().includes(state.search);
 }
 
-function getFilteredProperties() {
-  const query = state.query.trim().toLowerCase();
-  return publicData.properties.filter((property) => {
-    const matchesBlock = state.block === "all" || property.block === state.block;
-    const matchesStatus = state.status === "all" || property.status === state.status;
-    const text = Object.values(property).join(" ").toLowerCase();
-    return matchesBlock && matchesStatus && (!query || text.includes(query));
+function filteredProperties() {
+  return state.data.properties.filter((property) => {
+    const blockOk = state.block === "all" || property.block === state.block;
+    const statusOk = state.propertyStatus === "all" || property.occupancy === state.propertyStatus;
+    return blockOk && statusOk && matchesSearch(property);
   });
 }
 
-function matchesQuery(record) {
-  const query = state.query.trim().toLowerCase();
-  return !query || Object.values(record).join(" ").toLowerCase().includes(query);
-}
-
-function badge(value) {
-  const className = statusClass[value] || "";
-  return `<span class="badge ${className}">${value}</span>`;
-}
-
-function renderFilters() {
-  blocks.forEach((block) => {
-    const option = document.createElement("option");
-    option.value = block;
-    option.textContent = `Block ${block}`;
-    elements.blockFilter.append(option);
+function publicResidents() {
+  return state.data.properties.filter((property) => {
+    const blockOk = state.block === "all" || property.block === state.block;
+    const memberOk =
+      state.memberStatus === "all" ||
+      (state.memberStatus === "member" && property.rwaMember) ||
+      (state.memberStatus === "non-member" && !property.rwaMember);
+    return blockOk && memberOk && matchesSearch(property);
   });
 }
 
-function renderOverview() {
-  const properties = state.block === "all"
-    ? publicData.properties
-    : publicData.properties.filter((property) => property.block === state.block);
-  const count = (status) => properties.filter((property) => property.status === status).length;
+function renderDashboard() {
+  const data = state.data;
+  const total = data.properties.length;
+  const count = (status) => data.properties.filter((property) => property.occupancy === status).length;
   const occupied = count("Occupied") + count("Rented");
-  const underConstruction = count("Under Construction");
-  const emptyPlots = count("Empty Plot");
-  const rwaMembers = properties.filter((property) => property.rwaMember).length;
-  const nonRwaMembers = properties.length - rwaMembers;
-  const openComplaints = publicData.maintenance.filter((issue) => issue.status !== "Closed").length;
-  const activeWorkers = publicData.workers.filter((worker) => worker.attendance === "Present").length;
-  const todayVisitors = publicData.visitors.length;
-  const vehiclesParked = publicData.visitors.filter((visitor) => visitor.vehicleType !== "None" && visitor.exit === "-").length;
-  const currentFinance = publicData.monthlyFinance[0];
+  const rwaMembers = data.properties.filter((property) => property.rwaMember).length;
+  const pendingDues = data.maintenance.monthlyCollections.filter((item) => item.status === "Pending").length;
+  const workersPresent = data.workers.filter((worker) => worker.attendance === "Present").length;
+  const openComplaints = data.complaints.filter((complaint) => !["Resolved", "Closed"].includes(complaint.status)).length;
+  const recentExpenses = data.maintenance.expenses.slice(0, 3).reduce((sum, expense) => sum + expense.amount, 0);
+  const pendingTasks = data.maintenance.workHistory.filter((task) => task.status !== "Resolved").length;
 
-  const metrics = [
-    ["Blocks A to H", blocks.length, "Active layout blocks"],
-    ["Total Plots/Houses", properties.length, "Filtered inventory"],
-    ["Occupied Houses", occupied, "Resident names available"],
-    ["Under Construction", underConstruction, "Owner or builder work"],
-    ["Builder Pending", count("Builder Pending"), "Details pending"],
-    ["RWA Members", rwaMembers, "Public member count"],
-    ["Non-RWA Members", nonRwaMembers, "Follow-up required"],
-    ["Open Complaints", openComplaints, "Maintenance queue"],
-    ["Active Workers", activeWorkers, "Present today"],
-    ["Today Visitors", todayVisitors, "Gate entries"],
-    ["Vehicles Parked", vehiclesParked, "Currently inside"],
-    ["Money Received", money(currentFinance.received), currentFinance.month]
-  ];
+  byId("lastUpdated").textContent = `Updated ${data.society.lastUpdated}`;
+  byId("dashboardCards").innerHTML = [
+    ["Total plots", total, "All blocks A-H"],
+    ["Occupied houses", occupied, "Includes rented"],
+    ["Under construction", count("Under Construction"), "Active work"],
+    ["Vacant plots", count("Vacant Plot"), "No public resident"],
+    ["RWA members", rwaMembers, "Public member count"],
+    ["Non-RWA members", total - rwaMembers, "Follow-up needed"],
+    ["Open complaints", openComplaints, "Action queue"],
+    ["Pending dues", pendingDues, "House-wise pending"],
+    ["Workers present today", workersPresent, "Attendance"],
+    ["Visitors today", data.security.entries.length, "Gate entries"],
+    ["Recent notices", data.notices.slice(0, 3).length, "Latest notices"],
+    ["Recent expenses", money(recentExpenses), "Top 3 expenses"],
+    ["Pending tasks", pendingTasks, "Maintenance work"]
+  ].map(([label, value, note]) => metricCard(label, value, note)).join("");
 
-  elements.overviewCards.innerHTML = metrics.map(([label, value, note]) => `
-    <article class="metric-card">
-      <strong>${label}</strong>
-      <span>${value}</span>
-      <small>${note}</small>
-    </article>
+  const statusCounts = ["Occupied", "Under Construction", "Vacant Plot", "Rented", "Builder Pending", "Dispute/Pending Issue"]
+    .map((status) => ({ label: status, value: count(status) }));
+  renderBars("occupancyChart", statusCounts);
+
+  byId("activityFeed").innerHTML = [
+    ...data.notices.slice(0, 3).map((notice) => ({ title: notice.title, meta: `${notice.type} notice`, status: notice.priority })),
+    ...data.maintenance.expenses.slice(0, 3).map((expense) => ({ title: `${expense.category} - ${money(expense.amount)}`, meta: expense.paidTo, status: expense.status }))
+  ].map(feedItem).join("");
+}
+
+function metricCard(label, value, note) {
+  return `<article class="metric-card"><strong>${label}</strong><span>${value}</span><small>${note}</small></article>`;
+}
+
+function renderBars(target, rows) {
+  const max = Math.max(...rows.map((row) => row.value), 1);
+  byId(target).innerHTML = rows.map((row) => `
+    <div class="bar-row">
+      <span>${row.label}</span>
+      <i><b style="width:${(row.value / max) * 100}%"></b></i>
+      <strong>${row.value}</strong>
+    </div>
   `).join("");
-
-  elements.lastUpdated.textContent = `Updated ${publicData.lastUpdated}`;
-  elements.propertyTotalLabel.textContent = `${properties.length} properties`;
-  elements.openIssueLabel.textContent = `${openComplaints} open / active items`;
 }
 
-function renderCharts() {
-  const properties = state.block === "all"
-    ? publicData.properties
-    : publicData.properties.filter((property) => property.block === state.block);
-  const statuses = ["Occupied", "Rented", "Under Construction", "Empty Plot", "Builder Pending"];
-  const max = Math.max(...statuses.map((status) => properties.filter((property) => property.status === status).length), 1);
-
-  elements.propertyChart.innerHTML = statuses.map((status) => {
-    const total = properties.filter((property) => property.status === status).length;
-    return `
-      <div class="bar-row">
-        <span>${status}</span>
-        <span class="bar-track"><i class="bar-fill" style="width:${(total / max) * 100}%"></i></span>
-        <strong>${total}</strong>
-      </div>
-    `;
-  }).join("");
-
-  elements.blockChart.innerHTML = blocks.map((block) => {
-    const blockProperties = publicData.properties.filter((property) => property.block === block);
-    const active = blockProperties.filter((property) => ["Occupied", "Rented"].includes(property.status)).length;
-    const percent = blockProperties.length ? Math.max((active / blockProperties.length) * 100, 8) : 8;
-    return `
-      <div class="block-bar">
-        <i style="height:${percent * 1.45}px"></i>
-        <span>${block}</span>
-        <small>${active}/${blockProperties.length}</small>
-      </div>
-    `;
-  }).join("");
+function feedItem(item) {
+  return `<div class="feed-item"><div><strong>${item.title}</strong><span>${item.meta}</span></div>${badge(item.status)}</div>`;
 }
 
-function renderProperties() {
-  const rows = getFilteredProperties();
-  elements.propertyRows.innerHTML = rows.length ? rows.map((property) => `
+function renderSociety() {
+  const blocks = state.data.society.blocks;
+  byId("layoutGrid").innerHTML = blocks.map((block) => {
+    const properties = state.data.properties.filter((property) => property.block === block);
+    return `<article class="block-card"><h3>Block ${block}</h3><div class="plot-grid">${properties.map((property) => `<span class="${statusClass[property.occupancy] || "neutral"}" title="${property.house} ${property.occupancy}">${property.house}</span>`).join("")}</div></article>`;
+  }).join("");
+
+  byId("propertyRows").innerHTML = filteredProperties().map((property) => `
     <tr>
       <td>Block ${property.block}</td>
-      <td>${property.number}</td>
-      <td>${badge(property.status)}</td>
-      <td>${badge(property.rwaMember ? "Yes" : "No")}</td>
-      <td>${property.occupant}</td>
+      <td>${property.house}</td>
+      <td>${badge(property.occupancy)}</td>
+      <td>${property.resident}</td>
+      <td>${property.ownership}</td>
       <td>${property.waterSource}</td>
     </tr>
-  `).join("") : `<tr><td colspan="6" class="empty-state">No properties match the selected filters.</td></tr>`;
+  `).join("");
+}
+
+function renderResidents() {
+  byId("residentRows").innerHTML = publicResidents().map((resident) => `
+    <tr>
+      <td>${resident.block}</td>
+      <td>${resident.house}</td>
+      <td>${resident.resident}</td>
+      <td>${resident.ownership}</td>
+      <td>${yesNo(resident.rwaMember)}</td>
+    </tr>
+  `).join("");
+}
+
+function renderRwa() {
+  const data = state.data;
+  byId("rwaCards").innerHTML = [
+    ...data.rwa.officeBearers.map((member) => ({ title: member.name, subtitle: member.post, status: "Active" })),
+    ...data.rwa.executiveMembers.map((name) => ({ title: name, subtitle: "Executive Member", status: "Active" }))
+  ].map(simpleCard).join("");
+
+  const members = data.properties.filter((property) => property.rwaMember).length;
+  const nonMembers = data.properties.filter((property) => !property.rwaMember).length;
+  byId("coordinatorList").innerHTML = [
+    ...data.rwa.blockCoordinators.map((item) => `<div><strong>Block ${item.block}</strong><span>${item.name}</span></div>`),
+    `<div><strong>RWA members</strong><span>${members}</span></div>`,
+    `<div><strong>Non-RWA members</strong><span>${nonMembers}</span></div>`,
+    `<div><strong>Pending membership</strong><span>${nonMembers}</span></div>`
+  ].join("");
+
+  byId("meetingList").innerHTML = [
+    { title: data.rwa.agm.agenda, meta: `AGM: ${data.rwa.agm.date}`, status: "Planned" },
+    ...data.rwa.meetingSchedule.map((meeting) => ({ title: meeting.title, meta: meeting.date, status: meeting.status }))
+  ].map(feedItem).join("");
+}
+
+function simpleCard(item) {
+  return `<article class="info-card"><h3>${item.title}</h3><p>${item.subtitle || item.summary || item.note || ""}</p>${item.status ? badge(item.status) : ""}${item.link ? `<a class="action-link" href="${item.link}" target="_blank" rel="noreferrer">Open</a>` : ""}</article>`;
 }
 
 function renderMaintenance() {
-  const issues = publicData.maintenance.filter((issue) => {
-    const matchesBlock = state.block === "all" || issue.block.includes(state.block) || issue.block === "All";
-    return matchesBlock && matchesQuery(issue);
+  const data = state.data.maintenance;
+  const expected = data.monthlyCollections.reduce((sum, item) => sum + item.amount, 0);
+  const received = data.monthlyCollections.filter((item) => item.status === "Paid").reduce((sum, item) => sum + item.amount, 0);
+  const expenses = data.expenses.reduce((sum, item) => sum + item.amount, 0);
+  const pending = expected - received;
+
+  byId("maintenanceSummary").textContent = `${money(received)} received / ${money(pending)} pending`;
+  byId("maintenanceCards").innerHTML = [
+    ["Monthly collection", money(expected), "Sample expected"],
+    ["Received", money(received), "Paid houses"],
+    ["Pending dues", money(pending), "Pending houses"],
+    ["Expenses", money(expenses), "Recorded expenses"]
+  ].map(([label, value, note]) => metricCard(label, value, note)).join("");
+
+  byId("collectionRows").innerHTML = data.monthlyCollections.map((item) => `<tr><td>${item.house}</td><td>${item.resident}</td><td>${item.month}</td><td>${money(item.amount)}</td><td>${badge(item.status)}</td></tr>`).join("");
+  byId("expenseRows").innerHTML = data.expenses.map((item) => `<tr><td>${item.date}</td><td>${item.category}</td><td>${money(item.amount)}</td><td>${item.paidTo}</td><td>${badge(item.status)}</td></tr>`).join("");
+  byId("workHistory").innerHTML = [...data.workHistory, ...data.vendorBills].map((item) => simpleCard({
+    title: item.task || item.vendor,
+    subtitle: item.category || item.bill,
+    status: item.status
+  })).join("");
+}
+
+function renderUtilities() {
+  byId("utilityCards").innerHTML = state.data.utilities.map((item) => simpleCard({
+    title: item.name,
+    subtitle: `${item.owner}: ${item.note}`,
+    status: item.status
+  })).join("");
+}
+
+function renderComplaints() {
+  const complaints = state.data.complaints.filter((complaint) => {
+    const statusOk = state.complaintStatus === "all" || complaint.status === state.complaintStatus;
+    return statusOk && matchesSearch(complaint);
   });
-  elements.maintenanceCards.innerHTML = issues.length ? issues.map((issue) => `
-    <article class="issue-card">
-      <h3>${issue.title}</h3>
-      <p>${issue.description}</p>
-      <div class="issue-meta">
-        ${badge(issue.status)}
-        <span class="soft-pill">Block ${issue.block}</span>
-        <span class="soft-pill">${issue.priority}</span>
-      </div>
+  byId("complaintCards").innerHTML = complaints.map((complaint) => `
+    <article class="complaint-card">
+      <div class="panel-heading"><h3>${complaint.id}: ${complaint.title}</h3>${badge(complaint.status)}</div>
+      <p><strong>${complaint.category}</strong> / ${complaint.house} / ${complaint.assignedTo}</p>
+      <ol>${complaint.history.map((item) => `<li>${item}</li>`).join("")}</ol>
     </article>
-  `).join("") : `<div class="empty-state">No maintenance items match the filters.</div>`;
-
-  elements.expenseRows.innerHTML = publicData.expenses.filter(matchesQuery).map((expense) => `
-    <tr>
-      <td>${expense.date}</td>
-      <td>${expense.category}</td>
-      <td>${money(expense.amount)}</td>
-      <td>${expense.paidTo}</td>
-      <td>${badge(expense.status)}</td>
-    </tr>
   `).join("");
 }
 
-function renderFinance() {
-  const current = publicData.monthlyFinance[0];
-  const collectedPercent = Math.round((current.received / current.expected) * 100);
-  const paidPayments = publicData.payments.filter((payment) => payment.status === "Received").length;
-  const pendingPayments = publicData.payments.filter((payment) => payment.status === "Pending").length;
-  const monthExpenses = publicData.expenses.reduce((total, expense) => total + expense.amount, 0);
-
-  elements.financeMonthLabel.textContent = current.month;
-  elements.financeCards.innerHTML = [
-    ["Expected Collection", money(current.expected), "Monthly demand"],
-    ["Money Received", money(current.received), `${collectedPercent}% collected`],
-    ["Pending Collection", money(current.pending), "Follow-up list"],
-    ["Expenses Paid", money(monthExpenses), "Current expense ledger"],
-    ["Closing Balance", money(current.closingBalance), "After recorded expenses"],
-    ["Receipts Logged", paidPayments, `${pendingPayments} pending entries`]
-  ].map(([label, value, note]) => `
-    <article class="finance-card">
-      <strong>${label}</strong>
-      <span>${value}</span>
-      <small>${note}</small>
-    </article>
-  `).join("");
-
-  const accountRows = [
-    ["Account Name", publicData.bankAccount.accountName],
-    ["Bank Name", publicData.bankAccount.bankName],
-    ["Account No.", publicData.bankAccount.accountNumber],
-    ["IFSC", publicData.bankAccount.ifsc],
-    ["UPI", publicData.bankAccount.upi],
-    ["Note", publicData.bankAccount.note]
-  ];
-  elements.bankAccountDetails.innerHTML = accountRows.map(([label, value]) => `
-    <div>
-      <strong>${label}</strong>
-      <span>${value}</span>
-    </div>
-  `).join("");
-
-  elements.upiDetails.innerHTML = `
-    <strong>UPI ID</strong>
-    <button class="copy-chip" type="button" data-copy="${publicData.bankAccount.upi}">${publicData.bankAccount.upi}</button>
-    <span>${publicData.bankAccount.note}</span>
-  `;
-
-  const chartRows = [
-    ["Received", current.received, current.expected],
-    ["Pending", current.pending, current.expected],
-    ["Expenses", current.expenses, current.expected]
-  ];
-  elements.collectionChart.innerHTML = chartRows.map(([label, value, max]) => `
-    <div class="bar-row">
-      <span>${label}</span>
-      <span class="bar-track"><i class="bar-fill finance-fill" style="width:${(value / max) * 100}%"></i></span>
-      <strong>${money(value)}</strong>
-    </div>
-  `).join("");
-
-  elements.monthlyFinanceRows.innerHTML = publicData.monthlyFinance.map((row) => `
-    <tr>
-      <td>${row.month}</td>
-      <td>${money(row.expected)}</td>
-      <td>${money(row.received)}</td>
-      <td>${money(row.pending)}</td>
-      <td>${money(row.expenses)}</td>
-      <td>${money(row.closingBalance)}</td>
-    </tr>
-  `).join("");
-
-  elements.paymentRows.innerHTML = publicData.payments.filter(matchesQuery).map((payment) => `
-    <tr>
-      <td>${payment.house}</td>
-      <td>${payment.resident}</td>
-      <td>${payment.month}</td>
-      <td>${money(payment.amount)}</td>
-      <td>${payment.mode}</td>
-      <td>${badge(payment.status)}</td>
-    </tr>
-  `).join("");
+function renderSecurity() {
+  const security = state.data.security;
+  byId("securityRows").innerHTML = security.entries.map((entry) => `<tr><td>${entry.type}</td><td>${entry.name}</td><td>${entry.house}</td><td>${entry.entry}</td><td>${entry.exit}</td><td>${entry.purpose}</td><td>${entry.guard}</td><td>${entry.vehicle}</td></tr>`).join("");
+  byId("gatePassCards").innerHTML = security.gatePassRecords.map((pass) => simpleCard({
+    title: `${pass.pass} - ${pass.house}`,
+    subtitle: `${pass.purpose}; valid till ${pass.validTill}`,
+    status: pass.status
+  })).join("");
 }
 
-function renderNpcl() {
-  elements.npclDetails.innerHTML = publicData.npclAccount.map(([label, value]) => `
-    <div>
-      <strong>${label}</strong>
-      <span>${value}</span>
-    </div>
+function renderWorkers() {
+  byId("workerRows").innerHTML = state.data.workers.filter(matchesSearch).map((worker) => `
+    <tr>
+      <td>${worker.name}</td>
+      <td>${worker.role}</td>
+      <td>${badge(worker.attendance)}</td>
+      <td>${worker.shift}</td>
+      <td>${worker.area}</td>
+      <td>${badge(worker.paymentStatus)}</td>
+    </tr>
   `).join("");
 }
 
 function renderDocuments() {
-  elements.documentCards.innerHTML = publicData.documents.filter(matchesQuery).map((documentItem) => `
-    <article class="document-card">
-      <div class="document-icon">${documentItem.type.slice(0, 2).toUpperCase()}</div>
-      <div>
-        <h3>${documentItem.title}</h3>
-        <p>${documentItem.summary}</p>
-        <div class="issue-meta">
-          <span class="soft-pill">${documentItem.type}</span>
-          ${badge(documentItem.status)}
-          ${documentItem.link ? `<a class="doc-link" href="${documentItem.link}" target="_blank" rel="noreferrer">Open PDF</a>` : ""}
-        </div>
-      </div>
-    </article>
-  `).join("");
-
-  elements.gateRuleList.innerHTML = publicData.gateRules.map((rule) => `<li>${rule}</li>`).join("");
+  byId("documentCards").innerHTML = state.data.documents.map((doc) => simpleCard({
+    title: doc.title,
+    subtitle: `${doc.type} / ${doc.access}`,
+    status: doc.status,
+    link: doc.link
+  })).join("");
 }
 
-function renderTeam() {
-  elements.teamCards.innerHTML = publicData.rwaTeam.map((member) => `
-    <article class="team-card">
-      <div class="team-avatar">${member.name.split(" ").map((part) => part[0]).slice(0, 2).join("")}</div>
-      <div>
-        <h3>${member.name}</h3>
-        <span class="team-role">${member.designation}</span>
-      </div>
-    </article>
-  `).join("");
+function renderNotices() {
+  byId("noticeCards").innerHTML = state.data.notices.map((notice) => simpleCard({
+    title: notice.title,
+    subtitle: `${notice.date} / ${notice.type}`,
+    status: notice.priority
+  })).join("");
+  byId("whatsappLinks").innerHTML = state.data.whatsapp.map((item) => `<a class="action-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>`).join("");
 }
 
-function renderAboutAndHelp() {
-  elements.aboutCards.innerHTML = publicData.aboutRwa.map((item) => `
-    <article class="info-card">
-      <h3>${item.title}</h3>
-      <p>${item.text}</p>
-    </article>
-  `).join("");
+function renderReports() {
+  byId("reportCards").innerHTML = state.data.reports.map((report) => simpleCard({
+    title: report.title,
+    subtitle: report.summary,
+    status: "Available"
+  })).join("");
+}
 
-  elements.helplineCards.innerHTML = publicData.helplines.map((item) => `
+function renderHelp() {
+  byId("helpCards").innerHTML = state.data.help.map((item) => `
     <article class="help-card">
-      <span class="soft-pill">${item.status}</span>
-      <h3>${item.title}</h3>
-      <p>${item.action}</p>
-      <strong>${item.owner}</strong>
-    </article>
-  `).join("");
-
-  elements.commonServiceCards.innerHTML = publicData.commonServices.map((item) => `
-    <article class="service-card">
-      ${badge(item.status)}
-      <h3>${item.title}</h3>
-      <p>${item.note}</p>
-      <span>${item.schedule}</span>
+      <h3>${item.name}</h3>
+      <strong>${item.contact}</strong>
+      <p>${item.instruction}</p>
     </article>
   `).join("");
 }
 
-function renderLayout() {
-  elements.layoutBlocks.innerHTML = publicData.layoutBlocks.map((block) => `
-    <section class="plot-zone ${block.className}">
-      <h3>${block.title}</h3>
-      <div class="plot-list">
-        ${block.plots.map((plot) => `<span>${plot}</span>`).join("")}
-      </div>
-    </section>
-  `).join("");
-
-  elements.locationNotes.innerHTML = publicData.locationNotes.map((note) => `
-    <div class="location-note">${note}</div>
-  `).join("");
-}
-
-function renderEvents() {
-  elements.eventCards.innerHTML = publicData.events.map((eventItem) => `
-    <article class="event-card ${eventItem.theme}">
-      <div class="event-media">
-        <span>${eventItem.media}</span>
-      </div>
-      <div>
-        <div class="event-meta">
-          <span class="soft-pill">${eventItem.type}</span>
-          <span class="soft-pill">${eventItem.date}</span>
-        </div>
-        <h3>${eventItem.title}</h3>
-        <p>${eventItem.summary}</p>
-        <button class="media-button" type="button">Add photos/video</button>
-      </div>
-    </article>
-  `).join("");
-}
-
-function renderWorkers() {
-  elements.workerRows.innerHTML = publicData.workers.filter(matchesQuery).map((worker) => `
-    <tr>
-      <td>${worker.name}</td>
-      <td>${worker.role}</td>
-      <td><span class="soft-pill">${worker.mobile}</span></td>
-      <td>${badge(worker.attendance)}</td>
-      <td>${worker.dutyTime}</td>
-      <td>${worker.area}</td>
-    </tr>
-  `).join("");
-}
-
-function renderVisitors() {
-  elements.visitorRows.innerHTML = publicData.visitors.filter(matchesQuery).map((visitor) => `
-    <tr>
-      <td>${visitor.name}</td>
-      <td>${visitor.house}</td>
-      <td>${visitor.entry}</td>
-      <td>${visitor.exit}</td>
-      <td>${visitor.vehicleType}<br><span class="soft-pill">${visitor.vehicleMasked}</span></td>
-      <td>${visitor.purpose}</td>
-    </tr>
-  `).join("");
-}
-
-function render() {
-  renderOverview();
-  renderCharts();
-  renderProperties();
+function renderAll() {
+  renderDashboard();
+  renderSociety();
+  renderResidents();
+  renderRwa();
   renderMaintenance();
-  renderFinance();
-  renderNpcl();
-  renderAboutAndHelp();
-  renderDocuments();
-  renderTeam();
-  renderLayout();
-  renderEvents();
+  renderUtilities();
+  renderComplaints();
+  renderSecurity();
   renderWorkers();
-  renderVisitors();
+  renderDocuments();
+  renderNotices();
+  renderReports();
+  renderHelp();
 }
 
-elements.blockFilter.addEventListener("change", (event) => {
-  state.block = event.target.value;
-  render();
-});
+function setupFilters() {
+  const blockSelect = document.querySelector(selectors.block);
+  state.data.society.blocks.forEach((block) => {
+    const option = document.createElement("option");
+    option.value = block;
+    option.textContent = `Block ${block}`;
+    blockSelect.append(option);
+  });
 
-elements.statusFilter.addEventListener("change", (event) => {
-  state.status = event.target.value;
-  render();
-});
+  document.querySelector(selectors.search).addEventListener("input", (event) => {
+    state.search = event.target.value.trim().toLowerCase();
+    renderAll();
+  });
+  document.querySelector(selectors.block).addEventListener("change", (event) => {
+    state.block = event.target.value;
+    renderAll();
+  });
+  document.querySelector(selectors.status).addEventListener("change", (event) => {
+    state.propertyStatus = event.target.value;
+    renderSociety();
+  });
+  document.querySelector(selectors.member).addEventListener("change", (event) => {
+    state.memberStatus = event.target.value;
+    renderResidents();
+  });
+  document.querySelector(selectors.complaint).addEventListener("change", (event) => {
+    state.complaintStatus = event.target.value;
+    renderComplaints();
+  });
+}
 
-elements.globalSearch.addEventListener("input", (event) => {
-  state.query = event.target.value;
-  render();
-});
-
-document.addEventListener("click", async (event) => {
-  const copyButton = event.target.closest("[data-copy]");
-  if (!copyButton || !navigator.clipboard) {
-    return;
+async function init() {
+  const response = await fetch("data/public-data.json");
+  state.data = await response.json();
+  setupFilters();
+  renderAll();
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
   }
-  await navigator.clipboard.writeText(copyButton.dataset.copy);
-  copyButton.textContent = "UPI copied";
-  window.setTimeout(() => {
-    copyButton.textContent = copyButton.dataset.copy;
-  }, 1400);
+}
+
+init().catch((error) => {
+  document.body.insertAdjacentHTML("afterbegin", `<div class="load-error">Unable to load portal data: ${error.message}</div>`);
 });
-
-renderFilters();
-render();
-
-window.publicSocietyData = publicData;

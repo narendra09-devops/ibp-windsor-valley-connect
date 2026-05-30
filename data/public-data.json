@@ -1,0 +1,220 @@
+{
+  "society": {
+    "name": "IBP Windsor Valley Welfare Society",
+    "status": "Under-development residential society",
+    "blocks": ["A", "B", "C", "D", "E", "F", "G", "H"],
+    "lastUpdated": "30 May 2026",
+    "summary": "Public management portal for RWA operations, resident directory, utilities, maintenance, security, documents, notices, and reports."
+  },
+  "properties": [
+    {"block":"A","house":"A-01","resident":"Sanjeev Pande","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"A","house":"A-02","resident":"Saumuya","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"A","house":"A-03","resident":"Pooja","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"A","house":"A-04","resident":"Biswajeet","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"A","house":"A-05","resident":"Atul","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"A","house":"A-06","resident":"Umesh M","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"A","house":"A-07","resident":"Prabhu Dayal","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"A","house":"A-08","resident":"Harsh Mangal","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Own Submersible"},
+    {"block":"B","house":"B-01","resident":"Rajnish Kumar","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"B","house":"B-02","resident":"Manish","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"B","house":"B-03","resident":"Narendra Pratap Singh","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"B","house":"B-04","resident":"Nitesh Mulgali","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"B","house":"B-05","resident":"Nimesh","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Own Submersible"},
+    {"block":"B","house":"B-06","resident":"Nitesh","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"B","house":"B-07","resident":"Vasanth Gurude","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"B","house":"B-08","resident":"Narendra Vats","occupancy":"Occupied","ownership":"Owner","rwaMember":false,"waterSource":"Common"},
+    {"block":"B","house":"B-09","resident":"Sanjay Rastogi","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"B","house":"B-10","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"B","house":"B-11","resident":"Avinash Singh","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"B","house":"B-12","resident":"Hardik Mudgal","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"C","house":"C-01","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"C","house":"C-02","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"C","house":"C-03","resident":"Roshan Kumar","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"C","house":"C-04","resident":"Ravi Ranjan","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"C","house":"C-05","resident":"Nitin Arora","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"C","house":"C-06","resident":"Dhruv Tripathi","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"C","house":"C-07","resident":"Resident details pending","occupancy":"Under Construction","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"C","house":"C-08","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"C","house":"C-09","resident":"Resident details pending","occupancy":"Dispute/Pending Issue","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"C","house":"C-10","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"C","house":"C-11","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"C","house":"C-12","resident":"Resident details pending","occupancy":"Under Construction","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"D","house":"D-01","resident":"Ashish Rai","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"D","house":"D-02","resident":"Ram Krishna Gautam","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"D","house":"D-03","resident":"Ashok Yadav","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"D","house":"D-04","resident":"Pradeep Kumar","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"D","house":"D-05","resident":"Krishana Mishara","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"D","house":"D-06","resident":"Shiv Ram Tathagat","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"E","house":"E-01","resident":"Gautam Kumar","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"E","house":"E-02","resident":"Rakesh Singh","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Common"},
+    {"block":"E","house":"E-03","resident":"Anuj","occupancy":"Rented","ownership":"Tenant","rwaMember":false,"waterSource":"Common"},
+    {"block":"E","house":"E-04","resident":"Deepak","occupancy":"Occupied","ownership":"Owner","rwaMember":true,"waterSource":"Own Submersible"},
+    {"block":"E","house":"E-05","resident":"Resident details pending","occupancy":"Under Construction","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"E","house":"E-06","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-01","resident":"Resident details pending","occupancy":"Under Construction","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-02","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-03","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-04","resident":"Resident details pending","occupancy":"Under Construction","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-05","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-06","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-07","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-08","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-09","resident":"Resident details pending","occupancy":"Dispute/Pending Issue","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"F","house":"F-10","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-01","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-02","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-03","resident":"Resident details pending","occupancy":"Under Construction","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-04","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-05","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-06","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-07","resident":"Resident details pending","occupancy":"Dispute/Pending Issue","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-08","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-09","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"G","house":"G-10","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"H","house":"H-01","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"H","house":"H-02","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"H","house":"H-03","resident":"Resident details pending","occupancy":"Under Construction","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"H","house":"H-04","resident":"Resident details pending","occupancy":"Builder Pending","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"H","house":"H-05","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"},
+    {"block":"H","house":"H-06","resident":"Resident details pending","occupancy":"Vacant Plot","ownership":"Pending","rwaMember":false,"waterSource":"Not Connected"}
+  ],
+  "rwa": {
+    "officeBearers": [
+      {"name":"Rakesh Singh","post":"President"},
+      {"name":"Dhruv Tripathi","post":"Vice President"},
+      {"name":"Narendra Pratap Singh","post":"Secretary"},
+      {"name":"Avinash Singh","post":"Treasurer"}
+    ],
+    "executiveMembers": ["Aasheesh Kumar Rai", "Hardik Mudgal", "Vandana Kumari", "Shiv Ram Tathagat"],
+    "blockCoordinators": [
+      {"block":"A","name":"Sanjeev Pande"},
+      {"block":"B","name":"Narendra Pratap Singh"},
+      {"block":"C","name":"Dhruv Tripathi"},
+      {"block":"D","name":"Ashish Rai"},
+      {"block":"E","name":"Rakesh Singh"},
+      {"block":"F","name":"To be assigned"},
+      {"block":"G","name":"To be assigned"},
+      {"block":"H","name":"To be assigned"}
+    ],
+    "agm": {"date":"2026-07-14","agenda":"Accounts approval, utility plan, maintenance collection and block coordinator review"},
+    "meetingSchedule": [
+      {"date":"2026-06-08","title":"Monthly RWA Review","status":"Scheduled"},
+      {"date":"2026-06-22","title":"Maintenance Vendor Review","status":"Scheduled"},
+      {"date":"2026-07-14","title":"Annual General Meeting","status":"Planned"}
+    ]
+  },
+  "maintenance": {
+    "monthlyCollections": [
+      {"house":"A-01","resident":"Sanjeev Pande","month":"May 2026","amount":1000,"status":"Paid"},
+      {"house":"A-02","resident":"Saumuya","month":"May 2026","amount":1000,"status":"Paid"},
+      {"house":"B-03","resident":"Narendra Pratap Singh","month":"May 2026","amount":1000,"status":"Paid"},
+      {"house":"B-08","resident":"Narendra Vats","month":"May 2026","amount":1000,"status":"Pending"},
+      {"house":"C-03","resident":"Roshan Kumar","month":"May 2026","amount":1000,"status":"Paid"},
+      {"house":"E-03","resident":"Anuj","month":"May 2026","amount":1000,"status":"Pending"}
+    ],
+    "expenses": [
+      {"date":"2026-05-28","category":"Water motor repair","amount":4800,"paidTo":"Motor Service Vendor","status":"Pending"},
+      {"date":"2026-05-24","category":"Sweeper payment","amount":8500,"paidTo":"Cleaning Staff","status":"Paid"},
+      {"date":"2026-05-20","category":"Street light repair","amount":3450,"paidTo":"Electrical Store","status":"Paid"},
+      {"date":"2026-05-18","category":"Security payment","amount":18000,"paidTo":"Security Agency","status":"Paid"},
+      {"date":"2026-05-16","category":"Common electricity","amount":7900,"paidTo":"NPCL Recharge","status":"Paid"},
+      {"date":"2026-05-12","category":"Plumbing","amount":2100,"paidTo":"Plumber","status":"Paid"}
+    ],
+    "workHistory": [
+      {"date":"2026-05-30","task":"Street light audit","category":"Street light repair","block":"E-F","status":"In Progress"},
+      {"date":"2026-05-29","task":"Main pump vibration inspection","category":"Water motor repair","block":"C","status":"Assigned"},
+      {"date":"2026-05-27","task":"Parking lane debris removal","category":"Road/Parking issues","block":"D","status":"Resolved"}
+    ],
+    "vendorBills": [
+      {"vendor":"Security Agency","bill":"May security duty","amount":18000,"status":"Paid"},
+      {"vendor":"Electrical Store","bill":"LED street light parts","amount":3450,"status":"Paid"},
+      {"vendor":"Motor Service Vendor","bill":"Pump repair estimate","amount":4800,"status":"Pending"}
+    ]
+  },
+  "utilities": [
+    {"name":"Common water system","status":"Working","owner":"Maintenance Helpdesk","note":"Morning and evening tank refill monitoring"},
+    {"name":"Private submersible records","status":"Recorded","owner":"Block Coordinators","note":"Only public count shown; private owner details restricted"},
+    {"name":"Water tank records","status":"Planned","owner":"Maintenance Helpdesk","note":"Next cleaning schedule to be published"},
+    {"name":"Pipeline issues","status":"Open","owner":"Plumber","note":"Block B drain and pipeline inspection"},
+    {"name":"Street lights","status":"In Progress","owner":"Electrician","note":"Three lights inactive between E and F"},
+    {"name":"Common electricity","status":"Live","owner":"Treasurer","note":"NPCL prepaid recharge tracking enabled"},
+    {"name":"NPCL meter details","status":"Placeholder","owner":"Treasurer","note":"Consumer no. shown with masked account data"},
+    {"name":"CCTV camera status","status":"Planned","owner":"Security Desk","note":"Gate and main road coverage proposal"},
+    {"name":"Sewage line status","status":"Open","owner":"Maintenance Helpdesk","note":"Inspection behind Block B"},
+    {"name":"Garbage collection","status":"Working","owner":"Sweeper Team","note":"Daily morning pickup"}
+  ],
+  "complaints": [
+    {"id":"CMP-001","category":"Water","title":"Low water pressure near Block C","house":"C-05","status":"Assigned","assignedTo":"Plumber","history":["Opened by resident","Assigned to plumber"]},
+    {"id":"CMP-002","category":"Electricity","title":"Street light not working","house":"E-02","status":"In Progress","assignedTo":"Electrician","history":["Reported at gate","Parts purchased"]},
+    {"id":"CMP-003","category":"Security","title":"Night patrol log missing","house":"Gate","status":"Open","assignedTo":"Security Supervisor","history":["Opened by RWA"]},
+    {"id":"CMP-004","category":"Cleaning","title":"Construction debris in lane","house":"D-04","status":"Resolved","assignedTo":"Sweeper Team","history":["Assigned","Cleaned","Verified"]},
+    {"id":"CMP-005","category":"Builder Pending","title":"Builder handover pending","house":"F-05","status":"Open","assignedTo":"RWA Core Team","history":["Added to builder follow-up list"]}
+  ],
+  "security": {
+    "entries": [
+      {"type":"Visitor","name":"Neha Guest","house":"E-02","entry":"11:05 AM","exit":"-","purpose":"Guest","guard":"Mahesh","vehicle":"DL8C **** 87"},
+      {"type":"Delivery","name":"Amit Courier","house":"A-01","entry":"09:10 AM","exit":"09:22 AM","purpose":"Delivery","guard":"Mahesh","vehicle":"UP16 **** 42"},
+      {"type":"Worker","name":"Site Worker","house":"F-04","entry":"08:45 AM","exit":"-","purpose":"Worker","guard":"Mahesh","vehicle":"Private"},
+      {"type":"Vehicle","name":"Deepak Vendor","house":"D-01","entry":"10:35 AM","exit":"-","purpose":"Vendor","guard":"Mahesh","vehicle":"HR26 **** 19"}
+    ],
+    "gatePassRecords": [
+      {"pass":"GP-1001","house":"D-01","purpose":"Vendor work","validTill":"2026-06-02","status":"Active"},
+      {"pass":"GP-1002","house":"F-04","purpose":"Construction labour","validTill":"2026-06-01","status":"Active"}
+    ]
+  },
+  "workers": [
+    {"name":"Mahesh","role":"Security Guard","attendance":"Present","shift":"08:00 AM - 08:00 PM","area":"Main Gate","paymentStatus":"Paid"},
+    {"name":"Pooja","role":"Sweeper","attendance":"Present","shift":"07:00 AM - 11:00 AM","area":"Blocks A-C","paymentStatus":"Paid"},
+    {"name":"Ramesh","role":"Electrician","attendance":"Absent","shift":"On Call","area":"All Blocks","paymentStatus":"Pending"},
+    {"name":"Iqbal","role":"Plumber","attendance":"Present","shift":"10:00 AM - 04:00 PM","area":"Blocks D-H","paymentStatus":"Paid"},
+    {"name":"Sohan","role":"Carpenter","attendance":"Absent","shift":"On Call","area":"Club Office","paymentStatus":"Pending"},
+    {"name":"Biren","role":"Labour","attendance":"Present","shift":"09:00 AM - 05:00 PM","area":"Block D","paymentStatus":"Paid"},
+    {"name":"Arun","role":"Technician","attendance":"Present","shift":"11:00 AM - 06:00 PM","area":"Water Plant","paymentStatus":"Paid"}
+  ],
+  "documents": [
+    {"title":"Registration Certificate","type":"Registration","access":"Public","status":"Available","link":"assets/documents/RWA_Windsor_Valley_Certificate.pdf"},
+    {"title":"PAN","type":"Tax","access":"Private","status":"Restricted","link":""},
+    {"title":"Bylaws","type":"Governance","access":"Private","status":"Restricted","link":""},
+    {"title":"MOA","type":"Governance","access":"Private","status":"Restricted","link":""},
+    {"title":"AGM Minutes","type":"Meeting","access":"Private","status":"Restricted","link":""},
+    {"title":"Meeting Minutes","type":"Meeting","access":"Private","status":"Restricted","link":""},
+    {"title":"Vendor Contracts","type":"Vendor","access":"Private","status":"Restricted","link":""},
+    {"title":"Bills/Invoices","type":"Accounts","access":"Private","status":"Restricted","link":""},
+    {"title":"Government Authority Letters","type":"Authority","access":"Private","status":"Restricted","link":""},
+    {"title":"NPCL Recharge Manual","type":"Utility","access":"Public","status":"Available","link":"assets/documents/Prepaid_recharge_manual.pdf"}
+  ],
+  "notices": [
+    {"date":"2026-05-30","type":"Maintenance","title":"Monthly maintenance collection due by 7 June","priority":"High"},
+    {"date":"2026-05-29","type":"RWA","title":"Block coordinators to verify pending plots","priority":"Medium"},
+    {"date":"2026-05-28","type":"Emergency","title":"Report water motor noise immediately to helpdesk","priority":"High"},
+    {"date":"2026-05-25","type":"AGM","title":"AGM agenda draft published for review","priority":"Medium"},
+    {"date":"2026-05-22","type":"Event","title":"Community event photo/video folder placeholder added","priority":"Low"}
+  ],
+  "whatsapp": [
+    {"title":"Residents Group","url":"https://wa.me/"},
+    {"title":"RWA Core Team","url":"https://wa.me/"},
+    {"title":"Security","url":"https://wa.me/"},
+    {"title":"Maintenance Helpdesk","url":"https://wa.me/"}
+  ],
+  "reports": [
+    {"title":"Monthly collection report","summary":"Expected INR 70,000, received INR 52,000, pending INR 18,000"},
+    {"title":"Pending dues report","summary":"B-08 and E-03 pending for May sample data"},
+    {"title":"Expense report","summary":"Recent expenses include security, sweeper, common electricity and street light repair"},
+    {"title":"Complaint report","summary":"Open and in-progress complaints grouped by category and assignee"},
+    {"title":"Worker attendance report","summary":"5 workers present today, 2 absent/on-call"},
+    {"title":"Visitor report","summary":"4 sample gate entries with masked vehicle numbers"},
+    {"title":"Block-wise occupancy report","summary":"Blocks A-D mostly occupied; F-H mostly pending/vacant"},
+    {"title":"RWA membership report","summary":"Member, non-member and pending membership counts derived from public property data"}
+  ],
+  "help": [
+    {"name":"Security","contact":"Placeholder","instruction":"Call gate desk for visitor, delivery, vendor or emergency entry support."},
+    {"name":"Electrician","contact":"Placeholder","instruction":"Report common light, panel, wiring or meter issues."},
+    {"name":"Plumber","contact":"Placeholder","instruction":"Report water motor, pipeline, leakage and sewage issues."},
+    {"name":"Sweeper","contact":"Placeholder","instruction":"Report cleaning, garbage or construction debris issues."},
+    {"name":"Police","contact":"112","instruction":"Use only for emergency or law-and-order support."},
+    {"name":"Fire","contact":"101","instruction":"Raise fire or electrical hazard emergency immediately."},
+    {"name":"Ambulance","contact":"108","instruction":"Medical emergency support."},
+    {"name":"Nearby Hospital","contact":"Placeholder","instruction":"Nearest hospital details to be verified."},
+    {"name":"NPCL/Electricity","contact":"Placeholder","instruction":"Use NPCL portal/manual for prepaid recharge and power support."}
+  ]
+}
