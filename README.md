@@ -7,6 +7,10 @@ A static, mobile-responsive society dashboard for an under-development residenti
 - Interactive society overview dashboard for Blocks A to H.
 - Block-wise property status with plot/house number, occupancy status, RWA membership, occupant label, and water source.
 - Maintenance tracker for water motor repair, street lights, sewage, cleaning, security, common electricity, and expense history.
+- Monthly maintenance records with expected collection, received money, pending amount, expenses, and closing balance.
+- Payment collection register with house, resident, month, amount, mode, and payment status.
+- Masked IBP RWA bank account details for public payment guidance.
+- Licence, policy documents, and gate pass entry rules.
 - Worker attendance for security guard, sweeper, electrician, plumber, carpenter, labour, and technician roles.
 - Visitor and vehicle attendance with purpose categories for guest, delivery, worker, and vendor.
 - WhatsApp Connect page buttons for society group, security, RWA core team, and maintenance helpdesk.
@@ -25,6 +29,8 @@ The public dashboard does not display mobile numbers, email IDs, full vehicle nu
 
 Public data is stored in `publicData` inside `js/app.js`. Future login-only fields are represented separately in `privateData`, but real private values should stay outside GitHub Pages until authentication exists.
 
+Bank account details in the public site are masked demo details. Replace them only after confirming what should be publicly visible.
+
 ## Running Locally
 
 Open `index.html` in a browser. No backend or package installation is required.
@@ -35,5 +41,5 @@ For GitHub Pages, publish the repository root or `/docs` only if these files are
 
 - `index.html` - dashboard layout and module sections.
 - `css/style.css` - responsive visual design, cards, tables, charts, and badges.
-- `js/app.js` - dummy JSON data, filters, search, metrics, and rendering.
+- `js/app.js` - resident-derived public data, dummy finance records, filters, search, metrics, and rendering.
 - `manifest.json` - basic PWA metadata.

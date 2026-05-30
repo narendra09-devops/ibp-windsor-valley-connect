@@ -10,10 +10,16 @@
 </head>
 <body>
   <header class="app-header">
-    <div>
-      <p class="eyebrow">Under-development society dashboard</p>
-      <h1>IBP Windsor Valley Connect</h1>
-      <p class="header-copy">Public coordination view for blocks, plots, maintenance, workers, visitors, vehicles, and society help channels.</p>
+    <div class="brand-hero">
+      <div class="brand-logo" aria-label="IBP RWA logo">
+        <span>IBP</span>
+        <small>RWA</small>
+      </div>
+      <div>
+        <p class="eyebrow">Resident welfare portal</p>
+        <h1>IBP Windsor Valley Connect</h1>
+        <p class="header-copy">Colorful public dashboard for plots, maintenance, gate entries, policies, monthly collections, payments, and RWA coordination.</p>
+      </div>
     </div>
     <div class="header-actions" aria-label="Dashboard quick filters">
       <label class="search-field">
@@ -111,6 +117,78 @@
           </thead>
           <tbody id="expenseRows"></tbody>
         </table>
+      </div>
+    </section>
+
+    <section class="finance-band" aria-labelledby="financeTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Monthly accounts</p>
+          <h2 id="financeTitle">Maintenance Records & Payments</h2>
+        </div>
+        <span id="financeMonthLabel" class="soft-pill"></span>
+      </div>
+      <div id="financeCards" class="finance-grid"></div>
+      <div class="visual-grid">
+        <article class="panel account-panel">
+          <div class="panel-title">
+            <h3>IBP RWA Bank Account</h3>
+            <span class="soft-pill">Public masked view</span>
+          </div>
+          <div id="bankAccountDetails" class="bank-grid"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-title">
+            <h3>Collection Status</h3>
+            <span class="soft-pill">Current month</span>
+          </div>
+          <div id="collectionChart" class="bar-chart" aria-label="Payment collection chart"></div>
+        </article>
+      </div>
+      <div class="table-shell compact">
+        <table>
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Expected</th>
+              <th>Received</th>
+              <th>Pending</th>
+              <th>Expenses</th>
+              <th>Closing Balance</th>
+            </tr>
+          </thead>
+          <tbody id="monthlyFinanceRows"></tbody>
+        </table>
+      </div>
+      <div class="table-shell compact">
+        <table>
+          <thead>
+            <tr>
+              <th>House</th>
+              <th>Resident</th>
+              <th>Month</th>
+              <th>Amount</th>
+              <th>Mode</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="paymentRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="policy-band" aria-labelledby="policyTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Documents and compliance</p>
+          <h2 id="policyTitle">Licence, Policies & Gate Pass Rules</h2>
+        </div>
+        <span class="soft-pill">Public document index</span>
+      </div>
+      <div id="documentCards" class="document-grid"></div>
+      <div class="rules-panel">
+        <h3>Gate Pass Entry Rules</h3>
+        <ol id="gateRuleList"></ol>
       </div>
     </section>
 
