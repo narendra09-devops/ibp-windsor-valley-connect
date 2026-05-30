@@ -125,6 +125,22 @@ const publicData = {
     upi: "ppr.18882.20072024.00714042@cnrb",
     note: "Use the QR/UPI for society maintenance payments. Mention house number and month in payment remarks."
   },
+  npclAccount: [
+    ["Consumer No", "2000270949"],
+    ["Name", "IN**A BR***S PR*****T"],
+    ["C/O", "C/O Devendra Patil"],
+    ["Premises Address", "Plot-22 & 25, IBP Windsor Valley, Baidpura"],
+    ["Mobile No", "99*****333"],
+    ["Email ID", "VI**8@GMAIL.COM"],
+    ["Contract No", "1240117"],
+    ["Contract A/C", "315563"],
+    ["Current Status", "LIVE"],
+    ["Contractual Load", "10 KW"],
+    ["Voltage", "440"],
+    ["Tariff", "Q10U"],
+    ["Group", "PP01"],
+    ["Due Date", "N/A"]
+  ],
   layoutBlocks: [
     { block: "A", title: "Block-A", plots: ["Commercial", "A-01", "A-02", "A-03", "A-04", "A-05", "A-06", "A-07", "A-08", "Other Plots"], className: "layout-a" },
     { block: "B", title: "Block-B", plots: ["B-01", "B-02", "B-03", "B-04", "B-05", "B-06", "B-07", "B-08", "B-09", "B-10", "B-11", "B-12"], className: "layout-b" },
@@ -162,6 +178,16 @@ const publicData = {
     { title: "Diwali Celebration", date: "November 2026", type: "Festival", media: "Photos", summary: "Lighting, rangoli, diya decoration, sweets, and family group photos.", theme: "diwali" },
     { title: "Jagran Program", date: "October 2026", type: "Cultural", media: "Video", summary: "Evening devotional program, stage setup, prasad distribution, and community gathering.", theme: "jagran" },
     { title: "RWA Monthly Meeting", date: "Monthly", type: "Meeting", media: "Minutes + Photos", summary: "Maintenance review, payment collection update, open issues, and next action list.", theme: "meeting" }
+  ],
+  rwaTeam: [
+    { name: "Rakesh Singh", fatherName: "Dhananjay Singh", address: "Khasra No-323, Windsor Valley, Vaidpur, Gautam Buddha Nagar", mobile: "77770*****", occupation: "IT Professional", designation: "President" },
+    { name: "Dhruv Tripathi", fatherName: "Phool Dev Tripathi", address: "House No C-6, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "83681*****", occupation: "Business", designation: "Vice President" },
+    { name: "Narendra Pratap Singh", fatherName: "Ravindra Pratap Singh", address: "B-3, Windsor Valley, Vaidpura, Gautam Buddha Nagar, UP", mobile: "96658*****", occupation: "IT Professional", designation: "Secretary" },
+    { name: "Aasheesh Kumar Rai", fatherName: "Pyare Lal Rai", address: "D-5, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "96505*****", occupation: "IT Professional", designation: "Joint Secretary" },
+    { name: "Avinash Singh", fatherName: "Kamlesh Singh", address: "B-11, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "91670*****", occupation: "IT Professional", designation: "Treasurer" },
+    { name: "Hardik Mudgal", fatherName: "Govind Mudgal", address: "B-12, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "97184*****", occupation: "IT Professional", designation: "Executive Member" },
+    { name: "Vandana Kumari", fatherName: "Vijay Kumar", address: "C-3, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "93549*****", occupation: "IT Professional", designation: "Executive Member" },
+    { name: "Shiv Ram Tathagat", fatherName: "Anugrah Narayan Singh", address: "Khasra No-323, Windsor Valley Vaidpura, Gautam Buddha Nagar", mobile: "85788*****", occupation: "Private Job", designation: "Executive Member" }
   ],
   gateRules: [
     "Every visitor must share name, visiting house, purpose, entry time, and exit time at the gate.",
@@ -226,9 +252,11 @@ const elements = {
   documentCards: document.querySelector("#documentCards"),
   gateRuleList: document.querySelector("#gateRuleList"),
   upiDetails: document.querySelector("#upiDetails"),
+  npclDetails: document.querySelector("#npclDetails"),
   layoutBlocks: document.querySelector("#layoutBlocks"),
   locationNotes: document.querySelector("#locationNotes"),
   eventCards: document.querySelector("#eventCards"),
+  teamCards: document.querySelector("#teamCards"),
   lastUpdated: document.querySelector("#lastUpdated"),
   propertyTotalLabel: document.querySelector("#propertyTotalLabel"),
   openIssueLabel: document.querySelector("#openIssueLabel")
@@ -465,6 +493,15 @@ function renderFinance() {
   `).join("");
 }
 
+function renderNpcl() {
+  elements.npclDetails.innerHTML = publicData.npclAccount.map(([label, value]) => `
+    <div>
+      <strong>${label}</strong>
+      <span>${value}</span>
+    </div>
+  `).join("");
+}
+
 function renderDocuments() {
   elements.documentCards.innerHTML = publicData.documents.filter(matchesQuery).map((documentItem) => `
     <article class="document-card">
@@ -482,6 +519,24 @@ function renderDocuments() {
   `).join("");
 
   elements.gateRuleList.innerHTML = publicData.gateRules.map((rule) => `<li>${rule}</li>`).join("");
+}
+
+function renderTeam() {
+  elements.teamCards.innerHTML = publicData.rwaTeam.map((member) => `
+    <article class="team-card">
+      <div class="team-avatar">${member.name.split(" ").map((part) => part[0]).slice(0, 2).join("")}</div>
+      <div>
+        <span class="team-role">${member.designation}</span>
+        <h3>${member.name}</h3>
+        <p>${member.occupation}</p>
+        <dl>
+          <div><dt>Father Name</dt><dd>${member.fatherName}</dd></div>
+          <div><dt>Address</dt><dd>${member.address}</dd></div>
+          <div><dt>Mobile</dt><dd>${member.mobile}</dd></div>
+        </dl>
+      </div>
+    </article>
+  `).join("");
 }
 
 function renderLayout() {
@@ -550,7 +605,9 @@ function render() {
   renderProperties();
   renderMaintenance();
   renderFinance();
+  renderNpcl();
   renderDocuments();
+  renderTeam();
   renderLayout();
   renderEvents();
   renderWorkers();

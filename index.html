@@ -36,6 +36,16 @@
   </header>
 
   <main>
+    <nav class="portal-tabs" aria-label="Portal quick links">
+      <a href="#overviewTitle">Overview</a>
+      <a href="#financeTitle">Payments</a>
+      <a href="#npclTitle">NPCL Meter</a>
+      <a href="#certificateTitle">RWA Certificate</a>
+      <a href="#teamTitle">RWA Team</a>
+      <a href="#layoutTitle">Layout</a>
+      <a href="#eventsTitle">Events</a>
+    </nav>
+
     <section class="summary-band" aria-labelledby="overviewTitle">
       <div class="section-heading">
         <div>
@@ -200,6 +210,31 @@
       </div>
     </section>
 
+    <section class="npcl-band" aria-labelledby="npclTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Common electricity recharge</p>
+          <h2 id="npclTitle">NPCL Prepaid Meter Account</h2>
+        </div>
+        <div class="section-actions">
+          <a class="doc-link" href="assets/documents/Prepaid_recharge_manual.pdf" target="_blank" rel="noreferrer">Recharge Manual</a>
+          <a class="doc-link alt" href="assets/images/Prepaid-meter-Account-details.png" target="_blank" rel="noreferrer">View Screenshot</a>
+        </div>
+      </div>
+      <div class="npcl-grid">
+        <article class="panel npcl-card">
+          <img class="npcl-shot" src="assets/images/Prepaid-meter-Account-details.png" alt="NPCL prepaid meter common account details">
+        </article>
+        <article class="panel">
+          <div class="panel-title">
+            <h3>Recharge Details</h3>
+            <span class="soft-pill">Public masked view</span>
+          </div>
+          <div id="npclDetails" class="bank-grid detail-colors"></div>
+        </article>
+      </div>
+    </section>
+
     <section class="layout-band" aria-labelledby="layoutTitle">
       <div class="section-heading">
         <div>
@@ -240,6 +275,30 @@
         <span class="soft-pill">Holi, Diwali, Jagran and more</span>
       </div>
       <div id="eventCards" class="event-grid"></div>
+    </section>
+
+    <section class="certificate-band" aria-labelledby="certificateTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Registration document</p>
+          <h2 id="certificateTitle">IBP Windsor Valley RWA Registration Certificate</h2>
+        </div>
+        <a class="doc-link" href="assets/documents/RWA_Windsor_Valley_Certificate.pdf" target="_blank" rel="noreferrer">Open Certificate PDF</a>
+      </div>
+      <div class="certificate-frame">
+        <iframe src="assets/documents/RWA_Windsor_Valley_Certificate.pdf" title="RWA Windsor Valley certificate"></iframe>
+      </div>
+    </section>
+
+    <section class="team-band" aria-labelledby="teamTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Know your RWA</p>
+          <h2 id="teamTitle">IBP Windsor Valley RWA Team</h2>
+        </div>
+        <span class="soft-pill">Mobile numbers masked</span>
+      </div>
+      <div id="teamCards" class="team-grid"></div>
     </section>
 
     <section class="split-band">

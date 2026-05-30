@@ -161,16 +161,67 @@ main {
   padding: 24px clamp(16px, 4vw, 56px) 34px;
 }
 
+.portal-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.portal-tabs a {
+  flex: 0 0 auto;
+  min-height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+  padding: 9px 14px;
+}
+
+.portal-tabs a:nth-child(2) {
+  background: linear-gradient(135deg, var(--green), var(--teal));
+}
+
+.portal-tabs a:nth-child(3) {
+  background: linear-gradient(135deg, var(--amber), var(--red));
+}
+
+.portal-tabs a:nth-child(4) {
+  background: linear-gradient(135deg, var(--rose), var(--purple));
+}
+
+.portal-tabs a:nth-child(5) {
+  background: linear-gradient(135deg, #132b46, var(--blue));
+}
+
 .summary-band,
 .content-band,
 .whatsapp-band,
 .finance-band,
-.policy-band {
+.policy-band,
+.npcl-band,
+.certificate-band,
+.team-band {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
   padding: clamp(16px, 3vw, 26px);
+}
+
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .section-heading,
@@ -544,6 +595,10 @@ tbody tr:last-child td {
   cursor: pointer;
 }
 
+.doc-link.alt {
+  background: linear-gradient(135deg, var(--amber), var(--red));
+}
+
 .copy-chip {
   justify-content: flex-start;
   background: linear-gradient(135deg, var(--blue), var(--teal));
@@ -601,6 +656,141 @@ tbody tr:last-child td {
   gap: 8px;
   margin: 12px 0 0;
   padding-left: 22px;
+}
+
+.npcl-band {
+  background: linear-gradient(180deg, #fff, #edf7ff);
+}
+
+.npcl-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(320px, 1.15fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.npcl-card {
+  background: linear-gradient(180deg, #fff8df, #ffffff);
+}
+
+.npcl-shot {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.detail-colors div:nth-child(4n + 1) {
+  border-left: 5px solid var(--blue);
+}
+
+.detail-colors div:nth-child(4n + 2) {
+  border-left: 5px solid var(--green);
+}
+
+.detail-colors div:nth-child(4n + 3) {
+  border-left: 5px solid var(--amber);
+}
+
+.detail-colors div:nth-child(4n + 4) {
+  border-left: 5px solid var(--rose);
+}
+
+.certificate-band {
+  background: linear-gradient(180deg, #fff, #f6f0ff);
+}
+
+.certificate-frame {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  min-height: 620px;
+}
+
+.certificate-frame iframe {
+  width: 100%;
+  height: 620px;
+  border: 0;
+}
+
+.team-band {
+  background: linear-gradient(180deg, #ffffff, #eefbf8);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 14px;
+  border-top: 4px solid var(--teal);
+  box-shadow: 0 12px 26px rgba(30, 35, 45, 0.08);
+}
+
+.team-card:nth-child(3n + 2) {
+  border-top-color: var(--amber);
+}
+
+.team-card:nth-child(3n + 3) {
+  border-top-color: var(--rose);
+}
+
+.team-avatar {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: #fff;
+  font-weight: 900;
+}
+
+.team-role {
+  display: inline-flex;
+  margin-bottom: 6px;
+  border-radius: 999px;
+  background: #fff2c2;
+  color: #81500b;
+  font-size: 0.75rem;
+  font-weight: 900;
+  padding: 4px 8px;
+}
+
+.team-card p {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.team-card dl {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.team-card dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.team-card dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .layout-band,
@@ -947,7 +1137,8 @@ footer span {
   .split-band,
   .whatsapp-band,
   .finance-band .visual-grid,
-  .layout-grid {
+  .layout-grid,
+  .npcl-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1013,5 +1204,15 @@ footer span {
 
   .event-grid {
     grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-frame,
+  .certificate-frame iframe {
+    min-height: 460px;
+    height: 460px;
   }
 }
