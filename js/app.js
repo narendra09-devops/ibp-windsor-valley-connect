@@ -9,6 +9,10 @@ const state = {
   eventStatus: "all"
 };
 
+if (location.hash === "#help") {
+  location.replace("emergency-services.html");
+}
+
 const selectors = {
   search: "#globalSearch",
   block: "#blockFilter",
