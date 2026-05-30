@@ -1,0 +1,30 @@
+{
+  "privacyNotice": "Sample structure only. Do not publish real resident phone numbers, emails, Aadhaar, family details, full vehicle numbers, or private documents in the public app.",
+  "residentPrivateRecords": [
+    {
+      "house": "A-01",
+      "mobile": "PRIVATE_LOGIN_ONLY",
+      "email": "PRIVATE_LOGIN_ONLY",
+      "familyDetails": "PRIVATE_LOGIN_ONLY",
+      "vehicles": ["PRIVATE_LOGIN_ONLY"],
+      "documents": ["PRIVATE_LOGIN_ONLY"]
+    }
+  ],
+  "workerPrivateRecords": [
+    {
+      "name": "Mahesh",
+      "mobile": "PRIVATE_LOGIN_ONLY",
+      "identityDocument": "PRIVATE_LOGIN_ONLY"
+    }
+  ],
+  "privateDocuments": [
+    "PAN",
+    "Bylaws",
+    "MOA",
+    "AGM minutes",
+    "Meeting minutes",
+    "Vendor contracts",
+    "Bills/invoices",
+    "Government authority letters"
+  ]
+}

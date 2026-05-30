@@ -3,136 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="IBP Windsor Valley Connect society dashboard for property, maintenance, worker, visitor, and WhatsApp coordination.">
-  <title>IBP Windsor Valley Connect</title>
+  <meta name="description" content="IBP Windsor Valley Welfare Society static management portal for RWA, residents, maintenance, utilities, security, documents, notices and reports.">
+  <meta name="theme-color" content="#132b46">
+  <title>IBP Windsor Valley Welfare Society</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/images/ibp-windsor-valley-logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header id="home" class="app-header">
-    <div class="brand-hero">
-      <div class="brand-logo" aria-label="IBP RWA logo">
-        <img src="assets/images/ibp-windsor-valley-logo.svg" alt="IBP Windsor Valley RWA logo">
-      </div>
+  <header id="dashboard" class="hero">
+    <div class="brand-lockup">
+      <img src="assets/images/ibp-windsor-valley-logo.svg" alt="IBP Windsor Valley Welfare Society logo">
       <div>
-        <p class="eyebrow">Resident welfare portal</p>
-        <h1>IBP Windsor Valley Connect</h1>
-        <p class="header-copy">Colorful public dashboard for plots, maintenance, gate entries, policies, monthly collections, payments, and RWA coordination.</p>
+        <p class="eyebrow">Static society management portal</p>
+        <h1>IBP Windsor Valley Welfare Society</h1>
+        <p class="hero-copy">Practical public dashboard for RWA operations, residents, maintenance, utilities, complaints, security, workers, documents, notices and reports.</p>
       </div>
     </div>
-    <div class="header-actions" aria-label="Dashboard quick filters">
-      <label class="search-field">
-        <span>Search</span>
-        <input id="globalSearch" type="search" placeholder="House, owner, issue, worker...">
+    <div class="hero-tools">
+      <label>
+        <span>Search portal</span>
+        <input id="globalSearch" type="search" placeholder="Search house, issue, worker, notice...">
       </label>
-      <label class="select-field">
+      <label>
         <span>Block</span>
-        <select id="blockFilter" aria-label="Filter by block">
+        <select id="blockFilter">
           <option value="all">All Blocks</option>
         </select>
       </label>
     </div>
   </header>
 
+  <nav class="app-nav" aria-label="Society portal navigation">
+    <a href="#dashboard">Dashboard</a>
+    <a href="#society">Society</a>
+    <a href="#residents">Residents</a>
+    <a href="#rwa">RWA</a>
+    <a href="#maintenance">Maintenance</a>
+    <a href="#utilities">Utilities</a>
+    <a href="#complaints">Complaints</a>
+    <a href="#security">Security</a>
+    <a href="#workers">Workers</a>
+    <a href="#documents">Documents</a>
+    <a href="#notices">Notices</a>
+    <a href="#reports">Reports</a>
+    <a href="#help">Help</a>
+  </nav>
+
   <main>
-    <nav class="portal-tabs" aria-label="Portal quick links">
-      <a href="#home">Home</a>
-      <a href="#aboutTitle">About RWA</a>
-      <a href="#propertyTitle">Residents</a>
-      <a href="#maintenanceTitle">Maintenance</a>
-      <a href="#financeTitle">Payments</a>
-      <a href="#commonTitle">Utilities</a>
-      <a href="#policyTitle">Gate Pass</a>
-      <a href="#certificateTitle">Documents</a>
-      <a href="#teamTitle">Team</a>
-      <a href="#layoutTitle">Layout</a>
-      <a href="#eventsTitle">Events</a>
-      <a href="#helplineTitle">Helpline</a>
-    </nav>
-
-    <section class="summary-band" aria-labelledby="overviewTitle">
-      <div class="section-heading">
+    <section class="module dashboard-module" aria-labelledby="dashboardTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Live snapshot</p>
-          <h2 id="overviewTitle">Society Overview</h2>
+          <p class="eyebrow">Live overview</p>
+          <h2 id="dashboardTitle">Dashboard</h2>
         </div>
-        <span id="lastUpdated" class="soft-pill"></span>
+        <span id="lastUpdated" class="pill"></span>
       </div>
-      <div id="overviewCards" class="metric-grid"></div>
-      <div class="visual-grid">
+      <div id="dashboardCards" class="metric-grid"></div>
+      <div class="two-column">
         <article class="panel">
-          <div class="panel-title">
-            <h3>Property Mix</h3>
-            <span class="soft-pill" id="propertyTotalLabel"></span>
+          <div class="panel-heading">
+            <h3>Occupancy Summary</h3>
+            <span class="pill">Block A-H</span>
           </div>
-          <div id="propertyChart" class="bar-chart" aria-label="Property status chart"></div>
+          <div id="occupancyChart" class="bar-list"></div>
         </article>
         <article class="panel">
-          <div class="panel-title">
-            <h3>Block Occupancy</h3>
-            <span class="soft-pill">A to H</span>
+          <div class="panel-heading">
+            <h3>Recent Activity</h3>
+            <span class="pill">Notices & expenses</span>
           </div>
-          <div id="blockChart" class="block-chart" aria-label="Block-wise occupancy chart"></div>
+          <div id="activityFeed" class="feed"></div>
         </article>
       </div>
     </section>
 
-    <section class="about-band" aria-labelledby="aboutTitle">
-      <div class="section-heading">
+    <section id="society" class="module" aria-labelledby="societyTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Know about RWA</p>
-          <h2 id="aboutTitle">IBP Windsor Valley Resident Welfare Association</h2>
+          <p class="eyebrow">Blocks and properties</p>
+          <h2 id="societyTitle">Society</h2>
         </div>
-        <span class="soft-pill">Society help and coordination</span>
-      </div>
-      <div id="aboutCards" class="about-grid"></div>
-    </section>
-
-    <section class="help-band" aria-labelledby="helplineTitle">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Resident help portal</p>
-          <h2 id="helplineTitle">Common Motor, Common Light & Helpline</h2>
-        </div>
-        <span class="soft-pill">Public issue desk</span>
-      </div>
-      <div id="helplineCards" class="helpline-grid"></div>
-    </section>
-
-    <section class="common-band" aria-labelledby="commonTitle">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Common services</p>
-          <h2 id="commonTitle">Common Motor & Common Light Status</h2>
-        </div>
-        <span class="soft-pill">Society utilities</span>
-      </div>
-      <div id="commonServiceCards" class="common-grid"></div>
-    </section>
-
-    <section class="content-band" aria-labelledby="propertyTitle">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Block-wise inventory</p>
-          <h2 id="propertyTitle">Property Status</h2>
-        </div>
-        <select id="statusFilter" aria-label="Filter by property status">
+        <select id="statusFilter">
           <option value="all">All Statuses</option>
-          <option value="Occupied">Occupied</option>
-          <option value="Under Construction">Under Construction</option>
-          <option value="Empty Plot">Empty Plot</option>
-          <option value="Builder Pending">Builder Pending</option>
-          <option value="Rented">Rented</option>
+          <option>Occupied</option>
+          <option>Under Construction</option>
+          <option>Vacant Plot</option>
+          <option>Rented</option>
+          <option>Builder Pending</option>
+          <option>Dispute/Pending Issue</option>
         </select>
       </div>
+      <div id="layoutGrid" class="layout-grid"></div>
       <div class="table-shell">
         <table>
           <thead>
             <tr>
               <th>Block</th>
-              <th>Plot/House</th>
+              <th>House</th>
               <th>Status</th>
-              <th>RWA Member</th>
+              <th>Resident</th>
               <th>Owner/Tenant</th>
               <th>Water Source</th>
             </tr>
@@ -142,270 +112,178 @@
       </div>
     </section>
 
-    <section class="content-band" aria-labelledby="maintenanceTitle">
-      <div class="section-heading">
+    <section id="residents" class="module" aria-labelledby="residentsTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Common-area work</p>
-          <h2 id="maintenanceTitle">Maintenance Tracker</h2>
+          <p class="eyebrow">Public directory</p>
+          <h2 id="residentsTitle">Residents</h2>
         </div>
-        <span id="openIssueLabel" class="soft-pill"></span>
+        <select id="memberFilter">
+          <option value="all">All RWA Status</option>
+          <option value="member">RWA Members</option>
+          <option value="non-member">Non-RWA Members</option>
+        </select>
       </div>
-      <div id="maintenanceCards" class="maintenance-grid"></div>
-      <div class="table-shell compact">
+      <div class="privacy-note">Public view only: block, house number, resident name, owner/tenant status and RWA member status.</div>
+      <div class="table-shell">
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Category</th>
-              <th>Amount</th>
-              <th>Paid To</th>
-              <th>Status</th>
+              <th>Block</th>
+              <th>House Number</th>
+              <th>Resident Name</th>
+              <th>Owner/Tenant</th>
+              <th>RWA Member</th>
             </tr>
           </thead>
-          <tbody id="expenseRows"></tbody>
+          <tbody id="residentRows"></tbody>
         </table>
       </div>
     </section>
 
-    <section class="finance-band" aria-labelledby="financeTitle">
-      <div class="section-heading">
+    <section id="rwa" class="module" aria-labelledby="rwaTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Monthly accounts</p>
-          <h2 id="financeTitle">Maintenance Records & Payments</h2>
+          <p class="eyebrow">Core committee</p>
+          <h2 id="rwaTitle">RWA</h2>
         </div>
-        <span id="financeMonthLabel" class="soft-pill"></span>
+        <a class="action-link" href="assets/documents/RWA_Windsor_Valley_Certificate.pdf" target="_blank" rel="noreferrer">Open Registration Certificate</a>
       </div>
-      <div id="financeCards" class="finance-grid"></div>
-      <div class="visual-grid">
-        <article class="panel account-panel">
-          <div class="panel-title">
-            <h3>IBP RWA Bank Account</h3>
-            <span class="soft-pill">Public masked view</span>
-          </div>
-          <div id="bankAccountDetails" class="bank-grid"></div>
-        </article>
-        <article class="panel upi-panel">
-          <div class="panel-title">
-            <h3>Scan & Pay UPI</h3>
-            <span class="soft-pill">Canara Bank</span>
-          </div>
-          <img class="upi-qr" src="assets/images/RWA-Society-Account-UPI.jpeg" alt="IBP Windsor Valley RWA UPI QR code for maintenance payments">
-          <div id="upiDetails" class="upi-details"></div>
+      <div id="rwaCards" class="card-grid"></div>
+      <div class="two-column">
+        <article class="panel">
+          <h3>Block Coordinators</h3>
+          <div id="coordinatorList" class="mini-grid"></div>
         </article>
         <article class="panel">
-          <div class="panel-title">
-            <h3>Collection Status</h3>
-            <span class="soft-pill">Current month</span>
-          </div>
-          <div id="collectionChart" class="bar-chart" aria-label="Payment collection chart"></div>
+          <h3>Meetings & AGM</h3>
+          <div id="meetingList" class="feed"></div>
         </article>
       </div>
-      <div class="table-shell compact">
-        <table>
-          <thead>
-            <tr>
-              <th>Month</th>
-              <th>Expected</th>
-              <th>Received</th>
-              <th>Pending</th>
-              <th>Expenses</th>
-              <th>Closing Balance</th>
-            </tr>
-          </thead>
-          <tbody id="monthlyFinanceRows"></tbody>
-        </table>
-      </div>
-      <div class="table-shell compact">
-        <table>
-          <thead>
-            <tr>
-              <th>House</th>
-              <th>Resident</th>
-              <th>Month</th>
-              <th>Amount</th>
-              <th>Mode</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="paymentRows"></tbody>
-        </table>
-      </div>
     </section>
 
-    <section class="policy-band" aria-labelledby="policyTitle">
-      <div class="section-heading">
+    <section id="maintenance" class="module" aria-labelledby="maintenanceTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Documents and compliance</p>
-          <h2 id="policyTitle">Licence, Policies & Gate Pass Rules</h2>
+          <p class="eyebrow">Collection and work</p>
+          <h2 id="maintenanceTitle">Maintenance</h2>
         </div>
-        <span class="soft-pill">Public document index</span>
+        <span id="maintenanceSummary" class="pill"></span>
       </div>
-      <div id="documentCards" class="document-grid"></div>
-      <div class="rules-panel">
-        <h3>Gate Pass Entry Rules</h3>
-        <ol id="gateRuleList"></ol>
-      </div>
-    </section>
-
-    <section class="npcl-band" aria-labelledby="npclTitle">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">Common electricity recharge</p>
-          <h2 id="npclTitle">NPCL Prepaid Meter Account</h2>
-        </div>
-        <div class="section-actions">
-          <a class="doc-link" href="assets/documents/Prepaid_recharge_manual.pdf" target="_blank" rel="noreferrer">Recharge Manual</a>
-          <a class="doc-link alt" href="assets/images/Prepaid-meter-Account-details.png" target="_blank" rel="noreferrer">View Screenshot</a>
-        </div>
-      </div>
-      <div class="npcl-grid">
-        <article class="panel npcl-card">
-          <img class="npcl-shot" src="assets/images/Prepaid-meter-Account-details.png" alt="NPCL prepaid meter common account details">
+      <div id="maintenanceCards" class="metric-grid small"></div>
+      <div class="two-column">
+        <article class="panel">
+          <h3>House-wise Paid/Pending</h3>
+          <div class="table-shell compact"><table><thead><tr><th>House</th><th>Resident</th><th>Month</th><th>Amount</th><th>Status</th></tr></thead><tbody id="collectionRows"></tbody></table></div>
         </article>
         <article class="panel">
-          <div class="panel-title">
-            <h3>Recharge Details</h3>
-            <span class="soft-pill">Public masked view</span>
-          </div>
-          <div id="npclDetails" class="bank-grid detail-colors"></div>
+          <h3>Expense Tracker</h3>
+          <div class="table-shell compact"><table><thead><tr><th>Date</th><th>Category</th><th>Amount</th><th>Paid To</th><th>Status</th></tr></thead><tbody id="expenseRows"></tbody></table></div>
         </article>
       </div>
+      <div id="workHistory" class="work-grid"></div>
     </section>
 
-    <section class="layout-band" aria-labelledby="layoutTitle">
-      <div class="section-heading">
+    <section id="utilities" class="module" aria-labelledby="utilitiesTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Site planning</p>
-          <h2 id="layoutTitle">IBP Windsor Valley Layout Diagram</h2>
+          <p class="eyebrow">Water, power and services</p>
+          <h2 id="utilitiesTitle">Utilities</h2>
         </div>
-        <span class="soft-pill">Blocks A to H</span>
+        <a class="action-link" href="assets/documents/Prepaid_recharge_manual.pdf" target="_blank" rel="noreferrer">NPCL Recharge Manual</a>
       </div>
-      <div class="layout-grid">
-        <article class="layout-map" aria-label="Block layout diagram">
-          <div class="phase phase-left top"></div>
-          <div class="phase phase-left middle">PHASE - II</div>
-          <div class="phase phase-left bottom"></div>
-          <div class="main-road horizontal top-road">ROAD</div>
-          <div class="main-road horizontal mid-road">ROAD</div>
-          <div class="main-road horizontal lower-road">ROAD</div>
-          <div class="main-road vertical center-road">BLOCK-C</div>
-          <div class="main-road horizontal entry-road">40 FT WIDE MAIN ROAD</div>
-          <div class="entry-arrow"></div>
-          <div id="layoutBlocks" class="layout-blocks"></div>
-        </article>
-        <article class="panel location-panel">
-          <div class="panel-title">
-            <h3>Location Map Notes</h3>
-            <span class="soft-pill">Public guide</span>
-          </div>
-          <div id="locationNotes" class="location-notes"></div>
-        </article>
-      </div>
+      <div id="utilityCards" class="card-grid"></div>
     </section>
 
-    <section class="events-band" aria-labelledby="eventsTitle">
-      <div class="section-heading">
+    <section id="complaints" class="module" aria-labelledby="complaintsTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Community life</p>
-          <h2 id="eventsTitle">Events, Photos & Videos</h2>
+          <p class="eyebrow">Issue tracking</p>
+          <h2 id="complaintsTitle">Complaints</h2>
         </div>
-        <span class="soft-pill">Holi, Diwali, Jagran and more</span>
+        <select id="complaintFilter">
+          <option value="all">All Complaint Status</option>
+          <option>Open</option>
+          <option>Assigned</option>
+          <option>In Progress</option>
+          <option>Resolved</option>
+          <option>Closed</option>
+        </select>
       </div>
-      <div id="eventCards" class="event-grid"></div>
+      <div id="complaintCards" class="complaint-grid"></div>
     </section>
 
-    <section class="certificate-band" aria-labelledby="certificateTitle">
-      <div class="section-heading">
+    <section id="security" class="module" aria-labelledby="securityTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Registration document</p>
-          <h2 id="certificateTitle">IBP Windsor Valley RWA Registration Certificate</h2>
+          <p class="eyebrow">Gate and visitor records</p>
+          <h2 id="securityTitle">Security</h2>
         </div>
-        <a class="doc-link" href="assets/documents/RWA_Windsor_Valley_Certificate.pdf" target="_blank" rel="noreferrer">Open Certificate PDF</a>
+        <span class="pill">Vehicle numbers masked</span>
       </div>
-      <div class="certificate-frame">
-        <iframe src="assets/documents/RWA_Windsor_Valley_Certificate.pdf" title="RWA Windsor Valley certificate"></iframe>
-      </div>
+      <div class="table-shell"><table><thead><tr><th>Type</th><th>Name</th><th>House</th><th>Entry</th><th>Exit</th><th>Purpose</th><th>Guard</th><th>Vehicle</th></tr></thead><tbody id="securityRows"></tbody></table></div>
+      <div id="gatePassCards" class="card-grid slim"></div>
     </section>
 
-    <section class="team-band" aria-labelledby="teamTitle">
-      <div class="section-heading">
+    <section id="workers" class="module" aria-labelledby="workersTitle">
+      <div class="module-heading">
         <div>
-          <p class="eyebrow">Know your RWA</p>
-          <h2 id="teamTitle">IBP Windsor Valley RWA Team</h2>
+          <p class="eyebrow">Attendance and shifts</p>
+          <h2 id="workersTitle">Workers</h2>
         </div>
-        <span class="soft-pill">Name and post only</span>
+        <span class="pill">Contacts hidden</span>
       </div>
-      <div id="teamCards" class="team-grid"></div>
+      <div class="table-shell"><table><thead><tr><th>Name</th><th>Role</th><th>Attendance</th><th>Duty Shift</th><th>Assigned Area</th><th>Payment</th></tr></thead><tbody id="workerRows"></tbody></table></div>
     </section>
 
-    <section class="split-band">
-      <article class="content-band" aria-labelledby="workerTitle">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Attendance</p>
-            <h2 id="workerTitle">Worker Attendance</h2>
-          </div>
-          <span class="soft-pill">Mobile hidden</span>
+    <section id="documents" class="module" aria-labelledby="documentsTitle">
+      <div class="module-heading">
+        <div>
+          <p class="eyebrow">Public and restricted files</p>
+          <h2 id="documentsTitle">Documents</h2>
         </div>
-        <div class="table-shell">
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Role</th>
-                <th>Mobile</th>
-                <th>Status</th>
-                <th>Duty Time</th>
-                <th>Area</th>
-              </tr>
-            </thead>
-            <tbody id="workerRows"></tbody>
-          </table>
-        </div>
-      </article>
-
-      <article class="content-band" aria-labelledby="visitorTitle">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Gate register</p>
-            <h2 id="visitorTitle">Visitors & Vehicles</h2>
-          </div>
-          <span class="soft-pill">Vehicle number private</span>
-        </div>
-        <div class="table-shell">
-          <table>
-            <thead>
-              <tr>
-                <th>Visitor</th>
-                <th>House</th>
-                <th>Entry</th>
-                <th>Exit</th>
-                <th>Vehicle</th>
-                <th>Purpose</th>
-              </tr>
-            </thead>
-            <tbody id="visitorRows"></tbody>
-          </table>
-        </div>
-      </article>
+        <span class="pill">Private docs restricted</span>
+      </div>
+      <div id="documentCards" class="card-grid"></div>
     </section>
 
-    <section class="whatsapp-band" aria-labelledby="whatsappTitle">
-      <div>
-        <p class="eyebrow">Community channels</p>
-        <h2 id="whatsappTitle">WhatsApp Connect</h2>
+    <section id="notices" class="module" aria-labelledby="noticesTitle">
+      <div class="module-heading">
+        <div>
+          <p class="eyebrow">Announcements</p>
+          <h2 id="noticesTitle">Notices</h2>
+        </div>
+        <span class="pill">WhatsApp links included</span>
       </div>
-      <div class="wa-actions">
-        <a class="wa-button" href="https://wa.me/" target="_blank" rel="noreferrer">Join Society WhatsApp Group</a>
-        <a class="wa-button" href="https://wa.me/" target="_blank" rel="noreferrer">Message Security</a>
-        <a class="wa-button" href="https://wa.me/" target="_blank" rel="noreferrer">Message RWA Core Team</a>
-        <a class="wa-button" href="https://wa.me/" target="_blank" rel="noreferrer">Maintenance Helpdesk</a>
+      <div id="noticeCards" class="notice-grid"></div>
+      <div id="whatsappLinks" class="quick-links"></div>
+    </section>
+
+    <section id="reports" class="module" aria-labelledby="reportsTitle">
+      <div class="module-heading">
+        <div>
+          <p class="eyebrow">Management summaries</p>
+          <h2 id="reportsTitle">Reports</h2>
+        </div>
+        <span class="pill">Dummy JSON summaries</span>
       </div>
+      <div id="reportCards" class="card-grid"></div>
+    </section>
+
+    <section id="help" class="module" aria-labelledby="helpTitle">
+      <div class="module-heading">
+        <div>
+          <p class="eyebrow">Emergency and services</p>
+          <h2 id="helpTitle">Help</h2>
+        </div>
+        <span class="pill">Placeholders for society contacts</span>
+      </div>
+      <div id="helpCards" class="help-grid"></div>
     </section>
   </main>
 
   <footer>
-    <span>Public privacy mode active:</span> mobile numbers, email IDs, full vehicle numbers, documents, and family details are not shown.
+    <strong>Privacy mode active:</strong> public pages never show resident mobile numbers, emails, Aadhaar, family details, full vehicle numbers or private documents.
   </footer>
 
   <script src="js/app.js"></script>
