@@ -347,7 +347,6 @@ function renderAll() {
   renderNotices();
   renderEvents();
   renderReports();
-  renderHelp();
 }
 
 function setActiveNav(hash) {
