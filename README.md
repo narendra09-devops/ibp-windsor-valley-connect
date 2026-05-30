@@ -12,8 +12,9 @@ A static, mobile-responsive society dashboard for an under-development residenti
 - IBP RWA bank account and UPI scan-and-pay card using the published QR asset.
 - RWA certificate PDF, policy documents, and gate pass entry rules.
 - NPCL prepaid common meter account details with recharge manual and account screenshot.
-- RWA team cards with public names/designations and masked mobile numbers.
-- Web layout diagram for Blocks A to D, roads, Phase II, and main entry reference.
+- RWA team cards with only public name and post.
+- Know About RWA, common motor, common light, and helpline portal tabs.
+- Web layout diagram for Blocks A to H, roads, Phase II, and main entry reference.
 - Events section for Holi, Diwali, Jagran, meetings, photos, and videos.
 - Worker attendance for security guard, sweeper, electrician, plumber, carpenter, labour, and technician roles.
 - Visitor and vehicle attendance with purpose categories for guest, delivery, worker, and vendor.
@@ -39,6 +40,8 @@ The UPI QR image is included because it is intended for public maintenance payme
 
 NPCL account values shown publicly are taken from the masked account screenshot. RWA team mobile numbers are also masked for public display.
 
+The RWA team section intentionally shows only name and post. The registration certificate remains embedded on the page and can also be opened as a PDF.
+
 ## Running Locally
 
 Open `index.html` in a browser. No backend or package installation is required.
@@ -52,6 +55,7 @@ For GitHub Pages, publish the repository root or `/docs` only if these files are
 - `js/app.js` - resident-derived public data, dummy finance records, filters, search, metrics, and rendering.
 - `manifest.json` - basic PWA metadata.
 - `assets/images/RWA-Society-Account-UPI.jpeg` - UPI scan-and-pay image.
+- `assets/images/ibp-windsor-valley-logo.svg` - site logo.
 - `assets/images/Prepaid-meter-Account-details.png` - NPCL common meter account screenshot.
 - `assets/documents/RWA_Windsor_Valley_Certificate.pdf` - RWA certificate PDF.
 - `assets/documents/Prepaid_recharge_manual.pdf` - NPCL prepaid recharge manual.

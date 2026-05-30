@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-labelledby="title desc">
+  <title id="title">IBP Windsor Valley logo</title>
+  <desc id="desc">A colorful tree logo for IBP Windsor Valley RWA.</desc>
+  <rect width="640" height="300" rx="34" fill="#182036"/>
+  <g transform="translate(320 108)">
+    <path d="M0 42 C-8 12 -28 -10 -56 -24 M0 42 C8 12 28 -10 56 -24 M0 42 L0 -54" fill="none" stroke="#28a4d8" stroke-width="16" stroke-linecap="round"/>
+    <path d="M-18 42 C-34 10 -70 0 -104 -8 M18 42 C34 10 70 0 104 -8" fill="none" stroke="#2f8ec8" stroke-width="12" stroke-linecap="round"/>
+    <g fill="#5ab84d">
+      <ellipse cx="-112" cy="-30" rx="18" ry="8" transform="rotate(-18 -112 -30)"/>
+      <ellipse cx="-82" cy="-58" rx="18" ry="8" transform="rotate(-45 -82 -58)"/>
+      <ellipse cx="-46" cy="-78" rx="18" ry="8" transform="rotate(-70 -46 -78)"/>
+      <ellipse cx="112" cy="-30" rx="18" ry="8" transform="rotate(18 112 -30)"/>
+      <ellipse cx="82" cy="-58" rx="18" ry="8" transform="rotate(45 82 -58)"/>
+      <ellipse cx="46" cy="-78" rx="18" ry="8" transform="rotate(70 46 -78)"/>
+      <ellipse cx="-128" cy="4" rx="17" ry="8" transform="rotate(4 -128 4)"/>
+      <ellipse cx="128" cy="4" rx="17" ry="8" transform="rotate(-4 128 4)"/>
+    </g>
+    <g fill="#f5b12e">
+      <ellipse cx="-68" cy="-16" rx="16" ry="8" transform="rotate(-24 -68 -16)"/>
+      <ellipse cx="-26" cy="-38" rx="16" ry="8" transform="rotate(-72 -26 -38)"/>
+      <ellipse cx="68" cy="-16" rx="16" ry="8" transform="rotate(24 68 -16)"/>
+      <ellipse cx="26" cy="-38" rx="16" ry="8" transform="rotate(72 26 -38)"/>
+    </g>
+    <g fill="#ef3f3f">
+      <ellipse cx="-96" cy="-2" rx="17" ry="8" transform="rotate(-18 -96 -2)"/>
+      <ellipse cx="-20" cy="-96" rx="18" ry="8" transform="rotate(-85 -20 -96)"/>
+      <ellipse cx="96" cy="-2" rx="17" ry="8" transform="rotate(18 96 -2)"/>
+      <ellipse cx="20" cy="-96" rx="18" ry="8" transform="rotate(85 20 -96)"/>
+    </g>
+    <g fill="#1581bd">
+      <ellipse cx="-42" cy="-2" rx="15" ry="8" transform="rotate(-45 -42 -2)"/>
+      <ellipse cx="42" cy="-2" rx="15" ry="8" transform="rotate(45 42 -2)"/>
+    </g>
+  </g>
+  <text x="320" y="206" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="42" font-weight="700">IBP WINDSOR</text>
+  <text x="320" y="252" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-size="34" font-weight="700">VALLEY RWA</text>
+</svg>

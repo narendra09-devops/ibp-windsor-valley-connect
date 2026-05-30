@@ -145,7 +145,11 @@ const publicData = {
     { block: "A", title: "Block-A", plots: ["Commercial", "A-01", "A-02", "A-03", "A-04", "A-05", "A-06", "A-07", "A-08", "Other Plots"], className: "layout-a" },
     { block: "B", title: "Block-B", plots: ["B-01", "B-02", "B-03", "B-04", "B-05", "B-06", "B-07", "B-08", "B-09", "B-10", "B-11", "B-12"], className: "layout-b" },
     { block: "C", title: "Block-C", plots: ["C-01", "C-02", "C-03", "C-04", "C-05", "C-06", "C-07", "C-08", "C-09", "C-10", "C-11", "C-12"], className: "layout-c" },
-    { block: "D", title: "Block-D", plots: ["D-01", "D-02", "D-03", "D-04", "D-05", "D-06", "Other Size"], className: "layout-d" }
+    { block: "D", title: "Block-D", plots: ["D-01", "D-02", "D-03", "D-04", "D-05", "D-06", "Other Size"], className: "layout-d" },
+    { block: "E", title: "Block-E", plots: ["E-01", "E-02", "E-03", "E-04", "E-05", "E-06"], className: "layout-e" },
+    { block: "F", title: "Block-F", plots: ["F-01", "F-02", "F-03", "F-04", "F-05", "F-06", "F-07", "F-08", "F-09", "F-10"], className: "layout-f" },
+    { block: "G", title: "Block-G", plots: ["G-01", "G-02", "G-03", "G-04", "G-05", "G-06", "G-07", "G-08", "G-09", "G-10"], className: "layout-g" },
+    { block: "H", title: "Block-H", plots: ["H-01", "H-02", "H-03", "H-04", "H-05", "H-06"], className: "layout-h" }
   ],
   locationNotes: [
     "Connected from Gaur Chowk and the service road corridor.",
@@ -180,14 +184,32 @@ const publicData = {
     { title: "RWA Monthly Meeting", date: "Monthly", type: "Meeting", media: "Minutes + Photos", summary: "Maintenance review, payment collection update, open issues, and next action list.", theme: "meeting" }
   ],
   rwaTeam: [
-    { name: "Rakesh Singh", fatherName: "Dhananjay Singh", address: "Khasra No-323, Windsor Valley, Vaidpur, Gautam Buddha Nagar", mobile: "77770*****", occupation: "IT Professional", designation: "President" },
-    { name: "Dhruv Tripathi", fatherName: "Phool Dev Tripathi", address: "House No C-6, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "83681*****", occupation: "Business", designation: "Vice President" },
-    { name: "Narendra Pratap Singh", fatherName: "Ravindra Pratap Singh", address: "B-3, Windsor Valley, Vaidpura, Gautam Buddha Nagar, UP", mobile: "96658*****", occupation: "IT Professional", designation: "Secretary" },
-    { name: "Aasheesh Kumar Rai", fatherName: "Pyare Lal Rai", address: "D-5, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "96505*****", occupation: "IT Professional", designation: "Joint Secretary" },
-    { name: "Avinash Singh", fatherName: "Kamlesh Singh", address: "B-11, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "91670*****", occupation: "IT Professional", designation: "Treasurer" },
-    { name: "Hardik Mudgal", fatherName: "Govind Mudgal", address: "B-12, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "97184*****", occupation: "IT Professional", designation: "Executive Member" },
-    { name: "Vandana Kumari", fatherName: "Vijay Kumar", address: "C-3, Windsor Valley, Vaidpura, Gautam Buddha Nagar", mobile: "93549*****", occupation: "IT Professional", designation: "Executive Member" },
-    { name: "Shiv Ram Tathagat", fatherName: "Anugrah Narayan Singh", address: "Khasra No-323, Windsor Valley Vaidpura, Gautam Buddha Nagar", mobile: "85788*****", occupation: "Private Job", designation: "Executive Member" }
+    { name: "Rakesh Singh", designation: "President" },
+    { name: "Dhruv Tripathi", designation: "Vice President" },
+    { name: "Narendra Pratap Singh", designation: "Secretary" },
+    { name: "Aasheesh Kumar Rai", designation: "Joint Secretary" },
+    { name: "Avinash Singh", designation: "Treasurer" },
+    { name: "Hardik Mudgal", designation: "Executive Member" },
+    { name: "Vandana Kumari", designation: "Executive Member" },
+    { name: "Shiv Ram Tathagat", designation: "Executive Member" }
+  ],
+  aboutRwa: [
+    { title: "What RWA Does", text: "Coordinates common services, resident requests, maintenance, gate discipline, documents, and society communication." },
+    { title: "Resident Support", text: "Residents can use the helpline portal for common motor, street light, water, cleaning, security, and payment queries." },
+    { title: "Public Privacy", text: "The public website shows only non-sensitive information. Phone numbers, emails, vehicle numbers, and private papers stay hidden." },
+    { title: "Transparent Accounts", text: "Monthly collection, pending maintenance, expenses, and common electricity details are shown for resident awareness." }
+  ],
+  helplines: [
+    { title: "Common Motor Help", owner: "Maintenance Helpdesk", status: "Open", action: "Report water motor, pump, pressure, or tank issue." },
+    { title: "Common Light Help", owner: "Electrical Helpdesk", status: "Open", action: "Report street light, common panel, meter, or wiring issue." },
+    { title: "Security Gate Help", owner: "Gate Desk", status: "Open", action: "Visitor, vendor, worker, delivery, and vehicle entry support." },
+    { title: "RWA Accounts Help", owner: "Treasurer Desk", status: "Open", action: "Maintenance payment, UPI receipt, pending dues, and expense query." }
+  ],
+  commonServices: [
+    { title: "Common Motor", status: "Working", schedule: "Morning and evening tank refill check", note: "Motor repair issue should be logged with block and time." },
+    { title: "Common Street Light", status: "Needs Review", schedule: "Evening inspection", note: "Inactive lights between Blocks E-F are in progress." },
+    { title: "Common Electricity Meter", status: "Live", schedule: "NPCL prepaid recharge", note: "Consumer No 2000270949; recharge manual available above." },
+    { title: "Water Tank Cleaning", status: "Planned", schedule: "Monthly", note: "Cleaning date and vendor receipt to be added in expense history." }
   ],
   gateRules: [
     "Every visitor must share name, visiting house, purpose, entry time, and exit time at the gate.",
@@ -228,7 +250,11 @@ const statusClass = {
   "Draft": "pending",
   "Active": "paid",
   "Yes": "paid",
-  "No": "pending"
+  "No": "pending",
+  "Working": "paid",
+  "Needs Review": "pending",
+  "Live": "paid",
+  "Planned": "progress"
 };
 
 const elements = {
@@ -257,6 +283,9 @@ const elements = {
   locationNotes: document.querySelector("#locationNotes"),
   eventCards: document.querySelector("#eventCards"),
   teamCards: document.querySelector("#teamCards"),
+  aboutCards: document.querySelector("#aboutCards"),
+  helplineCards: document.querySelector("#helplineCards"),
+  commonServiceCards: document.querySelector("#commonServiceCards"),
   lastUpdated: document.querySelector("#lastUpdated"),
   propertyTotalLabel: document.querySelector("#propertyTotalLabel"),
   openIssueLabel: document.querySelector("#openIssueLabel")
@@ -526,15 +555,36 @@ function renderTeam() {
     <article class="team-card">
       <div class="team-avatar">${member.name.split(" ").map((part) => part[0]).slice(0, 2).join("")}</div>
       <div>
-        <span class="team-role">${member.designation}</span>
         <h3>${member.name}</h3>
-        <p>${member.occupation}</p>
-        <dl>
-          <div><dt>Father Name</dt><dd>${member.fatherName}</dd></div>
-          <div><dt>Address</dt><dd>${member.address}</dd></div>
-          <div><dt>Mobile</dt><dd>${member.mobile}</dd></div>
-        </dl>
+        <span class="team-role">${member.designation}</span>
       </div>
+    </article>
+  `).join("");
+}
+
+function renderAboutAndHelp() {
+  elements.aboutCards.innerHTML = publicData.aboutRwa.map((item) => `
+    <article class="info-card">
+      <h3>${item.title}</h3>
+      <p>${item.text}</p>
+    </article>
+  `).join("");
+
+  elements.helplineCards.innerHTML = publicData.helplines.map((item) => `
+    <article class="help-card">
+      <span class="soft-pill">${item.status}</span>
+      <h3>${item.title}</h3>
+      <p>${item.action}</p>
+      <strong>${item.owner}</strong>
+    </article>
+  `).join("");
+
+  elements.commonServiceCards.innerHTML = publicData.commonServices.map((item) => `
+    <article class="service-card">
+      ${badge(item.status)}
+      <h3>${item.title}</h3>
+      <p>${item.note}</p>
+      <span>${item.schedule}</span>
     </article>
   `).join("");
 }
@@ -606,6 +656,7 @@ function render() {
   renderMaintenance();
   renderFinance();
   renderNpcl();
+  renderAboutAndHelp();
   renderDocuments();
   renderTeam();
   renderLayout();
