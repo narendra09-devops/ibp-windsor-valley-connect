@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Community Activities, Meetings and Events Center for IBP Windsor Valley Welfare Society.">
+  <meta name="theme-color" content="#132b46">
+  <title>Community Activities, Meetings & Events Center | IBP Windsor Valley</title>
+  <link rel="icon" href="assets/images/rwa-logo.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="events.css">
+</head>
+<body>
+  <header class="events-hero">
+    <nav class="events-nav" aria-label="Events page navigation">
+      <a href="index.html#dashboard">Home</a>
+      <a href="index.html#society">Society</a>
+      <a href="index.html#residents">Residents</a>
+      <a href="index.html#rwa">RWA</a>
+      <a href="index.html#maintenance">Maintenance</a>
+      <a href="index.html#utilities">Utilities</a>
+      <a href="index.html#complaints">Complaints</a>
+      <a href="index.html#security">Security</a>
+      <a href="index.html#workers">Workers</a>
+      <a href="index.html#documents">Documents</a>
+      <a href="index.html#notices">Notices</a>
+      <a class="active" href="events.html">Community Activities</a>
+      <a href="reports.html">Reports & Analytics</a>
+      <a href="emergency-services.html">Emergency & Services</a>
+    </nav>
+    <div class="hero-grid">
+      <img src="assets/images/rwa-logo.png" alt="IBP Windsor Valley Welfare Society logo">
+      <div>
+        <p class="eyebrow">Meetings, programs, MOM and galleries</p>
+        <h1>Community Activities, Meetings & Events Center</h1>
+        <p>Professional event management center for RWA meetings, AGM, builder follow-up, development reviews, festivals, drives, health camps, sports, galleries and documents.</p>
+      </div>
+      <button id="themeToggle" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="admin-strip" aria-label="Public and admin access summary">
+      <div>
+        <p class="eyebrow">Public view</p>
+        <h2>Published events, MOM, galleries and documents</h2>
+        <p>Admin login, edit buttons, delete buttons, internal notes, draft events and private attendance are hidden from public users.</p>
+      </div>
+      <div class="admin-links">
+        <a href="admin-login.html">Admin Login Placeholder</a>
+        <a href="admin-dashboard.html">Admin Dashboard</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Activity dashboard</p>
+          <h2>Summary Cards</h2>
+        </div>
+        <span id="lastUpdated" class="pill"></span>
+      </div>
+      <div id="summaryCards" class="summary-grid"></div>
+    </section>
+
+    <section class="filters" aria-label="Event filters">
+      <label><span>Global Search</span><input id="searchInput" type="search" placeholder="Search AGM, builder, Diwali, MOM..."></label>
+      <label><span>Event Category</span><select id="categoryFilter"></select></label>
+      <label><span>Year</span><select id="yearFilter"></select></label>
+      <label><span>Status</span><select id="statusFilter"></select></label>
+      <label><span>Organizer</span><select id="organizerFilter"></select></label>
+      <label><span>Block</span><select id="blockFilter"></select></label>
+      <label><span>Date Range</span><select id="dateFilter"><option value="all">All Dates</option><option value="upcoming">Upcoming</option><option value="past">Past</option></select></label>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Published activities</p>
+          <h2>Event Cards</h2>
+        </div>
+        <span id="eventCount" class="pill"></span>
+      </div>
+      <div id="eventCards" class="event-grid"></div>
+    </section>
+
+    <section class="mom-center">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Meeting Minutes & MOM Center</p>
+          <h2>MOM Repository</h2>
+        </div>
+      </div>
+      <div class="mini-filters">
+        <input id="momSearch" type="search" placeholder="Search MOM...">
+        <select id="momYear"></select>
+        <select id="momCategory"></select>
+      </div>
+      <div id="momCards" class="repository-grid"></div>
+    </section>
+
+    <section class="gallery-center">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Photos, videos and memories</p>
+          <h2>Event Gallery</h2>
+        </div>
+      </div>
+      <div id="galleryCards" class="gallery-grid"></div>
+    </section>
+
+    <section class="documents-center">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Event Documents Repository</p>
+          <h2>Documents, Invitations, Budgets and Media</h2>
+        </div>
+        <span class="pill">PDF, DOCX, XLSX, CSV, JPG, PNG, MP4</span>
+      </div>
+      <div id="documentCards" class="repository-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="eventModal" class="event-modal" aria-labelledby="modalTitle">
+    <form method="dialog">
+      <button class="modal-close" value="close" aria-label="Close event details">Close</button>
+    </form>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="events.js"></script>
+</body>
+</html>

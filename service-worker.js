@@ -1,7 +1,14 @@
-const CACHE_NAME = "ibp-windsor-valley-rwa-v7";
+const CACHE_NAME = "ibp-windsor-valley-rwa-v8";
 const ASSETS = [
   "./",
   "./index.html",
+  "./events.html",
+  "./events.css",
+  "./events.js",
+  "./admin-login.html",
+  "./admin-dashboard.html",
+  "./admin-events.html",
+  "./admin-event-form.html",
   "./reports.html",
   "./reports.css",
   "./reports.js",
@@ -15,6 +22,10 @@ const ASSETS = [
   "./manifest.json",
   "./data/public-data.json",
   "./data/events.json",
+  "./data/events-public.json",
+  "./data/events-admin.json",
+  "./js/admin-auth.js",
+  "./js/admin-events.js",
   "./assets/images/rwa-logo.png",
   "./assets/images/RWA-Society-Account-UPI.jpeg",
   "./assets/images/Prepaid-meter-Account-details.png",

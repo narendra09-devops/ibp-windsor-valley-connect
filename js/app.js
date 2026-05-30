@@ -1,12 +1,10 @@
 const state = {
   data: null,
-  events: [],
   search: "",
   block: "all",
   propertyStatus: "all",
   memberStatus: "all",
-  complaintStatus: "all",
-  eventStatus: "all"
+  complaintStatus: "all"
 };
 
 if (location.hash === "#help") {
@@ -17,13 +15,16 @@ if (location.hash === "#reports") {
   location.replace("reports.html");
 }
 
+if (location.hash === "#events") {
+  location.replace("events.html");
+}
+
 const selectors = {
   search: "#globalSearch",
   block: "#blockFilter",
   status: "#statusFilter",
   member: "#memberFilter",
-  complaint: "#complaintFilter",
-  event: "#eventFilter"
+  complaint: "#complaintFilter"
 };
 
 const statusClass = {
@@ -286,43 +287,6 @@ function renderNotices() {
   byId("whatsappLinks").innerHTML = filterSearch(state.data.whatsapp).map((item) => `<a class="action-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>`).join("");
 }
 
-function renderEvents() {
-  const events = state.events.filter((eventItem) => {
-    const statusOk = state.eventStatus === "all" || eventItem.status === state.eventStatus;
-    return statusOk && matchesSearch(eventItem);
-  });
-  const upcoming = state.events.filter((item) => item.status === "Upcoming").length;
-  const completed = state.events.filter((item) => item.status === "Completed").length;
-  const cancelled = state.events.filter((item) => item.status === "Cancelled").length;
-
-  byId("eventSummary").innerHTML = [
-    ["Upcoming Events", upcoming],
-    ["Past Events", completed],
-    ["Cancelled", cancelled],
-    ["Total Programs", state.events.length]
-  ].map(([label, value]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join("");
-
-  byId("eventCards").innerHTML = events.map((eventItem) => `
-    <article class="event-card">
-      <div class="event-top">
-        <span>${eventItem.category}</span>
-        ${badge(eventItem.status)}
-      </div>
-      <h3>${eventItem.title}</h3>
-      <dl>
-        <div><dt>Date</dt><dd>${eventItem.date}</dd></div>
-        <div><dt>Time</dt><dd>${eventItem.time}</dd></div>
-        <div><dt>Venue</dt><dd>${eventItem.venue}</dd></div>
-        <div><dt>Organizer</dt><dd>${eventItem.organizer}</dd></div>
-      </dl>
-      <div class="event-actions">
-        <span>${eventItem.rsvp}</span>
-        <span>${eventItem.gallery}</span>
-      </div>
-    </article>
-  `).join("") || empty("event/program records");
-}
-
 function renderReports() {
   byId("reportCards").innerHTML = filterSearch(state.data.reports).map((report) => simpleCard({
     title: report.title,
@@ -353,7 +317,6 @@ function renderAll() {
   renderWorkers();
   renderDocuments();
   renderNotices();
-  renderEvents();
 }
 
 function setActiveNav(hash) {
@@ -428,19 +391,11 @@ function setupFilters() {
     state.complaintStatus = event.target.value;
     renderComplaints();
   });
-  document.querySelector(selectors.event).addEventListener("change", (event) => {
-    state.eventStatus = event.target.value;
-    renderEvents();
-  });
 }
 
 async function init() {
-  const [publicResponse, eventsResponse] = await Promise.all([
-    fetch("data/public-data.json"),
-    fetch("data/events.json")
-  ]);
+  const publicResponse = await fetch("data/public-data.json");
   state.data = await publicResponse.json();
-  state.events = (await eventsResponse.json()).events;
   setupFilters();
   setupNavigation();
   renderAll();

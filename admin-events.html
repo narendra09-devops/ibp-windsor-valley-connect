@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Events Placeholder | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="events.css">
+</head>
+<body>
+  <main>
+    <section class="admin-strip">
+      <div>
+        <p class="eyebrow">Admin event list</p>
+        <h1>Manage Events</h1>
+        <p>Draft events, admin remarks and private attendance must stay behind login when real backend storage is added.</p>
+      </div>
+      <div class="admin-links">
+        <a href="admin-event-form.html">Create Event</a>
+        <a href="admin-dashboard.html">Dashboard</a>
+      </div>
+    </section>
+    <section id="adminEventCards" class="event-grid"></section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-auth.js"></script>
+  <script src="js/admin-events.js"></script>
+</body>
+</html>

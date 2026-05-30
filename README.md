@@ -14,7 +14,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 - Security gate entries, visitor/delivery/worker/vehicle records and masked vehicle numbers.
 - Worker attendance, duty shift, assigned area and payment status with contacts hidden.
 - Documents, notices, WhatsApp links, reports and emergency help placeholders.
-- Events & Programs module with upcoming/past events, festival programs, meetings, drives, cultural programs, sports activities, RSVP and gallery placeholders.
+- Community Activities, Meetings & Events Center with RWA meetings, AGM, builder follow-up, MOM repository, galleries, event documents and admin management placeholders.
 - Reports & Analytics Center with auto-generated reports, uploaded report repository, KPI cards, charts, filters, details modal and admin placeholders.
 - Emergency & Services help center with colorful service cards, search, category filters, details modal, quick actions, sticky emergency contacts and dark mode.
 - PWA-ready manifest and service worker.
@@ -22,7 +22,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 
 ## Navigation
 
-Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Events, Reports & Analytics, Emergency & Services.
+Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notices, Community Activities, Reports & Analytics, Emergency & Services.
 
 ## Privacy Rules
 
@@ -41,7 +41,9 @@ Private sample structures are kept separately in `data/private-sample.json` for 
 ## Data
 
 - `data/public-data.json` contains dummy public JSON for the portal.
-- `data/events.json` contains dummy event/program data.
+- `data/events.json` contains public event, MOM, gallery and event document data.
+- `data/events-public.json` documents the public event access model.
+- `data/events-admin.json` contains admin-only sample role and permission structures for future login-based access.
 - `reports-data.json` contains public report metadata, upload placeholders and admin/auth placeholders.
 - `emergency-services.json` contains public emergency and service directory data.
 - `data/private-sample.json` contains private-data placeholders only.
@@ -81,6 +83,16 @@ The app is root-ready for GitHub Pages. Publish from the repository root on the 
 - `index.html` - static app shell and module containers.
 - `css/style.css` - responsive visual design.
 - `js/app.js` - JSON loading, filters and rendering.
+- `events.html` - Community Activities, Meetings & Events Center.
+- `events.css` - responsive event center design.
+- `events.js` - event filters, cards, MOM repository, gallery and details modal.
+- `admin-login.html` - future admin authentication placeholder.
+- `admin-dashboard.html` - future event admin dashboard placeholder.
+- `admin-events.html` - future event management list placeholder.
+- `admin-event-form.html` - future create/edit event form placeholder.
+- `js/admin-auth.js` - static admin authentication placeholder behavior.
+- `js/admin-events.js` - static admin event placeholder behavior.
+- `uploads/` - event upload folder structure for future MOM, gallery, videos, attendance and documents.
 - `reports.html` - Reports & Analytics Center.
 - `reports.css` - responsive reporting dashboard design.
 - `reports.js` - report analytics, filters, charts and modal details.
