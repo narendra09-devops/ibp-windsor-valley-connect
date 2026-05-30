@@ -19,6 +19,10 @@ if (location.hash === "#events") {
   location.replace("events.html");
 }
 
+if (location.hash === "#notices") {
+  location.replace("notice-board.html");
+}
+
 const selectors = {
   search: "#globalSearch",
   block: "#blockFilter",
@@ -278,15 +282,6 @@ function renderDocuments() {
   })).join("") || empty("document records");
 }
 
-function renderNotices() {
-  byId("noticeCards").innerHTML = filterSearch(state.data.notices).map((notice) => simpleCard({
-    title: notice.title,
-    subtitle: `${notice.date} / ${notice.type}`,
-    status: notice.priority
-  })).join("") || empty("notice records");
-  byId("whatsappLinks").innerHTML = filterSearch(state.data.whatsapp).map((item) => `<a class="action-link" href="${item.url}" target="_blank" rel="noreferrer">${item.title}</a>`).join("");
-}
-
 function renderReports() {
   byId("reportCards").innerHTML = filterSearch(state.data.reports).map((report) => simpleCard({
     title: report.title,
@@ -316,7 +311,6 @@ function renderAll() {
   renderSecurity();
   renderWorkers();
   renderDocuments();
-  renderNotices();
 }
 
 function setActiveNav(hash) {

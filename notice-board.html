@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Notice Board for IBP Windsor Valley Welfare Society.">
+  <meta name="theme-color" content="#132b46">
+  <title>Notice Board | IBP Windsor Valley</title>
+  <link rel="icon" href="assets/images/rwa-logo.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="notice-board.css">
+</head>
+<body>
+  <header class="notice-hero">
+    <nav class="notice-nav" aria-label="Notice board navigation">
+      <a href="index.html#dashboard">Home</a>
+      <a href="index.html#society">Society</a>
+      <a href="index.html#residents">Residents</a>
+      <a href="index.html#rwa">RWA</a>
+      <a href="index.html#maintenance">Maintenance</a>
+      <a href="index.html#utilities">Utilities</a>
+      <a href="index.html#complaints">Complaints</a>
+      <a href="index.html#security">Security</a>
+      <a href="index.html#workers">Workers</a>
+      <a href="index.html#documents">Documents</a>
+      <a class="active" href="notice-board.html">Notice Board</a>
+      <a href="events.html">Community Activities</a>
+      <a href="reports.html">Reports & Analytics</a>
+      <a href="emergency-services.html">Emergency & Services</a>
+    </nav>
+    <div class="hero-grid">
+      <img src="assets/images/rwa-logo.png" alt="IBP Windsor Valley Welfare Society logo">
+      <div>
+        <p class="eyebrow">Published circulars and public announcements</p>
+        <h1>Notice Board</h1>
+        <p>Search published notices, view attachments, download circulars, open WhatsApp actions and print public notices. Admin publishing controls are prepared separately.</p>
+      </div>
+      <button id="themeToggle" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="access-strip">
+      <div>
+        <p class="eyebrow">Public notice rules</p>
+        <h2>Only published notices are visible here</h2>
+        <p>Draft notices, unpublished notices, edit/delete buttons, upload controls and internal admin remarks are hidden from public users.</p>
+      </div>
+      <div class="admin-links">
+        <a href="admin-notices.html">Admin Notices</a>
+        <a href="notice-form.html">Create Notice</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Notice dashboard</p>
+          <h2>Summary Cards</h2>
+        </div>
+        <span id="lastUpdated" class="pill"></span>
+      </div>
+      <div id="summaryCards" class="summary-grid"></div>
+    </section>
+
+    <section class="filters" aria-label="Notice filters">
+      <label><span>Search</span><input id="searchInput" type="search" placeholder="Search title, category, date..."></label>
+      <label><span>Category</span><select id="categoryFilter"></select></label>
+      <label><span>Priority</span><select id="priorityFilter"></select></label>
+      <label><span>Status</span><select id="statusFilter"></select></label>
+      <label><span>Block</span><select id="blockFilter"></select></label>
+      <label><span>Date Range</span><select id="dateFilter"><option value="all">All Dates</option><option value="active">Current Active</option><option value="expired">Expired</option></select></label>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Published notices</p>
+          <h2>Public Notice Cards</h2>
+        </div>
+        <span id="noticeCount" class="pill"></span>
+      </div>
+      <div id="noticeCards" class="notice-grid"></div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Published WhatsApp links</p>
+          <h2>Quick Actions</h2>
+        </div>
+      </div>
+      <div id="whatsappLinks" class="whatsapp-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="noticeModal" class="notice-modal" aria-labelledby="modalTitle">
+    <form method="dialog">
+      <button class="modal-close" value="close" aria-label="Close notice details">Close</button>
+    </form>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="notice-board.js"></script>
+</body>
+</html>

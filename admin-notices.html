@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Notices Placeholder | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="notice-board.css">
+</head>
+<body>
+  <main>
+    <section class="access-strip">
+      <div>
+        <p class="eyebrow">Admin only placeholder</p>
+        <h1>Notice Management</h1>
+        <p>Create, edit, publish, unpublish, archive, delete and upload notice attachments after Firebase/Supabase login is added.</p>
+      </div>
+      <div class="admin-links">
+        <a href="notice-form.html">Add New Notice</a>
+        <a href="notice-board.html">Public Notice Board</a>
+      </div>
+    </section>
+    <section id="adminNoticeCards" class="notice-grid"></section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-auth.js"></script>
+  <script src="js/admin-notices.js"></script>
+</body>
+</html>

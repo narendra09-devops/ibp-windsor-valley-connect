@@ -1,0 +1,4 @@
+{
+  "note": "Public users can view published notices only. Draft, unpublished, admin remarks and upload controls must stay hidden.",
+  "source": "data/notices.json"
+}

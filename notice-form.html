@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notice Form Placeholder | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="notice-board.css">
+</head>
+<body>
+  <main>
+    <section class="access-strip">
+      <div>
+        <p class="eyebrow">Create or edit notice</p>
+        <h1>Notice Form</h1>
+        <p>Static placeholder for future authenticated notice publishing and attachment uploads.</p>
+      </div>
+      <div class="admin-links">
+        <a href="admin-notices.html">Admin Notices</a>
+        <a href="notice-board.html">Public Notice Board</a>
+      </div>
+    </section>
+    <section class="filters">
+      <label><span>Notice Title</span><input type="text" placeholder="Monthly maintenance collection due by 7 June"></label>
+      <label><span>Category</span><select><option>Maintenance</option><option>RWA</option><option>AGM</option><option>Emergency</option><option>Event</option><option>Payment</option><option>Utility</option><option>Security</option><option>Water</option><option>Electricity</option><option>Builder Pending Work</option><option>General Announcement</option></select></label>
+      <label><span>Priority</span><select><option>Low</option><option>Medium</option><option>High</option><option>Emergency</option></select></label>
+      <label><span>Description</span><input type="text" placeholder="Full notice description"></label>
+      <label><span>Publish Date</span><input type="date"></label>
+      <label><span>Expiry Date</span><input type="date"></label>
+      <label><span>Applicable Block</span><input type="text" placeholder="All Blocks"></label>
+      <label><span>Attachment Upload</span><input type="file"></label>
+      <label><span>PDF Upload</span><input type="file" accept="application/pdf"></label>
+      <label><span>Image/Screenshot Upload</span><input type="file" accept="image/png,image/jpeg"></label>
+      <label><span>WhatsApp Link</span><input type="url" placeholder="https://wa.me/"></label>
+      <label><span>Pin Notice</span><select><option>No</option><option>Yes</option></select></label>
+      <label><span>Emergency Alert</span><select><option>No</option><option>Yes</option></select></label>
+      <label><span>Publish</span><select><option>Published</option><option>Unpublished</option></select></label>
+      <button type="button" data-admin-action="Save notice">Save Notice Placeholder</button>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-auth.js"></script>
+</body>
+</html>
