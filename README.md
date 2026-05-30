@@ -5,6 +5,7 @@ A static, mobile-responsive society dashboard for an under-development residenti
 ## Modules
 
 - Interactive society overview dashboard for Blocks A to H.
+- Clean society-app tabs: Home, About RWA, Residents, Maintenance, Payments, Utilities, Gate Pass, Documents, Team, Layout, Events, and Helpline.
 - Block-wise property status with plot/house number, occupancy status, RWA membership, occupant label, and water source.
 - Maintenance tracker for water motor repair, street lights, sewage, cleaning, security, common electricity, and expense history.
 - Monthly maintenance records with expected collection, received money, pending amount, expenses, and closing balance.

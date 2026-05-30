@@ -213,6 +213,14 @@ main {
   background: linear-gradient(135deg, #7e4a18, #db4b82);
 }
 
+.portal-tabs a:nth-child(11) {
+  background: linear-gradient(135deg, #2d7c34, #16a3b8);
+}
+
+.portal-tabs a:nth-child(12) {
+  background: linear-gradient(135deg, #263b83, #6b4bd8);
+}
+
 .summary-band,
 .content-band,
 .whatsapp-band,
