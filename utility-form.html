@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utility Asset Form | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="utilities.css">
+</head>
+<body>
+  <main>
+    <section class="notice-strip">
+      <div>
+        <p class="eyebrow">Admin form placeholder</p>
+        <h1>Add / Edit Utility Asset</h1>
+        <p>This static form prepares fields for future Firebase/Supabase asset records, uploads, vendor assignment and maintenance scheduling.</p>
+      </div>
+      <div class="admin-links"><a href="admin-utilities.html">Admin Console</a><a href="utilities.html">Public Utilities</a></div>
+    </section>
+    <section class="form-shell">
+      <form id="utilityForm">
+        <label><span>Asset Name</span><input required name="assetName" placeholder="Common Water Motor 1"></label>
+        <label><span>Category</span><select id="formCategory" required></select></label>
+        <label><span>Asset Type</span><input name="assetType" placeholder="Water Motor / CCTV / Street Light"></label>
+        <label><span>Status</span><select id="formStatus" required></select></label>
+        <label><span>Capacity / Meter / Pole</span><input name="capacity" placeholder="5 HP / Consumer No / Pole No"></label>
+        <label><span>Installation Date</span><input type="date" name="installationDate"></label>
+        <label><span>Last Service Date</span><input type="date" name="lastServiceDate"></label>
+        <label><span>Next Service Date</span><input type="date" name="nextServiceDate"></label>
+        <label><span>Vendor</span><input name="vendor" placeholder="Vendor or staff name"></label>
+        <label><span>Location</span><input name="location" placeholder="Block or asset location"></label>
+        <label><span>Bill Upload Placeholder</span><input type="file" accept=".pdf,.png,.jpg,.jpeg,.xlsx,.csv"></label>
+        <label><span>Photo Upload Placeholder</span><input type="file" accept="image/*"></label>
+        <label class="wide"><span>Service Notes</span><textarea rows="6" placeholder="Maintenance records, repair expense, warranty, AMC and vendor notes."></textarea></label>
+        <button class="submit-button" type="submit">Save Utility Asset</button>
+      </form>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-utilities.js"></script>
+</body>
+</html>

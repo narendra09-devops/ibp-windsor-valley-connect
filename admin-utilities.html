@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Utilities | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="utilities.css">
+</head>
+<body>
+  <main>
+    <section class="notice-strip">
+      <div>
+        <p class="eyebrow">Admin/RWA placeholder</p>
+        <h1>Utilities Admin Console</h1>
+        <p>Add assets, update utility status, upload bills/photos/reports, schedule maintenance and assign vendors after secure login is connected.</p>
+      </div>
+      <div class="admin-links">
+        <a href="utility-form.html">Add Utility Asset</a>
+        <a href="utilities.html">Public Utilities</a>
+        <a href="utility-maintenance.html">Maintenance Schedule</a>
+      </div>
+    </section>
+    <section class="filters">
+      <label><span>Admin Search</span><input id="adminUtilitySearch" type="search" placeholder="Search asset, vendor, status..."></label>
+      <label><span>Category</span><select id="adminCategoryFilter"><option value="all">All Categories</option></select></label>
+      <label><span>Status</span><select id="adminStatusFilter"><option value="all">All Statuses</option></select></label>
+      <label><span>Bulk Action</span><select><option>Export utility report</option><option>Archive selected</option><option>Upload bill placeholder</option></select></label>
+    </section>
+    <section>
+      <div class="section-heading"><div><p class="eyebrow">Asset administration</p><h2>Utility Asset Queue</h2></div><span class="pill">Demo only</span></div>
+      <div id="adminUtilityCards" class="asset-grid"></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-auth.js"></script>
+  <script src="js/admin-utilities.js"></script>
+</body>
+</html>

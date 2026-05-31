@@ -1,0 +1,7 @@
+{
+  "lastUpdated": "31 May 2026",
+  "records": [
+    {"cameraId": "CCTV-GATE-01", "cameraLocation": "Main gate", "status": "Planned", "recordingStatus": "Planned", "lastMaintenance": "Not applicable"},
+    {"cameraId": "CCTV-ROAD-01", "cameraLocation": "40 ft main road", "status": "Planned", "recordingStatus": "Planned", "lastMaintenance": "Not applicable"}
+  ]
+}

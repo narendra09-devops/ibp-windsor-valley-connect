@@ -1,0 +1,8 @@
+{
+  "lastUpdated": "31 May 2026",
+  "records": [
+    {"id": "WTR-001", "motorName": "Common Water Motor 1", "capacity": "5 HP", "installationDate": "2025-09-15", "lastServiceDate": "2026-05-12", "nextServiceDate": "2026-06-12", "vendor": "Motor Service Vendor", "status": "Maintenance Due"},
+    {"id": "WTR-002", "motorName": "Overhead Water Tank A-C", "capacity": "20000 L", "installationDate": "2025-08-01", "lastServiceDate": "2026-04-20", "nextServiceDate": "2026-06-20", "vendor": "Tank Cleaning Vendor", "status": "Working"},
+    {"id": "WTR-003", "motorName": "Pipeline Network A-D", "capacity": "Common line", "installationDate": "2025-10-10", "lastServiceDate": "2026-05-30", "nextServiceDate": "2026-06-30", "vendor": "Plumber", "status": "Working"}
+  ]
+}

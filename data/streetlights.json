@@ -1,0 +1,8 @@
+{
+  "lastUpdated": "31 May 2026",
+  "records": [
+    {"poleNumber": "SL-EF-01", "location": "Between Blocks E and F", "installationDate": "2025-11-10", "currentStatus": "Under Repair", "complaintHistory": ["CMP-002"]},
+    {"poleNumber": "SL-A-01", "location": "Block A lane", "installationDate": "2025-10-05", "currentStatus": "Working", "complaintHistory": []},
+    {"poleNumber": "SL-G-01", "location": "Block G lane", "installationDate": "Planned", "currentStatus": "Replacement Required", "complaintHistory": []}
+  ]
+}

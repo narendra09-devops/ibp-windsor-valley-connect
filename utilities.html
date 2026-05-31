@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Utilities, Infrastructure and Asset Management Center for IBP Windsor Valley Welfare Society.">
+  <meta name="theme-color" content="#0f766e">
+  <title>Utilities & Infrastructure Management | IBP Windsor Valley</title>
+  <link rel="icon" href="assets/images/rwa-logo.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="utilities.css">
+</head>
+<body>
+  <header class="utility-hero">
+    <nav class="utility-nav" aria-label="Utilities navigation">
+      <a href="index.html#dashboard">Home</a>
+      <a href="index.html#society">Society</a>
+      <a href="index.html#residents">Residents</a>
+      <a href="index.html#rwa">RWA</a>
+      <a href="index.html#maintenance">Maintenance</a>
+      <a class="active" href="utilities.html">Utilities & Infrastructure</a>
+      <a href="complaints.html">Complaint Center</a>
+      <a href="visitor-records.html">Visitor Records</a>
+      <a href="workforce-management.html">Workforce Management</a>
+      <a href="documents-repository.html">Documents Repository</a>
+      <a href="notice-board.html">Notice Board</a>
+      <a href="events.html">Community Activities</a>
+      <a href="reports.html">Reports & Analytics</a>
+      <a href="emergency-services.html">Emergency & Services</a>
+    </nav>
+    <div class="hero-grid">
+      <img src="assets/images/rwa-logo.png" alt="IBP Windsor Valley Welfare Society logo">
+      <div>
+        <p class="eyebrow">Utilities, infrastructure and assets</p>
+        <h1>Utilities & Infrastructure Management</h1>
+        <p>Track common water, electricity, street lights, CCTV, sewage, waste routes, house utility summaries, vendors, service history and related complaints.</p>
+      </div>
+      <button id="themeToggle" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="notice-strip">
+      <div>
+        <p class="eyebrow">Public access</p>
+        <h2>Residents see status summaries only</h2>
+        <p>Private submersible owner details, full meter details, uploaded bills and admin remarks are reserved for future secure RWA/Admin login.</p>
+      </div>
+      <div class="admin-links">
+        <a href="complaints.html">Raise Utility Issue</a>
+        <a href="admin-utilities.html">Admin Utilities</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">Utility overview</p><h2>Asset Health Dashboard</h2></div>
+        <span id="lastUpdated" class="pill"></span>
+      </div>
+      <div id="summaryCards" class="summary-grid"></div>
+    </section>
+
+    <section class="filters" aria-label="Utility filters">
+      <label><span>Search</span><input id="searchInput" type="search" placeholder="Search water, meter, vendor, status..."></label>
+      <label><span>Category</span><select id="categoryFilter"></select></label>
+      <label><span>Status</span><select id="statusFilter"></select></label>
+      <label><span>Vendor</span><select id="vendorFilter"></select></label>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">Asset register</p><h2>Clickable Utility Cards</h2></div>
+        <span id="assetCount" class="pill"></span>
+      </div>
+      <div id="assetCards" class="asset-grid"></div>
+    </section>
+
+    <section class="two-column">
+      <article class="panel">
+        <div class="section-heading flush"><div><p class="eyebrow">Charts</p><h2>Reports & Analytics</h2></div></div>
+        <div id="reportBars" class="bar-list"></div>
+      </article>
+      <article class="panel">
+        <div class="section-heading flush"><div><p class="eyebrow">Private summary</p><h2>Submersible Count by Block</h2></div></div>
+        <div id="submersibleSummary" class="mini-grid"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">Resident requests</p><h2>Utility Complaint Types</h2></div>
+      </div>
+      <div id="requestChips" class="chip-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="assetModal" class="asset-modal" aria-labelledby="modalTitle">
+    <form method="dialog"><button class="modal-close" value="close">Close</button></form>
+    <div id="modalContent"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="utilities.js"></script>
+</body>
+</html>

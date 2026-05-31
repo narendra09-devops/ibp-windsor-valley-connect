@@ -11,6 +11,10 @@ if (location.hash === "#complaints") {
   location.replace("complaints.html");
 }
 
+if (location.hash === "#utilities") {
+  location.replace("utilities.html");
+}
+
 if (location.hash === "#help") {
   location.replace("emergency-services.html");
 }
@@ -243,14 +247,6 @@ function renderMaintenance() {
   })).join("") || empty("maintenance records");
 }
 
-function renderUtilities() {
-  byId("utilityCards").innerHTML = filterSearch(state.data.utilities).map((item) => simpleCard({
-    title: item.name,
-    subtitle: `${item.owner}: ${item.note}`,
-    status: item.status
-  })).join("") || empty("utility records");
-}
-
 function renderReports() {
   byId("reportCards").innerHTML = filterSearch(state.data.reports).map((report) => simpleCard({
     title: report.title,
@@ -275,7 +271,6 @@ function renderAll() {
   renderResidents();
   renderRwa();
   renderMaintenance();
-  renderUtilities();
 }
 
 function setActiveNav(hash) {

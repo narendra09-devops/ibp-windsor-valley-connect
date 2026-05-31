@@ -1,0 +1,7 @@
+{
+  "lastUpdated": "31 May 2026",
+  "records": [
+    {"drainageLine": "B rear line", "inspectionDate": "2026-05-30", "cleaningDate": "Pending", "blockCoverage": "Block B", "complaints": ["CMP-006"], "status": "Open Complaint"},
+    {"drainageLine": "A-C internal line", "inspectionDate": "2026-05-18", "cleaningDate": "2026-05-19", "blockCoverage": "Blocks A-C", "complaints": [], "status": "Working"}
+  ]
+}

@@ -9,7 +9,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 - Public resident directory with privacy-safe fields only.
 - RWA office bearers, executive members, block coordinators, AGM and meeting schedule.
 - Maintenance collection, paid/pending status, expenses, vendor bills and work history.
-- Utilities for water, submersible, tank, pipeline, street light, common electricity, NPCL, CCTV, sewage and garbage tracking.
+- Utilities & Infrastructure Management Center for water, private submersible summaries, tanks, motors, pipelines, common electricity, NPCL meter placeholders, street lights, CCTV, sewage, waste routes, assets, reports and admin maintenance scheduling.
 - Complaint Center with resident complaint form, colorful status cards, timeline/details modal, masked resident data and Admin/RWA work-order placeholders.
 - Visitor Records & Gate Pass module with masked public visitor cards, approval workflow placeholders, gate passes, notifications and Admin/Security Guard management placeholders.
 - Workforce Management module with public-safe worker directory, attendance status, monthly calendar, leave/holiday records, payment tracking and admin placeholders.
@@ -24,7 +24,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 
 ## Navigation
 
-Home, Society, Residents, RWA, Maintenance, Utilities, Complaint Center, Visitor Records, Workforce Management, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
+Home, Society, Residents, RWA, Maintenance, Utilities & Infrastructure, Complaint Center, Visitor Records, Workforce Management, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
 
 ## Privacy Rules
 
@@ -46,6 +46,12 @@ Residents can open the Complaint Center, raise a complaint with category, block,
 
 Admin/RWA users will need future secure login before real management actions are enabled. The current static admin pages demonstrate assignment, status updates, remarks, proof upload placeholders, reopen/close/archive actions, work-order generation and complaint reports. Real upload, notification, delete/archive and resident contact workflows require Firebase or Supabase authentication, database and storage.
 
+## Utilities Workflow
+
+Residents can open Utilities & Infrastructure to view public-safe utility status, asset health, maintenance summaries, private submersible block counts, reports and utility complaint entry points. Utility issue chips route residents to the Complaint Center so water, electricity, street light, sewage, garbage, CCTV and other utility requests stay linked with complaint tracking.
+
+Admin/RWA users will need future secure login before real management actions are enabled. The current static admin pages demonstrate asset creation, status updates, vendor assignment, bill/photo/report upload placeholders, maintenance scheduling, service history, expense history and asset register management. Real uploads, restricted meter/house records and delete/archive workflows require Firebase or Supabase authentication, database and storage.
+
 ## Data
 
 - `data/public-data.json` contains dummy public JSON for the portal.
@@ -59,6 +65,8 @@ Admin/RWA users will need future secure login before real management actions are
 - `data/complaints.json` contains dummy complaint, status, priority, timeline, assignment and work-proof placeholder data.
 - `data/complaints-public.json` documents the public complaint privacy model.
 - `data/complaints-admin.json` contains Admin/RWA permission and future backend placeholders.
+- `data/utilities.json` contains public utility asset, report, private-summary and admin placeholder data.
+- `data/water-assets.json`, `data/electricity-assets.json`, `data/cctv-assets.json`, `data/streetlights.json`, and `data/sewage-records.json` contain module-specific utility sample records.
 - `data/documents.json` contains public and restricted document repository data.
 - `data/documents-public.json` documents the public document access model.
 - `data/documents-admin.json` contains admin-only sample document role and permission structures for future login-based access.
@@ -124,6 +132,12 @@ The app is root-ready for GitHub Pages. Publish from the repository root on the 
 - `admin-complaints.html`, `complaint-form.html`, `complaint-details.html`, `complaint-workorder.html` - future Admin/RWA complaint and resident form placeholders.
 - `js/admin-complaints.js` - static admin complaint, form and work-order placeholder behavior.
 - `uploads/complaints/` - future complaint photo and work-proof upload folders.
+- `utilities.html` - public Utilities, Infrastructure & Asset Management Center.
+- `utilities.css` - responsive colorful utility dashboard design.
+- `utilities.js` - utility search, filters, cards, charts, modal details and resident request links.
+- `admin-utilities.html`, `utility-form.html`, `utility-assets.html`, `utility-maintenance.html` - future Admin/RWA utility management placeholders.
+- `js/admin-utilities.js` - static admin utility, asset form and maintenance placeholder behavior.
+- `uploads/utilities/` - future utility bill, photo and report upload folders.
 - `documents-repository.html` - public Documents Repository module.
 - `documents-repository.css` - responsive document repository design.
 - `documents-repository.js` - document search, filters, cards, public downloads and detail modal.
