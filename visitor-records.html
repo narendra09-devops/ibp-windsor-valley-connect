@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visitor Records and Gate Pass Management for IBP Windsor Valley Welfare Society.">
+  <meta name="theme-color" content="#132b46">
+  <title>Visitor Records & Gate Pass | IBP Windsor Valley</title>
+  <link rel="icon" href="assets/images/rwa-logo.png" type="image/png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="visitor-records.css">
+</head>
+<body>
+  <header class="visitor-hero">
+    <nav class="visitor-nav" aria-label="Visitor records navigation">
+      <a href="index.html#dashboard">Home</a>
+      <a href="index.html#society">Society</a>
+      <a href="index.html#residents">Residents</a>
+      <a href="index.html#rwa">RWA</a>
+      <a href="index.html#maintenance">Maintenance</a>
+      <a href="index.html#utilities">Utilities</a>
+      <a href="index.html#complaints">Complaints</a>
+      <a class="active" href="visitor-records.html">Visitor Records</a>
+      <a href="workforce-management.html">Workforce Management</a>
+      <a href="documents-repository.html">Documents Repository</a>
+      <a href="notice-board.html">Notice Board</a>
+      <a href="events.html">Community Activities</a>
+      <a href="reports.html">Reports & Analytics</a>
+      <a href="emergency-services.html">Emergency & Services</a>
+    </nav>
+    <div class="hero-grid">
+      <img src="assets/images/rwa-logo.png" alt="IBP Windsor Valley Welfare Society logo">
+      <div>
+        <p class="eyebrow">Gate entries, approvals and passes</p>
+        <h1>Visitor Records & Gate Pass</h1>
+        <p>Public-safe visitor status dashboard with masked mobile and vehicle numbers. Admin and Security Guard workflows are prepared as placeholders for future login.</p>
+      </div>
+      <button id="themeToggle" type="button">Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="access-strip">
+      <div>
+        <p class="eyebrow">Privacy mode</p>
+        <h2>Public view shows masked visitor data only</h2>
+        <p>Full mobile numbers, full vehicle numbers and ID proof details are reserved for future Admin/Security Guard login.</p>
+      </div>
+      <div class="admin-links">
+        <a href="admin-visitor-records.html">Admin Visitor Records</a>
+        <a href="visitor-entry-form.html">Add Visitor Entry</a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">Visitor dashboard</p><h2>Summary Cards</h2></div>
+        <span id="lastUpdated" class="pill"></span>
+      </div>
+      <div id="summaryCards" class="summary-grid"></div>
+    </section>
+
+    <section class="filters" aria-label="Visitor filters">
+      <label><span>Search</span><input id="searchInput" type="search" placeholder="Search visitor, house, guard, purpose..."></label>
+      <label><span>Status</span><select id="statusFilter"></select></label>
+      <label><span>Visitor Type</span><select id="typeFilter"></select></label>
+      <label><span>Block</span><select id="blockFilter"></select></label>
+      <label><span>Date</span><select id="dateFilter"><option value="today">Today</option><option value="all">All Dummy Data</option></select></label>
+      <label><span>Guard</span><select id="guardFilter"></select></label>
+      <label><span>Vehicle</span><select id="vehicleFilter"><option value="all">All Vehicle Status</option><option>Yes</option><option>No</option></select></label>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">Visitor requests</p><h2>Visitor Cards</h2></div>
+        <span id="visitorCount" class="pill"></span>
+      </div>
+      <div id="visitorCards" class="visitor-grid"></div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">Gate pass module</p><h2>Gate Pass Cards</h2></div>
+      </div>
+      <div id="gatePassCards" class="pass-grid"></div>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">Reports</p><h2>Visitor Reports</h2></div>
+      </div>
+      <div id="reportCards" class="pass-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="visitorModal" class="visitor-modal" aria-labelledby="modalTitle">
+    <form method="dialog"><button class="modal-close" value="close" aria-label="Close visitor details">Close</button></form>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="visitor-records.js"></script>
+</body>
+</html>

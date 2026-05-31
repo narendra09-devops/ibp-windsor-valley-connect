@@ -1,0 +1,10 @@
+{
+  "notifications": [
+    {"visitorId":"VIS-1001","channel":"WhatsApp","status":"Sent","time":"11:06 AM","message":"Approval request placeholder"},
+    {"visitorId":"VIS-1001","channel":"In-app","status":"Pending","time":"11:06 AM","message":"Resident app workflow placeholder"},
+    {"visitorId":"VIS-1002","channel":"SMS","status":"Sent","time":"09:11 AM","message":"Delivery approval placeholder"},
+    {"visitorId":"VIS-1003","channel":"WhatsApp","status":"Pending","time":"08:46 AM","message":"Construction worker approval placeholder"},
+    {"visitorId":"VIS-1005","channel":"In-app","status":"Rejected","time":"12:24 PM","message":"Resident rejected entry placeholder"}
+  ],
+  "channels": ["WhatsApp notification placeholder", "SMS notification placeholder", "In-app notification placeholder", "Email notification placeholder"]
+}

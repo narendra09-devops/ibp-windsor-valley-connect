@@ -1,0 +1,10 @@
+{
+  "note": "Admin and Security Guard role model for future login-based gate management.",
+  "roles": {
+    "Admin": ["full_records", "add", "edit", "delete", "archive", "full_mobile", "full_vehicle", "manage_guards", "reports"],
+    "Security Guard": ["add_daily_entry", "update_exit", "create_gate_pass", "send_approval_request", "update_status"],
+    "Resident/Public Viewer": ["view_related_status_only"]
+  },
+  "hiddenFromPublic": ["fullMobile", "fullVehicle", "idProofNumber", "allVisitorRecords", "deleteButtons", "adminRemarks"],
+  "backendPlaceholders": ["Firebase Authentication", "Firebase Realtime Database", "Firebase Storage", "Supabase Authentication", "Supabase Database", "Supabase Storage"]
+}

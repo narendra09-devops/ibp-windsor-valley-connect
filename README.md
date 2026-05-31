@@ -12,7 +12,7 @@ https://narendra09-devops.github.io/ibp-windsor-valley-connect/
 - Maintenance collection, paid/pending status, expenses, vendor bills and work history.
 - Utilities for water, submersible, tank, pipeline, street light, common electricity, NPCL, CCTV, sewage and garbage tracking.
 - Complaints with category, status, assignee and work-order style history.
-- Security gate entries, visitor/delivery/worker/vehicle records and masked vehicle numbers.
+- Visitor Records & Gate Pass module with masked public visitor cards, approval workflow placeholders, gate passes, notifications and Admin/Security Guard management placeholders.
 - Workforce Management module with public-safe worker directory, attendance status, monthly calendar, leave/holiday records, payment tracking and admin placeholders.
 - Documents Repository, Notice Board, published WhatsApp links, reports and emergency help placeholders.
 - Documents Repository module with public document viewing, search/filter, detail modal, public downloads, restricted/private access rules and admin document management placeholders.
@@ -25,7 +25,7 @@ https://narendra09-devops.github.io/ibp-windsor-valley-connect/
 
 ## Navigation
 
-Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workforce Management, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
+Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Visitor Records, Workforce Management, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
 
 ## Privacy Rules
 
@@ -44,6 +44,9 @@ Private sample structures are kept separately in `data/private-sample.json` for 
 ## Data
 
 - `data/public-data.json` contains dummy public JSON for the portal.
+- `data/visitor-records.json`, `data/gate-passes.json`, and `data/visitor-notifications.json` contain dummy visitor, gate pass and notification placeholder data.
+- `data/visitor-public.json` documents the public visitor privacy model.
+- `data/visitor-admin.json` contains Admin/Security Guard role placeholders for future login-based access.
 - `data/workers.json` contains public-safe worker role, attendance and payment status data.
 - `data/workers-public.json` documents the public worker access model.
 - `data/workers-admin.json` contains admin-only sample worker role and permission structures.
@@ -96,6 +99,11 @@ The app is root-ready for GitHub Pages. Publish from the repository root on the 
 - `index.html` - static app shell and module containers.
 - `css/style.css` - responsive visual design.
 - `js/app.js` - JSON loading, filters and rendering.
+- `visitor-records.html` - public Visitor Records & Gate Pass module.
+- `visitor-records.css` - responsive visitor records design.
+- `visitor-records.js` - visitor filters, cards, gate passes, reports and details modal.
+- `admin-visitor-records.html`, `visitor-entry-form.html`, `gate-pass-form.html`, `visitor-approval-requests.html` - future Admin/Security Guard placeholders.
+- `js/admin-visitors.js` - static admin visitor placeholder behavior.
 - `workforce-management.html` - public Workforce Attendance & Payment Management Center.
 - `workforce-management.css` - responsive workforce dashboard design.
 - `workforce-management.js` - worker filters, tabs, attendance calendar, payments and modal details.

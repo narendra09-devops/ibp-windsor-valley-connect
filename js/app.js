@@ -31,6 +31,10 @@ if (location.hash === "#workers") {
   location.replace("workforce-management.html");
 }
 
+if (location.hash === "#security") {
+  location.replace("visitor-records.html");
+}
+
 const selectors = {
   search: "#globalSearch",
   block: "#blockFilter",
@@ -258,16 +262,6 @@ function renderComplaints() {
   `).join("");
 }
 
-function renderSecurity() {
-  const security = state.data.security;
-  byId("securityRows").innerHTML = filterSearch(security.entries).map((entry) => `<tr><td>${entry.type}</td><td>${entry.name}</td><td>${entry.house}</td><td>${entry.entry}</td><td>${entry.exit}</td><td>${entry.purpose}</td><td>${entry.guard}</td><td>${entry.vehicle}</td></tr>`).join("");
-  byId("gatePassCards").innerHTML = filterSearch(security.gatePassRecords).map((pass) => simpleCard({
-    title: `${pass.pass} - ${pass.house}`,
-    subtitle: `${pass.purpose}; valid till ${pass.validTill}`,
-    status: pass.status
-  })).join("") || empty("gate pass records");
-}
-
 function renderReports() {
   byId("reportCards").innerHTML = filterSearch(state.data.reports).map((report) => simpleCard({
     title: report.title,
@@ -294,7 +288,6 @@ function renderAll() {
   renderMaintenance();
   renderUtilities();
   renderComplaints();
-  renderSecurity();
 }
 
 function setActiveNav(hash) {
