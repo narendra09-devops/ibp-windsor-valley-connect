@@ -23,6 +23,10 @@ if (location.hash === "#notices") {
   location.replace("notice-board.html");
 }
 
+if (location.hash === "#documents") {
+  location.replace("documents-repository.html");
+}
+
 const selectors = {
   search: "#globalSearch",
   block: "#blockFilter",
@@ -273,15 +277,6 @@ function renderWorkers() {
   `).join("");
 }
 
-function renderDocuments() {
-  byId("documentCards").innerHTML = filterSearch(state.data.documents).map((doc) => simpleCard({
-    title: doc.title,
-    subtitle: `${doc.type} / ${doc.access}`,
-    status: doc.status,
-    link: doc.link
-  })).join("") || empty("document records");
-}
-
 function renderReports() {
   byId("reportCards").innerHTML = filterSearch(state.data.reports).map((report) => simpleCard({
     title: report.title,
@@ -310,7 +305,6 @@ function renderAll() {
   renderComplaints();
   renderSecurity();
   renderWorkers();
-  renderDocuments();
 }
 
 function setActiveNav(hash) {
