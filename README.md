@@ -13,7 +13,8 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 - Complaints with category, status, assignee and work-order style history.
 - Security gate entries, visitor/delivery/worker/vehicle records and masked vehicle numbers.
 - Worker attendance, duty shift, assigned area and payment status with contacts hidden.
-- Documents, Notice Board, published WhatsApp links, reports and emergency help placeholders.
+- Documents Repository, Notice Board, published WhatsApp links, reports and emergency help placeholders.
+- Documents Repository module with public document viewing, search/filter, detail modal, public downloads, restricted/private access rules and admin document management placeholders.
 - Notice Board module with public published notices, search/filter, detail modal, attachment placeholders, WhatsApp actions and admin notice management placeholders.
 - Community Activities, Meetings & Events Center with RWA meetings, AGM, builder follow-up, MOM repository, galleries, event documents and admin management placeholders.
 - Reports & Analytics Center with auto-generated reports, uploaded report repository, KPI cards, charts, filters, details modal and admin placeholders.
@@ -23,7 +24,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 
 ## Navigation
 
-Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
+Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
 
 ## Privacy Rules
 
@@ -42,6 +43,9 @@ Private sample structures are kept separately in `data/private-sample.json` for 
 ## Data
 
 - `data/public-data.json` contains dummy public JSON for the portal.
+- `data/documents.json` contains public and restricted document repository data.
+- `data/documents-public.json` documents the public document access model.
+- `data/documents-admin.json` contains admin-only sample document role and permission structures for future login-based access.
 - `data/notices.json` contains public notice board data, attachment placeholders and published WhatsApp links.
 - `data/notices-public.json` documents the public notice access model.
 - `data/notices-admin.json` contains admin-only sample notice role and permission structures for future login-based access.
@@ -87,6 +91,13 @@ The app is root-ready for GitHub Pages. Publish from the repository root on the 
 - `index.html` - static app shell and module containers.
 - `css/style.css` - responsive visual design.
 - `js/app.js` - JSON loading, filters and rendering.
+- `documents-repository.html` - public Documents Repository module.
+- `documents-repository.css` - responsive document repository design.
+- `documents-repository.js` - document search, filters, cards, public downloads and detail modal.
+- `admin-documents.html` - future document admin list placeholder.
+- `document-form.html` - future upload/edit document form placeholder.
+- `js/admin-documents.js` - static admin document placeholder behavior.
+- `uploads/documents/` - future public, restricted, private, meeting minutes, bills, legal and utility document folders.
 - `notice-board.html` - public Notice Board module.
 - `notice-board.css` - responsive notice board design.
 - `notice-board.js` - notice search, filters, cards, modal and WhatsApp actions.

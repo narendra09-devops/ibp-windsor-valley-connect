@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Form Placeholder | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="documents-repository.css">
+</head>
+<body>
+  <main>
+    <section class="access-strip">
+      <div>
+        <p class="eyebrow">Create or edit document</p>
+        <h1>Document Form</h1>
+        <p>Static placeholder for future authenticated document upload, versioning and access control.</p>
+      </div>
+      <div class="admin-links">
+        <a href="admin-documents.html">Admin Documents</a>
+        <a href="documents-repository.html">Public Repository</a>
+      </div>
+    </section>
+    <section class="filters">
+      <label><span>Document Title</span><input type="text" placeholder="Registration Certificate"></label>
+      <label><span>Category</span><select><option>Registration Certificate</option><option>PAN</option><option>Bylaws</option><option>MOA</option><option>AGM Minutes</option><option>Meeting Minutes</option><option>Vendor Contracts</option><option>Bills/Invoices</option><option>Government Authority Letters</option><option>NPCL Recharge Manual</option><option>Maintenance Bills</option><option>Legal Documents</option><option>Builder Communication</option><option>RWA Circulars</option></select></label>
+      <label><span>Access Level</span><select><option>Public</option><option>Restricted</option><option>Private</option></select></label>
+      <label><span>Description</span><input type="text" placeholder="Document description"></label>
+      <label><span>Upload File</span><input type="file"></label>
+      <label><span>File Type</span><select><option>PDF</option><option>DOCX</option><option>XLSX</option><option>Image</option></select></label>
+      <label><span>Version</span><input type="text" placeholder="1.0"></label>
+      <label><span>Valid From</span><input type="date"></label>
+      <label><span>Valid Till</span><input type="date"></label>
+      <label><span>Renewal Reminder Date</span><input type="date"></label>
+      <label><span>Related Meeting/Event/Notice</span><input type="text" placeholder="AGM 2026"></label>
+      <label><span>Publish</span><select><option>Published</option><option>Unpublished</option></select></label>
+      <label><span>Restricted</span><select><option>No</option><option>Yes</option></select></label>
+      <label><span>Internal Remarks</span><input type="text" placeholder="Admin-only remarks"></label>
+      <button type="button" data-admin-action="Save document">Save Document Placeholder</button>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-auth.js"></script>
+</body>
+</html>

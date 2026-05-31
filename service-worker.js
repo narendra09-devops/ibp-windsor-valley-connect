@@ -1,7 +1,12 @@
-const CACHE_NAME = "ibp-windsor-valley-rwa-v9";
+const CACHE_NAME = "ibp-windsor-valley-rwa-v10";
 const ASSETS = [
   "./",
   "./index.html",
+  "./documents-repository.html",
+  "./documents-repository.css",
+  "./documents-repository.js",
+  "./admin-documents.html",
+  "./document-form.html",
   "./notice-board.html",
   "./notice-board.css",
   "./notice-board.js",
@@ -26,6 +31,9 @@ const ASSETS = [
   "./js/app.js",
   "./manifest.json",
   "./data/public-data.json",
+  "./data/documents.json",
+  "./data/documents-public.json",
+  "./data/documents-admin.json",
   "./data/notices.json",
   "./data/notices-public.json",
   "./data/notices-admin.json",
@@ -33,6 +41,7 @@ const ASSETS = [
   "./data/events-public.json",
   "./data/events-admin.json",
   "./js/admin-auth.js",
+  "./js/admin-documents.js",
   "./js/admin-events.js",
   "./js/admin-notices.js",
   "./assets/images/rwa-logo.png",

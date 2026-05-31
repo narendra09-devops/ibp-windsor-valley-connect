@@ -1,0 +1,13 @@
+{
+  "note": "Admin-only document management sample structure for future login-based access.",
+  "roles": ["Super Admin", "RWA Core Admin", "Document Manager", "Treasurer", "Viewer"],
+  "permissions": {
+    "Super Admin": ["upload", "edit", "delete", "archive", "publish", "unpublish", "replace_version", "manage_access"],
+    "RWA Core Admin": ["upload", "edit", "archive", "publish", "replace_version"],
+    "Document Manager": ["upload", "edit", "update_status", "replace_version"],
+    "Treasurer": ["upload_accounts", "view_restricted", "replace_accounts"],
+    "Viewer": ["view_public"]
+  },
+  "hiddenFromPublic": ["internalRemarks", "restrictedFiles", "privateFiles", "privateDownloadLinks", "uploadControls", "editButtons", "deleteButtons"],
+  "backendPlaceholders": ["Firebase Authentication", "Firebase Storage", "Firebase Firestore", "Supabase Authentication", "Supabase Database", "Supabase Storage"]
+}
