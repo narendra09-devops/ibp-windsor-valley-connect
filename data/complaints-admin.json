@@ -1,0 +1,13 @@
+{
+  "note": "Admin/RWA complaint management sample structure for future login-based access.",
+  "roles": ["Super Admin", "RWA Core Admin", "Complaint Manager", "Vendor/Worker", "Viewer"],
+  "permissions": {
+    "Super Admin": ["view_all", "assign", "status_update", "delete", "archive", "reports"],
+    "RWA Core Admin": ["view_all", "assign", "status_update", "resolve", "reopen", "reports"],
+    "Complaint Manager": ["assign", "remarks", "upload_work_proof", "status_update"],
+    "Vendor/Worker": ["view_assigned", "upload_work_proof", "add_work_note"],
+    "Viewer": ["view_related"]
+  },
+  "hiddenFromPublic": ["adminRemarks", "privateContact", "deleteButtons", "archiveButtons", "internalAssignments"],
+  "backendPlaceholders": ["Firebase Authentication", "Firebase Database", "Firebase Storage", "Supabase Authentication", "Supabase Database", "Supabase Storage"]
+}

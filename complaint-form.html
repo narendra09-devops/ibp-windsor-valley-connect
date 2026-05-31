@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raise Complaint | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="complaints.css">
+</head>
+<body>
+  <main>
+    <section class="access-strip">
+      <div>
+        <p class="eyebrow">Resident complaint form</p>
+        <h1>Raise New Complaint</h1>
+        <p>This static form is a GitHub Pages placeholder. Real submission, photo upload and notifications require a secure backend.</p>
+      </div>
+      <div class="admin-links"><a href="complaints.html">Complaint Center</a><a href="admin-complaints.html">Admin Console</a></div>
+    </section>
+    <section class="form-shell">
+      <form id="complaintForm">
+        <label><span>Complaint Title</span><input required name="title" placeholder="Example: Street light not working"></label>
+        <label><span>Category</span><select required name="category" id="formCategory"></select></label>
+        <label><span>Block</span><select required name="block"><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option>F</option><option>G</option><option>H</option></select></label>
+        <label><span>House Number</span><input required name="house" placeholder="Example: C-05"></label>
+        <label><span>Resident Name</span><input required name="resident" placeholder="Shown as masked in public view"></label>
+        <label><span>Priority</span><select required name="priority" id="formPriority"></select></label>
+        <label class="wide"><span>Description</span><textarea required name="description" rows="6" placeholder="Describe the issue, location, timing and urgency."></textarea></label>
+        <label><span>Photo Upload Placeholder</span><input type="file" accept="image/*"></label>
+        <label><span>Contact Preference Placeholder</span><select><option>WhatsApp after login</option><option>Phone after login</option><option>Email after login</option></select></label>
+        <button class="submit-button" type="submit">Submit Complaint</button>
+      </form>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-complaints.js"></script>
+</body>
+</html>

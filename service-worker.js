@@ -1,4 +1,4 @@
-const CACHE_NAME = "ibp-windsor-valley-rwa-v12";
+const CACHE_NAME = "ibp-windsor-valley-rwa-v13";
 const ASSETS = [
   "./",
   "./index.html",
@@ -9,6 +9,13 @@ const ASSETS = [
   "./visitor-entry-form.html",
   "./gate-pass-form.html",
   "./visitor-approval-requests.html",
+  "./complaints.html",
+  "./complaints.css",
+  "./complaints.js",
+  "./admin-complaints.html",
+  "./complaint-form.html",
+  "./complaint-details.html",
+  "./complaint-workorder.html",
   "./workforce-management.html",
   "./workforce-management.css",
   "./workforce-management.js",
@@ -50,6 +57,9 @@ const ASSETS = [
   "./data/visitor-notifications.json",
   "./data/visitor-public.json",
   "./data/visitor-admin.json",
+  "./data/complaints.json",
+  "./data/complaints-public.json",
+  "./data/complaints-admin.json",
   "./data/workers.json",
   "./data/workers-public.json",
   "./data/workers-admin.json",
@@ -67,6 +77,7 @@ const ASSETS = [
   "./data/events-admin.json",
   "./js/admin-auth.js",
   "./js/admin-visitors.js",
+  "./js/admin-complaints.js",
   "./js/admin-workers.js",
   "./js/admin-documents.js",
   "./js/admin-events.js",
