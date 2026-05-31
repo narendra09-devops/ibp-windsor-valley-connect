@@ -1,0 +1,23 @@
+{
+  "month": "May",
+  "year": "2026",
+  "records": [
+    {"workerId":"WRK-001","date":"2026-05-27","status":"Present","shift":"08:00 AM - 08:00 PM","checkIn":"08:02 AM","checkOut":"08:01 PM","area":"Main Gate","markedBy":"RWA Admin","remarks":"On time"},
+    {"workerId":"WRK-001","date":"2026-05-28","status":"Present","shift":"08:00 AM - 08:00 PM","checkIn":"08:05 AM","checkOut":"08:03 PM","area":"Main Gate","markedBy":"RWA Admin","remarks":"Regular duty"},
+    {"workerId":"WRK-001","date":"2026-05-29","status":"Weekly Off","shift":"Off","checkIn":"-","checkOut":"-","area":"Main Gate","markedBy":"System","remarks":"Weekly off"},
+    {"workerId":"WRK-001","date":"2026-05-30","status":"Present","shift":"08:00 AM - 08:00 PM","checkIn":"08:00 AM","checkOut":"08:00 PM","area":"Main Gate","markedBy":"RWA Admin","remarks":"Gate duty"},
+    {"workerId":"WRK-001","date":"2026-05-31","status":"Present","shift":"08:00 AM - 08:00 PM","checkIn":"08:01 AM","checkOut":"-","area":"Main Gate","markedBy":"RWA Admin","remarks":"Today"},
+    {"workerId":"WRK-002","date":"2026-05-27","status":"Present","shift":"07:00 AM - 11:00 AM","checkIn":"07:10 AM","checkOut":"11:05 AM","area":"Blocks A-C","markedBy":"RWA Admin","remarks":"Cleaning"},
+    {"workerId":"WRK-002","date":"2026-05-28","status":"Half Day","shift":"07:00 AM - 11:00 AM","checkIn":"07:20 AM","checkOut":"09:30 AM","area":"Blocks A-C","markedBy":"RWA Admin","remarks":"Half day"},
+    {"workerId":"WRK-002","date":"2026-05-29","status":"Present","shift":"07:00 AM - 11:00 AM","checkIn":"07:05 AM","checkOut":"11:00 AM","area":"Blocks A-C","markedBy":"RWA Admin","remarks":"Regular"},
+    {"workerId":"WRK-002","date":"2026-05-30","status":"Holiday","shift":"Off","checkIn":"-","checkOut":"-","area":"Blocks A-C","markedBy":"System","remarks":"Holiday"},
+    {"workerId":"WRK-002","date":"2026-05-31","status":"Present","shift":"07:00 AM - 11:00 AM","checkIn":"07:03 AM","checkOut":"11:00 AM","area":"Blocks A-C","markedBy":"RWA Admin","remarks":"Today"},
+    {"workerId":"WRK-003","date":"2026-05-31","status":"On Call","shift":"On Call","checkIn":"-","checkOut":"-","area":"All Blocks","markedBy":"RWA Admin","remarks":"Street light issue"},
+    {"workerId":"WRK-004","date":"2026-05-31","status":"Present","shift":"10:00 AM - 04:00 PM","checkIn":"10:00 AM","checkOut":"04:00 PM","area":"Blocks D-H","markedBy":"RWA Admin","remarks":"Pipeline check"},
+    {"workerId":"WRK-005","date":"2026-05-31","status":"Absent","shift":"On Call","checkIn":"-","checkOut":"-","area":"Club Office","markedBy":"RWA Admin","remarks":"Not available"},
+    {"workerId":"WRK-006","date":"2026-05-31","status":"Present","shift":"09:00 AM - 05:00 PM","checkIn":"09:05 AM","checkOut":"05:00 PM","area":"Block D","markedBy":"RWA Admin","remarks":"Debris removal"},
+    {"workerId":"WRK-007","date":"2026-05-31","status":"Present","shift":"11:00 AM - 06:00 PM","checkIn":"11:00 AM","checkOut":"06:00 PM","area":"Water Plant","markedBy":"RWA Admin","remarks":"Tank check"},
+    {"workerId":"WRK-008","date":"2026-05-31","status":"On Call","shift":"06:00 AM - 10:00 AM","checkIn":"06:00 AM","checkOut":"10:00 AM","area":"Common Water System","markedBy":"RWA Admin","remarks":"Water refill"},
+    {"workerId":"WRK-009","date":"2026-05-31","status":"On Leave","shift":"07:00 AM - 10:00 AM","checkIn":"-","checkOut":"-","area":"Green Belt","markedBy":"RWA Admin","remarks":"Approved leave"}
+  ]
+}

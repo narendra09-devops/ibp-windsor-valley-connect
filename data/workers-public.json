@@ -1,0 +1,4 @@
+{
+  "note": "Public worker view exposes only name, role, attendance status, duty shift, assigned area and payment status.",
+  "source": "data/workers.json"
+}

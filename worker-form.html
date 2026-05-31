@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Worker Form Placeholder</title><link rel="stylesheet" href="workforce-management.css"></head>
+<body><main>
+  <section class="access-strip"><div><p class="eyebrow">Create or edit worker</p><h1>Worker Form</h1><p>Static placeholder for future authenticated worker records.</p></div><div class="admin-links"><a href="admin-workers.html">Admin Workers</a><a href="workforce-management.html">Public Workforce</a></div></section>
+  <section class="filters">
+    <label><span>Worker Name</span><input placeholder="Mahesh"></label><label><span>Role</span><select><option>Security Guard</option><option>Sweeper</option><option>Electrician</option><option>Plumber</option><option>Carpenter</option><option>Technician</option><option>Labour</option><option>Gardener</option><option>Water Operator</option></select></label>
+    <label><span>Duty Shift</span><input placeholder="08:00 AM - 08:00 PM"></label><label><span>Assigned Area/Block</span><input placeholder="Main Gate"></label><label><span>Attendance Status</span><select><option>Present</option><option>Absent</option><option>On Leave</option><option>On Call</option></select></label>
+    <label><span>Check-in time</span><input type="time"></label><label><span>Check-out time</span><input type="time"></label><label><span>Monthly Salary/Charge</span><input placeholder="Placeholder"></label><label><span>Payment Status</span><select><option>Paid</option><option>Pending</option><option>Not Applicable</option></select></label><label><span>Payment Date</span><input type="date"></label>
+    <label><span>Remarks</span><input placeholder="Admin-only remarks"></label><label><span>Document Upload</span><input type="file"></label><label><span>Active Status</span><select><option>Active</option><option>Inactive</option></select></label><button type="button" data-admin-action="Save worker">Save Worker Placeholder</button>
+  </section>
+</main><div id="toast" class="toast" role="status" aria-live="polite"></div><script src="js/admin-auth.js"></script></body></html>
