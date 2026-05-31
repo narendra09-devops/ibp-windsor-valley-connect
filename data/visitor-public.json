@@ -1,0 +1,4 @@
+{
+  "note": "Public/resident future view can show only related request/status. Mobile, vehicle and ID proof details must remain masked.",
+  "source": "data/visitor-records.json"
+}
