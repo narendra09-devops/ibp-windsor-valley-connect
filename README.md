@@ -1,6 +1,7 @@
 # IBP Windsor Valley Welfare Society Portal
 
 Static GitHub Pages compatible society management portal for IBP Windsor Valley Welfare Society, an under-development residential society with Blocks A to H.
+https://narendra09-devops.github.io/ibp-windsor-valley-connect/
 
 ## Features
 
