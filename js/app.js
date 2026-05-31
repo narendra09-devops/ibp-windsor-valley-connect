@@ -27,6 +27,10 @@ if (location.hash === "#documents") {
   location.replace("documents-repository.html");
 }
 
+if (location.hash === "#workers") {
+  location.replace("workforce-management.html");
+}
+
 const selectors = {
   search: "#globalSearch",
   block: "#blockFilter",
@@ -264,19 +268,6 @@ function renderSecurity() {
   })).join("") || empty("gate pass records");
 }
 
-function renderWorkers() {
-  byId("workerRows").innerHTML = state.data.workers.filter(matchesSearch).map((worker) => `
-    <tr>
-      <td>${worker.name}</td>
-      <td>${worker.role}</td>
-      <td>${badge(worker.attendance)}</td>
-      <td>${worker.shift}</td>
-      <td>${worker.area}</td>
-      <td>${badge(worker.paymentStatus)}</td>
-    </tr>
-  `).join("");
-}
-
 function renderReports() {
   byId("reportCards").innerHTML = filterSearch(state.data.reports).map((report) => simpleCard({
     title: report.title,
@@ -304,7 +295,6 @@ function renderAll() {
   renderUtilities();
   renderComplaints();
   renderSecurity();
-  renderWorkers();
 }
 
 function setActiveNav(hash) {

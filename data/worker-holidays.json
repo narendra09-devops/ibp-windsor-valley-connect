@@ -1,0 +1,7 @@
+{
+  "records": [
+    {"date":"2026-05-30","title":"Cleaning team holiday","type":"Holiday","workerId":"WRK-002","remarks":"Holiday record"},
+    {"date":"2026-05-29","title":"Security weekly off","type":"Weekly Off","workerId":"WRK-001","remarks":"Weekly off"},
+    {"date":"2026-05-31","title":"Gardener leave","type":"Leave","workerId":"WRK-009","remarks":"Approved leave"}
+  ]
+}

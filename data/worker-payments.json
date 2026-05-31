@@ -1,0 +1,15 @@
+{
+  "month": "May",
+  "year": "2026",
+  "payments": [
+    {"workerId":"WRK-001","monthlyCharge":"Placeholder","paidAmount":"Placeholder","pendingAmount":"0","status":"Paid","paymentDate":"2026-05-30","mode":"UPI","reference":"Receipt placeholder","remarks":"Monthly security duty"},
+    {"workerId":"WRK-002","monthlyCharge":"Placeholder","paidAmount":"Placeholder","pendingAmount":"0","status":"Paid","paymentDate":"2026-05-30","mode":"Cash","reference":"Receipt placeholder","remarks":"Sweeper payment"},
+    {"workerId":"WRK-003","monthlyCharge":"On call","paidAmount":"0","pendingAmount":"Placeholder","status":"Pending","paymentDate":"-","mode":"-","reference":"Pending","remarks":"Electrician call basis"},
+    {"workerId":"WRK-004","monthlyCharge":"Placeholder","paidAmount":"Placeholder","pendingAmount":"0","status":"Paid","paymentDate":"2026-05-31","mode":"UPI","reference":"Receipt placeholder","remarks":"Plumbing support"},
+    {"workerId":"WRK-005","monthlyCharge":"On call","paidAmount":"0","pendingAmount":"Placeholder","status":"Pending","paymentDate":"-","mode":"-","reference":"Pending","remarks":"Carpenter on call"},
+    {"workerId":"WRK-006","monthlyCharge":"Placeholder","paidAmount":"Placeholder","pendingAmount":"0","status":"Paid","paymentDate":"2026-05-29","mode":"Cash","reference":"Receipt placeholder","remarks":"Labour work"},
+    {"workerId":"WRK-007","monthlyCharge":"Placeholder","paidAmount":"Placeholder","pendingAmount":"0","status":"Paid","paymentDate":"2026-05-31","mode":"UPI","reference":"Receipt placeholder","remarks":"Technician work"},
+    {"workerId":"WRK-008","monthlyCharge":"Not Applicable","paidAmount":"0","pendingAmount":"0","status":"Not Applicable","paymentDate":"-","mode":"-","reference":"-","remarks":"Volunteer/operator placeholder"},
+    {"workerId":"WRK-009","monthlyCharge":"Placeholder","paidAmount":"0","pendingAmount":"Placeholder","status":"Pending","paymentDate":"-","mode":"-","reference":"Pending","remarks":"Gardener payment pending"}
+  ]
+}

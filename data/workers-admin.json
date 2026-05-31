@@ -1,0 +1,13 @@
+{
+  "note": "Admin-only worker management sample structure for future login-based access.",
+  "roles": ["Super Admin", "RWA Core Admin", "Workforce Manager", "Treasurer", "Viewer"],
+  "permissions": {
+    "Super Admin": ["add", "edit", "delete", "archive", "attendance", "payments", "uploads", "reports"],
+    "RWA Core Admin": ["add", "edit", "attendance", "payments", "reports"],
+    "Workforce Manager": ["attendance", "shift", "area", "leave", "uploads"],
+    "Treasurer": ["payments", "salary_status", "reports"],
+    "Viewer": ["view_public"]
+  },
+  "hiddenFromPublic": ["mobile", "address", "idProof", "salaryAmount", "bankDetails", "adminRemarks", "editButtons", "deleteButtons"],
+  "backendPlaceholders": ["Firebase Authentication", "Firebase Storage", "Firebase Firestore", "Supabase Authentication", "Supabase Database", "Supabase Storage"]
+}

@@ -1,0 +1,19 @@
+{
+  "lastUpdated": "31 May 2026",
+  "publicRules": [
+    "Public users can view worker name, role, attendance status, duty shift, assigned area and payment status only.",
+    "Mobile number, address, ID proof, salary amount, bank details and admin remarks are hidden."
+  ],
+  "roles": ["Security Guard", "Sweeper", "Electrician", "Plumber", "Carpenter", "Technician", "Labour", "Gardener", "Water Operator", "Maintenance Helper", "Vendor Staff"],
+  "workers": [
+    {"id":"WRK-001","name":"Mahesh","role":"Security Guard","theme":"security","attendance":"Present","shift":"08:00 AM - 08:00 PM","area":"Main Gate","paymentStatus":"Paid","active":true},
+    {"id":"WRK-002","name":"Pooja","role":"Sweeper","theme":"cleaning","attendance":"Present","shift":"07:00 AM - 11:00 AM","area":"Blocks A-C","paymentStatus":"Paid","active":true},
+    {"id":"WRK-003","name":"Ramesh","role":"Electrician","theme":"electrician","attendance":"On Call","shift":"On Call","area":"All Blocks","paymentStatus":"Pending","active":true},
+    {"id":"WRK-004","name":"Iqbal","role":"Plumber","theme":"plumber","attendance":"Present","shift":"10:00 AM - 04:00 PM","area":"Blocks D-H","paymentStatus":"Paid","active":true},
+    {"id":"WRK-005","name":"Sohan","role":"Carpenter","theme":"carpenter","attendance":"Absent","shift":"On Call","area":"Club Office","paymentStatus":"Pending","active":true},
+    {"id":"WRK-006","name":"Biren","role":"Labour","theme":"labour","attendance":"Present","shift":"09:00 AM - 05:00 PM","area":"Block D","paymentStatus":"Paid","active":true},
+    {"id":"WRK-007","name":"Arun","role":"Technician","theme":"technician","attendance":"Present","shift":"11:00 AM - 06:00 PM","area":"Water Plant","paymentStatus":"Paid","active":true},
+    {"id":"WRK-008","name":"Water Operator","role":"Water Operator","theme":"plumber","attendance":"On Call","shift":"06:00 AM - 10:00 AM","area":"Common Water System","paymentStatus":"Not Applicable","active":true},
+    {"id":"WRK-009","name":"Gardener","role":"Gardener","theme":"technician","attendance":"On Leave","shift":"07:00 AM - 10:00 AM","area":"Green Belt","paymentStatus":"Pending","active":true}
+  ]
+}

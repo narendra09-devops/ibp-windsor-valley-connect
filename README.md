@@ -12,7 +12,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 - Utilities for water, submersible, tank, pipeline, street light, common electricity, NPCL, CCTV, sewage and garbage tracking.
 - Complaints with category, status, assignee and work-order style history.
 - Security gate entries, visitor/delivery/worker/vehicle records and masked vehicle numbers.
-- Worker attendance, duty shift, assigned area and payment status with contacts hidden.
+- Workforce Management module with public-safe worker directory, attendance status, monthly calendar, leave/holiday records, payment tracking and admin placeholders.
 - Documents Repository, Notice Board, published WhatsApp links, reports and emergency help placeholders.
 - Documents Repository module with public document viewing, search/filter, detail modal, public downloads, restricted/private access rules and admin document management placeholders.
 - Notice Board module with public published notices, search/filter, detail modal, attachment placeholders, WhatsApp actions and admin notice management placeholders.
@@ -24,7 +24,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 
 ## Navigation
 
-Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workers, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
+Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Security, Workforce Management, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
 
 ## Privacy Rules
 
@@ -43,6 +43,10 @@ Private sample structures are kept separately in `data/private-sample.json` for 
 ## Data
 
 - `data/public-data.json` contains dummy public JSON for the portal.
+- `data/workers.json` contains public-safe worker role, attendance and payment status data.
+- `data/workers-public.json` documents the public worker access model.
+- `data/workers-admin.json` contains admin-only sample worker role and permission structures.
+- `data/worker-attendance.json`, `data/worker-payments.json`, and `data/worker-holidays.json` contain dummy workforce operations data.
 - `data/documents.json` contains public and restricted document repository data.
 - `data/documents-public.json` documents the public document access model.
 - `data/documents-admin.json` contains admin-only sample document role and permission structures for future login-based access.
@@ -91,6 +95,12 @@ The app is root-ready for GitHub Pages. Publish from the repository root on the 
 - `index.html` - static app shell and module containers.
 - `css/style.css` - responsive visual design.
 - `js/app.js` - JSON loading, filters and rendering.
+- `workforce-management.html` - public Workforce Attendance & Payment Management Center.
+- `workforce-management.css` - responsive workforce dashboard design.
+- `workforce-management.js` - worker filters, tabs, attendance calendar, payments and modal details.
+- `admin-workers.html`, `worker-form.html`, `worker-attendance.html`, `worker-payment.html` - future admin workforce placeholders.
+- `js/admin-workers.js` - static admin worker placeholder behavior.
+- `uploads/workers/` - future worker document, contract and ID proof upload folders.
 - `documents-repository.html` - public Documents Repository module.
 - `documents-repository.css` - responsive document repository design.
 - `documents-repository.js` - document search, filters, cards, public downloads and detail modal.
