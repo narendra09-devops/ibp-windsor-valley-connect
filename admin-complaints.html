@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Complaints | IBP Windsor Valley</title>
+  <link rel="stylesheet" href="complaints.css">
+</head>
+<body>
+  <main>
+    <section class="access-strip">
+      <div>
+        <p class="eyebrow">Admin/RWA placeholder</p>
+        <h1>Complaint Admin Console</h1>
+        <p>Assign complaints, update status, add remarks, upload work proof, reopen, close, archive and generate complaint reports after secure login is connected.</p>
+      </div>
+      <div class="admin-links">
+        <a href="complaint-form.html">Raise Complaint</a>
+        <a href="complaints.html">Public Complaint Center</a>
+        <a href="complaint-workorder.html">Work Orders</a>
+      </div>
+    </section>
+    <section class="filters">
+      <label><span>Admin Search</span><input id="adminComplaintSearch" type="search" placeholder="Search complaint, assignee, category..."></label>
+      <label><span>Status</span><select id="adminStatusFilter"><option value="all">All Statuses</option></select></label>
+      <label><span>Priority</span><select id="adminPriorityFilter"><option value="all">All Priorities</option></select></label>
+      <label><span>Action</span><select><option>Publish / update after login</option><option>Archive selected</option><option>Export report</option></select></label>
+    </section>
+    <section>
+      <div class="section-heading">
+        <div><p class="eyebrow">Complaint management</p><h2>Admin Queue</h2></div>
+        <span class="pill">Demo only</span>
+      </div>
+      <div id="adminComplaintCards" class="complaint-grid"></div>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/admin-auth.js"></script>
+  <script src="js/admin-complaints.js"></script>
+</body>
+</html>

@@ -10,7 +10,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 - RWA office bearers, executive members, block coordinators, AGM and meeting schedule.
 - Maintenance collection, paid/pending status, expenses, vendor bills and work history.
 - Utilities for water, submersible, tank, pipeline, street light, common electricity, NPCL, CCTV, sewage and garbage tracking.
-- Complaints with category, status, assignee and work-order style history.
+- Complaint Center with resident complaint form, colorful status cards, timeline/details modal, masked resident data and Admin/RWA work-order placeholders.
 - Visitor Records & Gate Pass module with masked public visitor cards, approval workflow placeholders, gate passes, notifications and Admin/Security Guard management placeholders.
 - Workforce Management module with public-safe worker directory, attendance status, monthly calendar, leave/holiday records, payment tracking and admin placeholders.
 - Documents Repository, Notice Board, published WhatsApp links, reports and emergency help placeholders.
@@ -24,7 +24,7 @@ Static GitHub Pages compatible society management portal for IBP Windsor Valley 
 
 ## Navigation
 
-Home, Society, Residents, RWA, Maintenance, Utilities, Complaints, Visitor Records, Workforce Management, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
+Home, Society, Residents, RWA, Maintenance, Utilities, Complaint Center, Visitor Records, Workforce Management, Documents Repository, Notice Board, Community Activities, Reports & Analytics, Emergency & Services.
 
 ## Privacy Rules
 
@@ -40,6 +40,12 @@ The public resident directory only shows:
 
 Private sample structures are kept separately in `data/private-sample.json` for future login-based access.
 
+## Complaint Center Workflow
+
+Residents can open the Complaint Center, raise a complaint with category, block, house, title, description, priority and photo placeholder, then track the public status lifecycle: Open, Assigned, In Progress, On Hold, Resolved, Reopened and Closed.
+
+Admin/RWA users will need future secure login before real management actions are enabled. The current static admin pages demonstrate assignment, status updates, remarks, proof upload placeholders, reopen/close/archive actions, work-order generation and complaint reports. Real upload, notification, delete/archive and resident contact workflows require Firebase or Supabase authentication, database and storage.
+
 ## Data
 
 - `data/public-data.json` contains dummy public JSON for the portal.
@@ -50,6 +56,9 @@ Private sample structures are kept separately in `data/private-sample.json` for 
 - `data/workers-public.json` documents the public worker access model.
 - `data/workers-admin.json` contains admin-only sample worker role and permission structures.
 - `data/worker-attendance.json`, `data/worker-payments.json`, and `data/worker-holidays.json` contain dummy workforce operations data.
+- `data/complaints.json` contains dummy complaint, status, priority, timeline, assignment and work-proof placeholder data.
+- `data/complaints-public.json` documents the public complaint privacy model.
+- `data/complaints-admin.json` contains Admin/RWA permission and future backend placeholders.
 - `data/documents.json` contains public and restricted document repository data.
 - `data/documents-public.json` documents the public document access model.
 - `data/documents-admin.json` contains admin-only sample document role and permission structures for future login-based access.
@@ -109,6 +118,12 @@ The app is root-ready for GitHub Pages. Publish from the repository root on the 
 - `admin-workers.html`, `worker-form.html`, `worker-attendance.html`, `worker-payment.html` - future admin workforce placeholders.
 - `js/admin-workers.js` - static admin worker placeholder behavior.
 - `uploads/workers/` - future worker document, contract and ID proof upload folders.
+- `complaints.html` - public Complaint & Work Order Management Center.
+- `complaints.css` - responsive colorful complaint dashboard design.
+- `complaints.js` - complaint search, filters, summary cards, modal details and report placeholders.
+- `admin-complaints.html`, `complaint-form.html`, `complaint-details.html`, `complaint-workorder.html` - future Admin/RWA complaint and resident form placeholders.
+- `js/admin-complaints.js` - static admin complaint, form and work-order placeholder behavior.
+- `uploads/complaints/` - future complaint photo and work-proof upload folders.
 - `documents-repository.html` - public Documents Repository module.
 - `documents-repository.css` - responsive document repository design.
 - `documents-repository.js` - document search, filters, cards, public downloads and detail modal.

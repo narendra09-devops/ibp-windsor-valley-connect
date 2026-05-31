@@ -7,6 +7,10 @@ const state = {
   complaintStatus: "all"
 };
 
+if (location.hash === "#complaints") {
+  location.replace("complaints.html");
+}
+
 if (location.hash === "#help") {
   location.replace("emergency-services.html");
 }
@@ -39,8 +43,7 @@ const selectors = {
   search: "#globalSearch",
   block: "#blockFilter",
   status: "#statusFilter",
-  member: "#memberFilter",
-  complaint: "#complaintFilter"
+  member: "#memberFilter"
 };
 
 const statusClass = {
@@ -248,20 +251,6 @@ function renderUtilities() {
   })).join("") || empty("utility records");
 }
 
-function renderComplaints() {
-  const complaints = state.data.complaints.filter((complaint) => {
-    const statusOk = state.complaintStatus === "all" || complaint.status === state.complaintStatus;
-    return statusOk && matchesSearch(complaint);
-  });
-  byId("complaintCards").innerHTML = complaints.map((complaint) => `
-    <article class="complaint-card">
-      <div class="panel-heading"><h3>${complaint.id}: ${complaint.title}</h3>${badge(complaint.status)}</div>
-      <p><strong>${complaint.category}</strong> / ${complaint.house} / ${complaint.assignedTo}</p>
-      <ol>${complaint.history.map((item) => `<li>${item}</li>`).join("")}</ol>
-    </article>
-  `).join("");
-}
-
 function renderReports() {
   byId("reportCards").innerHTML = filterSearch(state.data.reports).map((report) => simpleCard({
     title: report.title,
@@ -287,7 +276,6 @@ function renderAll() {
   renderRwa();
   renderMaintenance();
   renderUtilities();
-  renderComplaints();
 }
 
 function setActiveNav(hash) {
@@ -357,10 +345,6 @@ function setupFilters() {
   document.querySelector(selectors.member).addEventListener("change", (event) => {
     state.memberStatus = event.target.value;
     renderResidents();
-  });
-  document.querySelector(selectors.complaint).addEventListener("change", (event) => {
-    state.complaintStatus = event.target.value;
-    renderComplaints();
   });
 }
 
